@@ -1,0 +1,62 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="token-capacitor" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <h3>Token capacitor problems</h3>
+                <p>Below are the faults related to token capacitor</p>
+                <ul>
+                    <li>No display</li>
+                    <li>Laptop hangs immediately adapter is inserted</li>
+                    <li>Laptop randomly hangs</li>
+                    <li>Junk display</li>
+                    <li>Problem with booting</li>
+                </ul>
+                <p>How does token capacitor looks like? </p>
+                <img class="hint-img1" src="../../images/nav/token.jpg" alt="token">
+                <h3> Solution</h3>
+                <p>Remove the token capacitor from the motherboard.</p>
+                <p>Replace token capacitor with four or two SMD electrolytic capacitors.</p>
+                <details>
+                    <summary>Hint</summary>
+                    <p>Show me how <a target="_blank"
+                            href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fq9_k7LTzDfk%2Fhqdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dq9_k7LTzDfk&tbnid=cqwD8oaqvp1IaM&vet=12ahUKEwjhtILbpKj5AhWHQ_EDHdBlC_wQMygEegQIARB0..i&docid=IDXgseglru6HTM&w=480&h=360&q=laptop%20juck%20display&ved=2ahUKEwjhtILbpKj5AhWHQ_EDHdBlC_wQMygEegQIARB0">
+                            junks display </a>looks like.</p>
+                    </p>
+                    <!-- <img src="" alt=""> -->
+                    <p>At times when the token capacitor is faulty, it will cause the PWM coil voltage to be absent and
+                        it
+                        does'nt stop the PWM coil voltage from generating some times. In a nutshell, it is the top
+                        weakness of the
+                        motherboard that possess the capacitor</p>
+                    <p>How do I replace token capacitor with SMD electrolytic capacitors? </p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+                </details>
+                <div class="arrow">
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+
+                </div>
+                <p>If problem does not resolve after rectifying this, continue troubleshooting by navigateing to the
+                    current state of your motherboard</p>
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+
+            </div>
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+
+    </body>
+
+    </html>

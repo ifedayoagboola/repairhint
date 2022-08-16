@@ -1,0 +1,1214 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="stb" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-stb1">
+                    <h3>Standby Section Troubleshooting</h3>
+                    <p>Check impedance of the following and make sure they are all clear</p>
+                    <ol>
+                        <li>IC vin pin </li>
+                        <li>Output coil </li>
+                        <li>Vreg3 and Vreg5 </li>
+                        <li>Vref</li>
+                    </ol>
+                    <div class="arrow">
+                        <button class="btn-stb1 btn option" type="button" name="button">All impedance are clear</button>
+                        <button class="btn-stb2 btn option" type="button" name="button">One impedance out of the list is
+                            not clear</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Standby section can also be reffered to as <em>DC to DC section</em> or <em>Stepdown
+                                section</em> or <em>power section</em>. It is a section of the motherboard that is used
+                            to step down the CLR voltage to lower voltage (3.3 & 5v) required by other sections.
+                        </p>
+                        <p>How do I locate standby section? In the schematic, the output coils that has 3V and 5V. Most
+                            of the times they are always beside each others.</p>
+                        <p>Incases where standby IC is heating, it is mostly always caused by Vreg3 line short or low
+                            impedance.</p>
+                        <p>What is the expected impedance value? They all should have at least 150 in multimeter diode
+                            range</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>This is the standby section page in the below motherboards. Each an every component on
+                                each page makes up standby section of each motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>Page 46</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>Page 48</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>Page 35</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Page 47</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>Page 40</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>Page 45</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Page</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>Page 57</p>
+                            </ul>
+                        </details>
+                    </details>
+                </div>
+                <div class="d-stb2 invisible">
+                    <h3>All impedance are clear</h3>
+                    <p>Check standby IC VIN voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb3 btn option" type="button" name="button">Standby IC VIN voltage
+                            present</button>
+                        <button class="btn-stb4 btn option" type="button" name="button">Standby IC VIN voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate standby section? By the 2 PWM coils that has 3v and 5v in the schematic,
+                            usually the next page to charging IC</p>
+                        <p>Standby IC VIN voltage: This is the main supply of the IC, voltage will be CLR voltage.</p>
+                        <p>Also confirm presence of the VIN voltage at the drain of PWM top MOSFET.</p>
+                        <p>2in1 MOSFET can be used to replace top MOSFET nad lower MOSFET. All you have to do is
+                            identify which pin is the drain of top MOSFET. Checkout for clue in the below material:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Xc_yIdHw0zI">Dr-Bios com</a>
+                        <p>Take a look at the below reference motherboard:</p>
+                        <ul>
+                            <li>LA-D993</li>
+                            <P>PQ401 is a 2in1 MOSFET used just as it would have been something like PQ400 & PQ402. Pin
+                                2 of PQ401 is the drain of top MOSFET for 5v phase.</P>
+                        </ul>
+                        <p>Checkout practical example of where 19v of standby is missing:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GUj9SlUJatM">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=_8Ptmi6_Img">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GUj9SlUJatM">Aditya11ttt</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='standby-section.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-stb3 invisible">
+                    <h3>One impedance out of the list is not clear</h3>
+                    <p>Make sure you clear the short or very low impedance issue before anything.</p>
+                    <div class="arrow">
+                        <button class="btn-stb5 btn option" type="button" name="button">All impedance are now
+                            clear</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+                            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+                            direct contact between supply (positive) and ground (GND or negative).</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+                        <p>What is impedance? Measure of the total opposition that a circuit or a part of a circuit
+                            presents to electric current.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+                        <p>Very low impedance here refers to value too low to it's standard value.</p>
+                        <a href="short.ejs">How to clear short</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='standby-section.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-stb4 invisible">
+                    <h3>Standby IC VIN voltage present</h3>
+                    <p>Check LDO enable voltage of the Standby IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb6 btn option" type="button" name="button">LDO enable voltage is
+                            present</button>
+                        <button class="btn-stb7 btn option" type="button" name="button">LDO enable voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected enable LDO voltage? It actually depend on the circuit architecture,
+                            checking the IC datasheet can also help.</p>
+                        <P>Be sure to follow the simple divider circuit to get the actual value.</P>
+                        <p>In some standby regulators there is always ONLDO supply of the standby IC that must be feeded
+                            with the required voltage (e.g RT8206) </p>
+                        <p>In some standby regulators the enable LDO is optional or compulsory, depending on the
+                            architecture (e.g TPS51125 series)</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb5 invisible">
+                    <h3>Standby IC VIN voltage absent</h3>
+                    <p>Back-trace the voltage to its source.</p>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is mostly feeded through an resistor or conbination of a resistor and diode</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GUj9SlUJatM">Aditya11ttt</a>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check out it few examples in the schematic of the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>From B+ to PR35 to pin 6 of standby regulator(standby VIN).</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>From B+ to PL5 to pin 16 of standby regulator(standby VIN).</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>From VIN to PL9 to PR116 to pin 16 of standby regulator(standby VIN).</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>From B+ to PL202 to pin 16 of standby regulator(standby VIN).</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>From B+ to PL401 & PL403 to pin 8 of 3&5V standby regulator(standby VIN).</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb6 invisible">
+                    <h3>LDO enable voltage is present</h3>
+                    <p>Check LDOs voltage of the Standby IC</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb8 btn option" type="button" name="button">All LDOs voltage are
+                            present</button>
+                        <button class="btn-stb9 btn option" type="button" name="button">Vreg5 or Vref of the LDOs is
+                            absent</button>
+                        <button class="btn-stb10 btn option" type="button" name="button">Vreg3 of the LDOs is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <ol>
+                            <p>List of LDO voltages:</p>
+                            <li>VREG 3 = 3.3V minimun value 95%</li>
+                            <li>VREG5 = 5V minimun value 98%</li>
+                            <li>VREF = 2V minimun value 95% </li>
+                        </ol>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=MOPhRCklxm4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=d35DszdjafU">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb7 invisible">
+                    <h3>All LDOs voltage are present</h3>
+                    <p>Check standby IC enable voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb11 btn option btn option" type="button" name="button">Enable voltage is
+                            present</button>
+                        <button class="btn-stb12 btn option btn option" type="button" name="button">Enable voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Clue on STB enable</summary>
+                        <P>Enable pin is to enable the generation of the output coil voltages of the standby section.
+                        </P>
+                        <p>Enable of the Standby IC use to have different names such as below depending on the ic</p>
+                        <ol>
+                            <li>EN1 and EN2</li>
+                            <li>ON1 and ON2</li>
+                            <li>Enable</li>
+                            <li>Shutdown</li>
+                        </ol>
+                        <p>In some cases, there will be one Enable for 3.3v phase and one for 5v phase. In some
+                            architecture the two enables has to be present before it can generate coil output voltage,
+                            while in some very rare cases, only one enable is used to run the two phases.</p>
+                        <p>Checkout similar example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=rJIf-cLD6KA">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=hZxlITqDxoU">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kYeVBB7sgX8">AFS SOLUTIONS</a>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb8 invisible">
+                    <h3>Enable voltage is present</h3>
+                    <p>Check output coil voltages 3.3v / 5v Always</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb13 btn option" type="button" name="button">Output coil voltages 3.3v / 5v
+                            Always is present</button>
+                        <button class="btn-stb14 btn option" type="button" name="button">Output coil voltages 3.3v / 5v
+                            Always is absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In some rare cases, the motherboard architecture is designed to only have 3.3v output coil
+                            voltage to be present and no 5v output voltage before power. While in some architectures,
+                            3V&5V Always will be generated after power</p>
+                        <p>In some few motherboard architectures, the standby coil voltages come and goes back in less
+                            than 3seconds, which is normal for them. There will be difference of arround 0.009 in the
+                            drop of DC supply consumption.</p>
+                        <p>Where can I check the output coil voltages? Standby section PWM coils.</p>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb9 invisible">
+                    <h3>Enable voltage is absent</h3>
+                    <p>Download the schematic and check to see if the architecture is designed to generate standby coils
+                        voltage before or after power.</p>
+                    <div class="arrow">
+                        <button class="btn-stb15 btn option" type="button" name="button">STB coil voltage comes before
+                            power</button>
+                        <button class="btn-stb16 btn option" type="button" name="button">STB coil voltage comes after
+                            power</button>
+                        <button class="btn-stb17 btn option" type="button" name="button">I don't know when STB coil
+                            voltage comes</button>
+                    </div>
+                    <details>
+                        <Summary>Hint</Summary>
+                        <P>In some few motherboard architectures, the coil voltages only generate after power. In these
+                            types of architectures, there standby enable voltage comes after power.</P>
+                        <p>Almost all Core 2 and Arrandele series will generate standby voltage before power</p>
+                        <p>In some few motherboard architectures, the enble come and goes back in less than 3seconds,
+                            which is normal for them. There will be difference of arround 0.009 in the drop of DC supply
+                            consumption.</p>
+                        <p>Checkout similar example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=rJIf-cLD6KA">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=hZxlITqDxoU">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kYeVBB7sgX8">AFS SOLUTIONS</a>
+                        <p>How to know weather standby coils voltage generate before or after power</p>
+                        <ol>
+                            <li>Through power sequence in the schematic.</li>
+                            <li>Relating power flow of your schematic to chipset(PCH/ICH) timing sequence in datasheet
+                                (check in electrical characteristic chapter of chipset datasheet).</li>
+                            <li>Sometimes naming convetion of the Output coil voltage.</li>
+                            <li>Experience too can be a way to know</li>
+                        </ol>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb10 invisible">
+                    <h3>STB coil voltage comes before power</h3>
+                    <p>If motherboard standby coils voltage comes before power, enable must be high to generate coil
+                        voltage</p>
+                    <p>Check enable pin of the standby regulator</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb18 btn option" type="button" name="button">Enable voltage is
+                            present</button>
+                        <button class="btn-stb19 btn option" type="button" name="button">Enable voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected enable voltage? 3.3V minimun value is 2.9V</p>
+                        <p>Where can I check the enable voltage? Standby regulator</p>
+                        <p>If regulator enable itself without super I/O aid, just replace the standby IC.</p>
+                        <p>Basically some architectures will be designed to enable itself, some are designed to be
+                            directly enabled by SIO, while some are indirectly enabled by SIO but through a simple
+                            circuit.</p>
+                        <P>If its a dell motherboard , the simple circut can be PLS logic</P>
+                        <p>How do I know if PSL logic is used in my dell? search for PSL_IN in your schematic, if there
+                            is result for it, then PSL logic is used in your motherboard.</p>
+                        <p>You can also use buck regulator if you can't get the IC. Checkout practical examples:</p>
+                        <a target="_blank" href="www.youtube.com/watch?v=il-U7ymZJIY">Adityatt111</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb11 invisible">
+                    <h3>Enable voltage is present</h3>
+                    <p>Check PWM output voltage at output coils</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb20 btn option" type="button" name="button">PWM 3.3/5v is absent</button>
+                        <button class="btn-stb21 btn option" type="button" name="button">PWM 3.3/5v is present</button>
+                    </div>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb12 invisible">
+                    <h3>PWM 3.3/5v is absent</h3>
+                    <p>Check Standby IC trip pins.</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb22 btn option" type="button" name="button">Trip pin voltage is
+                            fine</button>
+                        <button class="btn-stb23 btn option" type="button" name="button">Trip pin voltage is
+                            Bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Trip pin of the regulator is used to short down the IC in case there is an issue. If the
+                            voltage on the pin is wrong, it will stop the regulator from working</p>
+                        <p>Trip pin in different regulators has there name. In most cases you will find the pin to be
+                            named as follows</p>
+                        <ul>
+                            <li>ENTRIP1 & ENTRIP2</li>
+                            <li>Trip1 and Trip2</li>
+                            <li>CS1 and CS2</li>
+                            <li>trip</li>
+                        </ul>
+                        <p>What is the expected trip voltage? As the regulator architecture concept is different, the
+                            voltage depend on the circuit. One of the most common concept is the ENTRIP and CS.</p>
+                        <ul>
+                            <li>For ENTRIP: One can easily determine the voltage by the value of the resistor connected
+                                to the pin. For example with 180K resistor connected to ENTRIP pin, the expected voltage
+                                will be 1.80V. This is archeivable simply by shifting the decimal in two places. One
+                                more example is 74k resistor will give 0.74v</li>
+                            <li>For CS: The logic is similar to ENTRIP concept, just that you will have to divide the
+                                voltage by 2. Example: with 180k resistor used, CS voltage will be 0.9v. With 90K
+                                resistor used, CS voltage will be 0.4V (This is not always right). Most importantly, you
+                                shouldn't have 0V on this pin for working condition.</li>
+                        </ul>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=xP1LzUGPObo">Laptex</a>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb13 invisible">
+                    <h3>PWM 3.3/5v is present</h3>
+                    <p>Confirm standby Power good (PGOOD) and proceed by checking all I.O requiremnts</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                            name="button">Let check I.O requirements</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Sometimes PGOOD is used and sometimes it is not used. If PGOOD is used, it is very important
+                            to check it as it can cause big issue in the next sequence. The motherboard result can be no
+                            display issue or auto off immediatly after power</p>
+                        <p>Why I.O requirements? Because generally, I.O require is the next on the sequence if standby
+                            voltages are present.
+                        </p>
+                    </details>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb14 invisible">
+                    <h3>Trip pin voltage is fine</h3>
+                    <p>If you are sure output coil impedance is fine, follow the below steps:</p>
+                    <ul>
+                        <li>Replace standby regulator.</li>
+                        <li>If PWM voltage is still absent, check the two PWMs feedback resistors (voltage divider)</li>
+                        <li>If both feedback circuit is perfect: Make sure both input and output impedance of all
+                            <em>DC-DC MOSFETs/ICs are fine</em> are fine
+                        </li>
+                        <li>Check condition of PWM output capacitors</li>
+                        <a href="https://www.youtube.com/watch?v=tWoqVfFsg8E">Laptop Repair Zone</a><br>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=SPG9Nwcj2og">Laptop Repair Zone</a>
+                        <li>Check impedance of all USBs positive terminal.</li>
+                        <li>Check and be sure both PWMs top and lower MOSFET gate signal is good</li>
+                        <li>If all the above is good, replace both top and lower MOSFETs of the two phases</li>
+                        <p>You can also use buck regulator if you can't get the IC. Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+
+                    </ul>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I check inpudence of USB positive terminal? On every USB ports, it is always basically
+                            4 terminals, the 2 middle pins are clock and data, while the remain 2(one on left and one on
+                            right) are positive and negative. There shouldn't be continuity across the 2 pins (positive
+                            and negative).</p>
+                        <p>If short is found in the USB section, it Is important to clear the short or isolate the USB
+                            section by removing the USB IC.</p>
+                        <p>Where is DC-DC?</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Here are DC-DC pages for the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>Page 42</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>Page 44</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>Page 39</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Page 35</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>Page 34</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>Page 40 & 86</P>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Page 33</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>Page 32</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb15 invisible">
+                    <h3>Trip pin voltage is Bad</h3>
+                    <p>Back-trace to the controlling circuit for the trip pin. Enable for the circuit mostly comes from
+                        super I.O </p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                            name="button">Let check I.O requirements</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If trip is controlled by the IC itself, replace the standby IC. It will not be connected
+                            to any external circuIt, it will only be connected to a resist and the resistor is connected
+                            to GND.</p>
+                        <p>If standby trip is contronlled by external circuit, check the circuit.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=wljiM-3cr_g">Refixnetwork</a>
+                        <p>What is the expected voltage on trip pin? As the regulator architecture concept is different,
+                            the voltage depend on the circuit. One of the most common concept is the ENTRIP and CS.</p>
+                        <p>In most cases the ultimate game changer voltage usually comes from I.O</p>
+                        <p>What is game changer? It actually means single voltage that changes the whole circuit.</p>
+                        <p>You can also use buck regulator if you can't get the IC. Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb16 invisible">
+                    <h3>Enable voltage is absent</h3>
+                    <p><em>It can be directly or indirectly feeded by super SIO. You can start by back-tracing the
+                            pin to it's pre-circuit first.</em></p>
+                    <p>Proceed by checking all I.O requiremnts</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb24 btn option" onclick="location.href='IO-requirements.ejs'" type="button"
+                            name="button">Let check I.O requirements</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why I.O requirements? Because I.O require is the next on the sequence if standby voltages are
+                            present.</p>
+                        <p>Beware of motherboard architectures that uses simple circuit for enable such as PSL logic.
+                        </p>
+                        <p>Checkout similar example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=rJIf-cLD6KA">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=hZxlITqDxoU">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kYeVBB7sgX8">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=wljiM-3cr_g">Refixnetwork</a>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-stb17 invisible">
+                    <h3>STB coil voltage comes after power</h3>
+                    <p>If motherboard has EC BIOS, check 3.3v on pin number 8 of BIOS chip</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb25 btn option" type="button" name="button">3.3v present on pin 8 of
+                            BIOS</button>
+                        <button class="btn-stb26 btn option" type="button" name="button">3.3v absent on pin 8 of
+                            BIOS</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If the EC BIOS is not embedded inside the super I/O, there must be 3.3v or 1.8v at BIOS pin 8
+                            of bios chip before power, carefully back-trace the voltage or continue with the navigator
+                            (Super I/O troubleshooting).</p>
+                        <p>You can confirm the exact voltage of bios pin 8 in the schematic. It will either be 3.3 or
+                            1.8</p>
+                        <p>How do I know weather the EC BIOS is embedded inside the super I/O or not? If the EC BIOS is
+                            embedded, there will be no BIOS connected to the super I/O in the block diagram page
+                            while, if the EC BIOS is not embedded, there will be BIOS connected to the super I/O in the
+                            block diagram page.</p>
+
+                        <img class="hint-img1" src="../../images/nav/bios.jpg" alt="bios">
+                        <p>In the picture above, EC_Bios is not embedded, because there is external BIOS connected to
+                            the EC</p>
+                        <img class="hint-img1" src="../../images/nav/bios2.jpg" alt="bios1">
+                        <p>In this picture above, EC_Bios is also not embelled, because there is external BIOS connected
+                            to the EC.</p>
+                        <img class="hint-img1" src="../../images/nav/bios3.jpg" alt="bios2">
+                        <p>In this picture above, no external bios connected to SIO. Therefor, EC_BIOS is embedded.</p>
+                    </details>
+                    <!-- <button class="btn-previous14" type="button" name="button">Previous</button> -->
+                </div>
+                <div class="d-stb18 invisible">
+                    <h3>I don't know when STB coil voltage comes</h3>
+                    <p>If motherboard has EC BIOS, check 3.3v on pin 8 of BIOS chip</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb27 btn option" type="button" name="button">3.3v present on pin 8 of
+                            BIOS</button>
+                        <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                            name="button">3.3v absent on pin 8 of BIOS</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If the EC BIOS is not embedded inside the super I/O, there must be 3.3v or 1.8v at BIOS pin 8
+                            of bios chip before power, carefully back-trace the voltage or continue with the navigator
+                            (Super I/O troubleshooting).</p>
+                        <p>You can confirm the exact voltage of bios pin 8 in the schematic. It will either be 3.3 or
+                            1.8</p>
+                        <p>How do I know weather the EC BIOS is embedded inside the super I/O or not? If the EC BIOS is
+                            embedded, there will be no BIOS connected to the super I/O in the block diagram page
+                            while, if the EC BIOS is not embedded, there will be BIOS connected to the super I/O in the
+                            block diagram page.</p>
+
+                        <img class="hint-img1" src="../../images/nav/bios.jpg" alt="bios">
+                        <p>In the picture above, EC_Bios is not embedded, because there is external BIOS connected to
+                            the EC</p>
+                        <img class="hint-img1" src="../../images/nav/bios2.jpg" alt="bios1">
+                        <p>In this picture above, EC_Bios is also not embelled, because there is external BIOS connected
+                            to the EC.</p>
+                        <img class="hint-img1" src="../../images/nav/bios3.jpg" alt="bios2">
+                        <p>In this picture above, no external bios connected to SIO. Therefor, EC_BIOS is embedded.</p>
+                    </details>
+                    <!-- <button class="btn-previous15" type="button" name="button">Previous</button> -->
+                </div>
+                <div class="d-stb19 invisible">
+                    <h3>Output coil voltages 3.3v / 5v Always is present</h3>
+                    <p>Check PGOOD of the standby IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb28 btn option" type="button" name="button">PGOOD voltage is fine</button>
+                        <button class="btn-stb38 btn option" type="button" name="button">PGOOD voltage is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>As much as the PGOOD is important, it is not mandatory in all architectures but it is
+                            important you always check. If it is not important in your motherboard architecture, the
+                            PGOOD will be left with no connection in your schematic.</p>
+                    </details>
+
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                    <!-- this div was updated -->
+                </div>
+                <div class="d-stb20 invisible">
+                    <h3>3.3v present on pin 8 of BIOS</h3>
+                    <p>Proceed by checking all I.O requiremnts</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                            name="button">Let check I.O requirements</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why I.O requirements? Because I.O requirements is the next on the sequence if standby
+                            voltages are present.</p>
+                    </details>
+                    <!-- <button class="btn-previous17" type="button" name="button">Previous</button> -->
+                </div>
+                <div class="d-stb21 invisible">
+                    <h3>Output coil voltages 3.3v / 5v Always is absent</h3>
+                    <p>Check and confirm CLR voltage on drain of standby top MOSFETS </p>
+
+                    <div class="arrow">
+                        <button class="btn-stb39 btn option" type="button" name="button">CLR voltage present on drain of
+                            top MOSFET</button>
+                        <button class="btn-stb40 btn option" type="button" name="button">CLR voltage absent on drain of
+                            top MOSFET</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>2in1 MOSFET can be used to replace top MOSFET nad lower MOSFET. All you have to do is
+                            identify which pin is the drain of top MOSFET. Checkout for clue in the below material:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Xc_yIdHw0zI">Dr-Bios com</a>
+                        <p>Take a look at the below reference motherboard:</p>
+                        <ul>
+                            <li>LA-D993</li>
+                            <P>PQ401 is a 2in1 MOSFET used just as it would have been something like PQ400 & PQ402. Pin
+                                2 of PQ401 is the drain of top MOSFET for 5v phase.</P>
+                        </ul>                       
+                        <p>It is important to confirm the presence CLR voltage at the drain of PWM top MOSFET simply
+                            beacuse in some architectures, the CLR voltage is feeded to jumper pad, coil or fuse before
+                            getting feeded to the top MOSFET.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PJ1O</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PL5</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PL400, PL4001 & PJP400</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PL202</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PL401 and PL403</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>PG4525, PG4521, PG4524 and PG4531</P>
+                            </ul>
+                        </details>
+                        <p>Be sure you have carefully checked all previous testing points.</p>
+                        <p>Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=o0sLxJvwXRc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=fkBy2Jd9apk">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=3iE4X4j2AAM">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=yoiNwEpd_eI">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=FpCwhOb1bdQ">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ANhe9VHGtWQ">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                    <!-- this div was updated -->
+                </div>
+                <div class="d-stb22 invisible">
+                    <h3>Vreg5 or Vref of the LDOs is absent</h3>
+                    <p>If you are sure there impedance value is fine, replace the capacitor connected(Vreg 5), because
+                        it can be
+                        leaky.</p>
+                    <p>Replace the Standby regulator and retest your motherboard.</p>
+                    <p>If your issue is resolved after replacing IC, its fine. Beware, there can be many faults on a
+                        single motherboard, locate your motherboards state on the navigator and continue troubleshooting
+                    </p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+                        <p>You can also use buck regulator if you can't get the IC. Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=il-U7ymZJIY">Adityatt111</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                    </details>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb23 invisible">
+                    <h3>Vreg3 of the LDOs is absent</h3>
+
+                    <P>When Vreg3 line is bad, in most cases the impedance will be bad or poor.</P>
+                    <p>Start by checking and notiningthe impedance of Vreg3 line.</p>
+                    <p> Remove Standby IC and re-check VREG3 line impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb32 btn option" type="button" name="button">Vreg3 line impedance
+                            improve</button>
+                        <button class="btn-stb33 btn option" type="button" name="button">Vreg3 line impedance remain the
+                            same</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Vreg, also known as <em>LDO3 line</em> is mostly the common fault of standby section, if we
+                            are to percentegize the source of this fault, it goes below</p>
+                        <ol>
+                            <li>Bad standby regulator 40%</li>
+                            <li>Bad Super I.O chip 30%</li>
+                            <li>Bad Random section 20%</li>
+                            <li>Bad RTC section 10%</li>
+                        </ol>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=d35DszdjafU">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb24 invisible">
+                    <h3>LDO enable voltage is absent</h3>
+                    <p>Back-trace the voltage to its source</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected enable LDO voltage? It IS mostly 3.3V, it actually depend on the
+                            architecture. checking the IC datasheet can also help.</p>
+                        <P>Be sure to follow the simple divider circuit to get the actual value.</P>
+                        <p>In some standby IC, there is always ONLDO suppy of the standby IC that must be feeded with
+                            the required voltage (e.g RT8206) </p>
+                        <p>In some standby IC the enable LDO is optional or compulsory, depending on the architecture
+                            (e.g TPS51125 series)</p>
+                    </details>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb25 invisible">
+                    <h3>Vreg3 line impedance improve</h3>
+                    <p>Replace the IC with correct one and be sure to comfirm if the impedance is still fine after
+                        replacement of the IC before you re-test with your DC supply </p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <p>If your issue is resolved after replacing IC, its fine. Beware, there can be many faults on a
+                        single motherboard, locate your motherboards state on the navigator and continue troubleshooting
+                    </p>
+                    <p>You can also use buck regulator if you can't get the IC. Checkout practical examples:</p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=il-U7ymZJIY">Adityatt111</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb26 invisible">
+                    <h3>Vreg3 line impedance remain the same</h3>
+                    <p>Inject 3.3v on the Vreg3 line, a component must be heating up</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb34 btn option" type="button" name="button">A component is heating</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In most case the super I.O will be heating</p>
+                        <p>Do not increase the voltage above the expected voltage 3.3v</p>
+                        <p>How do inject voltage on Vreg3? It is as good as <a href="short.ejs">clearing short.</a></p>
+                    </details>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb27 invisible">
+                    <h3>A component is heating</h3>
+                    <p>Follow the below steps from here</p>
+                    <ol>
+                        <li>Remove the heating component.</li>
+                        <li>Recheck Vreg3 line impedance and be sure the impedance is fine.</li>
+                        <li>Replace component with the correct one.</li>
+                        <li>Recheck Vreg3 line impedance and be sure the impedance is fine.</li>
+                        <li>Go ahead and retest your motherboard.</li>
+                        <li>If your issue is resolved after replacing component, its fine. Beware, there can be many
+                            faults on a single motherboard, locate your motherboard state in the navigator and continue
+                            troubleshooting.</li>
+                        <li>Don't forget to return the standby IC. Do not insert charger or DC supply to motherboard
+                            with the standby IC or any PWM regulator. </li>
+                    </ol>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb28 invisible">
+                    <h3>3.3v absent on pin 8 of BIOS</h3>
+                    <p>In architectures where standby coil voltages comes after power, BIOs pin 8 supply always comes
+                        from Vreg. If EC BIOS pin 8 has no voltage, you have to back-trace the voltage of BIOs pin8 to
+                        it's source</p>
+                    <p>After rectifying this BIOS supply issue, proceed by testing your motherboard.</p>
+                    <P>If problem remain the same, navigate to your motherboard current state in the navigator.</P>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If the EC BIOS is not embedded inside the super I/O, there must be 3.3v or 1.8v at BIOS pin 8
+                            before power, carefully back-trace the voltage.</p>
+                    </details>
+                    <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb29 invisible">
+                    <h3>PGOOD voltage is fine</h3>
+                    <p>If motherboard has EC BIOS, check 3.3v on pin 8 of BIOS chip</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb35 btn option" type="button" name="button">3.3v present on pin 8 of
+                            BIOS</button>
+                        <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                            name="button">3.3v absent on pin 8 of
+                            BIOS</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Be sure to confirm PGOOD of the standby regulator before proceeding to EC BIOS.</p>
+                        <p>If the EC BIOS is not embedded inside the super I/O, there must be 3.3v or 1.8v at BIOS pin 8
+                            of bios chip before power, carefully back-trace the voltage or continue with the navigator
+                            (Super I/O troubleshooting).</p>
+                        <p>You can confirm the exact voltage of bios pin 8 in the schematic. It will either be 3.3 or
+                            1.8</p>
+                        <p>How do I know weather the EC BIOS is embedded inside the super I/O or not? If the EC BIOS is
+                            embedded, there will be no BIOS connected to the super I/O in the block diagram page
+                            while, if the EC BIOS is not embedded, there will be BIOS connected to the super I/O in the
+                            block diagram page.</p>
+
+                        <img class="hint-img1" src="../../images/nav/bios.jpg" alt="bios">
+                        <p>In the picture above, EC_Bios is not embedded, because there is external BIOS connected to
+                            the EC</p>
+                        <img class="hint-img1" src="../../images/nav/bios2.jpg" alt="bios1">
+                        <p>In this picture above, EC_Bios is also not embelled, because there is external BIOS connected
+                            to the EC.</p>
+                        <img class="hint-img1" src="../../images/nav/bios3.jpg" alt="bios2">
+                        <p>In this picture above, no external bios connected to SIO. Therefor, EC_BIOS is embedded.</p>
+                    </details>
+                    <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-stb30 invisible">
+                    <h3>PGOOD voltage is bad</h3>
+                    <p>Check the feedback pin of the regulator.</p>
+
+                    <div class="arrow">
+                        <button class="btn-stb36 btn option" type="button" name="button">Feedback voltage is
+                            fine</button>
+                        <button class="btn-stb37 btn option" type="button" name="button">Feedback voltage is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This is usually connected via voltage divider from the pwm coil output to the feedback pin of
+                            the regulator.</p>
+                        <p>Check the resistance value of the feedback resistors connected to the feedback pin. For
+                            better testing, it is ideal to take out the resistors and check it off motherboard </p>
+                    </details>
+                    <button class="btn-previous27 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb31 invisible">
+                    <h3>Feedback voltage is fine</h3>
+                    <p>Check the standby PGOOD pin status in the schematic of your motherboard.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+
+                    <p>If your issue is resolved after replacing IC, its fine. Beware, there can be many faults on a
+                        single motherboard, locate your motherboards state in the navigator and continue troubleshooting
+                    </p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always connected to a pull resistor, check the pull up resistor value and input voltage
+                        </p>
+                        <p>As much as the PGOOD is important, it is not mandatory in all architectures.</p>
+                    </details>
+                    <button class="btn-previous28 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb32 invisible">
+                    <h3>Feedback voltage is bad</h3>
+                    <p>Rectify the simple feedback circuit.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+
+                    <p>If your issue is resolved after replacing IC, its fine. Beware, there can be many faults on a
+                        single motherboard, locate your motherboards state on the navigator and continue troubleshooting
+                    </p>
+                    <button class="btn-previous29 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb33 invisible">
+                    <h3>CLR voltage present on drain of top MOSFET</h3>
+                    <p>Download the schematic and check to see if the architecture is designed to generate standby coil
+                        voltages before or after power.</p>
+                    <p style="text-align: center;">&</p>
+                    <P>Check bootstrap for of the standby ic</P>
+                    <div class="arrow">
+                        <button class="btn-stb29 btn option" type="button" name="button">STB coil voltage comes before
+                            power</button>
+                        <button class="btn-stb30 btn option" type="button" name="button">STB coil voltage comes after
+                            power</button>
+                        <button class="btn-stb31 btn option" type="button" name="button">I don't know when STB coil
+                            voltage comes</button>
+                        <button class="btn-stb41 btn option">Bootstrap</button>
+                    </div>
+
+                    <details>
+                        <Summary>Hint</Summary>
+                        <p>There will be no need for checking bootstrap if it is not used in your motherboard.</p>
+                        <P>In some few motherboard architectures, the coil voltages only generate after power. In these
+                            types of architectures, there standby enable voltage comes after power.</P>
+                        <p>Almost all Core 2 and Arrandele series will generate standby voltage before power</p>
+                        <p>In some few motherboard architectures, the enble come and goes back in less than 3seconds,
+                            which is normal for them. There will be difference of arround 0.009 in the drop of DC supply
+                            consumption</p>
+                        <p>How to know weather standby coil voltages generates before or after power</p>
+                        <ol>
+                            <li>Through power sequence in the schematic.</li>
+                            <li>Sometimes naming convetion of the Output coil voltage.</li>
+                            <li>Experience too can be a way to know</li>
+                        </ol>
+                    </details>
+                    <br>
+                    <button class="btn-previous30 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-stb34 invisible">
+                    <h3>CLR voltage absent on drain of top MOSFET</h3>
+                    <p>Back-trace the missing voltage from the drain of top to it Source.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+
+                    <p>If your issue is resolved after replacing IC, its fine. Beware, there can be many faults on a
+                        single motherboard, locate your motherboards state on the navigator and continue
+                        troubleshooting.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is important to confirm the presence of CLR voltage at the drain of PWM top MOSFET
+                            beacuse. In some architectures, the CLR voltage is feeded to jumper pad, coil or fuse before
+                            getting feeded to the top MOSFET </p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PJ1O</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PL5</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PL400, PL4001 & PJP400</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PL202</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PL401 and PL403</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>PG4525, PG4521, PG4524 and PG4531</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous31 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-stb35 invisible">
+                    <h3>Bootstrap</h3>
+                    <p>Check voltage stability of both standyby bootstrap pin</p>
+
+                    <div>
+                        <button class="btn-stb42 btn option">Both bootstrap voltage is stable and fine</button>
+                        <button class="btn-stb43 btn option">One or bootstrap voltage is abnormal</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? It actually depends on the IC used on the other, in most cases
+                            it is always arround 4.5V and it can be the same with each other or there should be slight
+                            difference in the voltage of the two(2) bootstraps. However, The most important point is to
+                            have a stable voltage at the bootstrap pin of each phase(3.3 & 5).</p>
+                        <p>If at all there is any suspicious sign on this pin, it ideal to take out bootstrap resitor
+                            and check the resistance value and take out the capacitor and check the impedance
+                            value too.Checking boostrap on the motherboard will only read short weather it is good or
+                            not. Checkout the below material for clue:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=72XQPtJZK0M">AFS SOLUTIONS</a>
+
+                        <details>
+                            <summary>Hint</summary>
+                            <p>It is important to confirm the presence of CLR voltage at the drain of PWM top MOSFET
+                                beacuse. In some architectures, the CLR voltage is feeded to jumper pad, coil or fuse
+                                before getting feeded to the top MOSFET </p>
+                            <details>
+                                <summary>Reference</summary>
+                                <p>Check boostrap pin in the below motherboards</p>
+                                <ul>
+                                    <li>LA-4494P</li>
+                                    <P>For 3.3v: Pin24</P>
+                                    <p>For 5v: pin17</p>
+                                </ul>
+                                <ul>
+                                    <li>LA-7912P</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin22</p>
+                                </ul>
+                                <ul>
+                                    <li>R33</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin22</p>
+                                </ul>
+                                <ul>
+                                    <li>LA-9104P</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin22</p>
+                                </ul>
+                                <ul>
+                                    <li>LA-B101</li>
+                                    <P>For 3.3v: Pin6</P>
+                                    <p>For 5v: pin6</p>
+                                </ul>
+                                <ul>
+                                    <li>15341-1</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin17</p>
+                                </ul>
+                                <ul>
+                                    <li>LA-C361P</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin17</p>
+                                </ul>
+                                <ul>
+                                    <li>LA-D993</li>
+                                    <P>For 3.3v: Pin9</P>
+                                    <p>For 5v: pin17</p>
+                                </ul>
+                            </details>
+                        </details>
+                        <button class="btn-previous32 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-stb36 invisible">
+                    <h3>Both bootstrap voltage is stable and fine</h3>
+                    <p>If at this point there is still no positive result you can use buck regulator to generate the
+                        standby voltages. If choose to, you can still confirm few things around</p>
+                    <div class="arrow">
+                        <button class="btn-stb44 btn option">Check</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Checkout practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=il-U7ymZJIY">Adityatt111</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous33 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-stb37 invisible">
+                    <h3>One or bootstrap voltage is abnormal</h3>
+                    <p>For the abnormal phase, take out the bootstrap resistor and capacitor and checkk there value</p>
+                    <p>Replace the fault component(resistor or capacitor) with the exactone</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Using wrong replacement can possibly conplicate your issue.</p>
+                        <p>How do I get exactly the same type?</p>
+                        <li>You can use that of similar motherboard if you have exact scrap.</li>
+                        <li>You can take from another motherboard where similar IC or equivalent IC is used.</li>
+                        <li>You can copy and search the complete number of the capacitor in the schematic and search
+                            in schematic of another motherboard you intend to take from.</li>
+                        <p>If at all there is any suspicious sign on this pin, it ideal to take out bootstrap resitor
+                            and check the resistance value and take out the capacitor and check the impedance
+                            value too.Checking boostrap on the motherboard will only read short weather it is good or
+                            not.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check boostrap pin in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PR37 is for 3.3v phase boostrap resistor</P>
+                                <p>PR40 is for 5v phase boostrap resistor</p>
+                                <p>PC31 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC32 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <P>PR73 is for 3.3v phase boostrap resistor</P>
+                                <p>PR74 is for 5v phase boostrap resistor</p>
+                                <p>PC58 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC59 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <P>PR66 is for 3.3v phase boostrap resistor</P>
+                                <p>PR61 is for 5v phase boostrap resistor</p>
+                                <p>PC57 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC50 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <P>PR207 is for 3.3v phase boostrap resistor</P>
+                                <p>PR208 is for 5v phase boostrap resistor</p>
+                                <p>PC210 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC211 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <P>PR401 is for 3.3v phase boostrap resistor</P>
+                                <p>PR411 is for 5v phase boostrap resistor</p>
+                                <p>PC402 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC414 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>PR4528 is for 3.3v phase boostrap resistor</P>
+                                <p>PR4524 is for 5v phase boostrap resistor</p>
+                                <p>PC4535 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC4516 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <P>PR411 is for 3.3v phase boostrap resistor</P>
+                                <p>PR412 is for 5v phase boostrap resistor</p>
+                                <p>PC410 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC411 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>PR412 is for 3.3v phase boostrap resistor</P>
+                                <p>PR414 is for 5v phase boostrap resistor</p>
+                                <p>PC411 is for 3.3v phase boostrap capacitor</p>
+                                <p>PC412 is for 5v phase boostrap capacitor</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous34 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+
+            </div>
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

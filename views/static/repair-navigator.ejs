@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+
+  <body>
+    <%- include('../partials/navbar') %>
+
+
+      <div class="direction">
+        <h3>Welcome to the Navigator</h3>
+
+        <p>This is designed to help you troubleshoot you motherboard with the provided information. Please
+          be sure your are providing the valid information, as the navigator works only with the provided
+          information.</p>
+        <p>It will be more advantageous for you if you at least have the below tools, but nevertheless, the Navigator
+          will
+          provide maximum support regardless of what tools you have.</p>
+        <p>There will be reference to video material where given testing hint is the culprit or more emphasis is place
+          on the testing hint in the reference material.</p>
+
+        <ul>
+          <li>Adapter</li>
+          <li>DC power supply</li>
+          <li>Bios Programmer</li>
+          <li>Digital multimeter</li>
+          <li>Soldering iron</li>
+          <li>Rework station </li>
+          <li>Oscilloscope</li>
+          <p>We will try as much as possible to reduce the need for oscilloscope in this level of troubleshooting.</p>
+        </ul>
+        <div class="arrow">
+          <button class="btn option" onclick="location.href='issue/mb-issue.ejs'" type="button">Let start</button>
+        </div>
+      </div>
+      <button class="btn" style="margin-bottom: 50px;"
+        onclick="location.href='https://drive.google.com/file/d/1pR8eKKf0mtVmQOEdKfoO2AobS6dnuVMA/view?usp=sharing'"><i
+          class="fa-solid fa-download" style="padding-right: 10px;"></i>Download Reference material</button>
+
+      <!-- Footer using ejs template-->
+      <%- include('../partials/footer') %>
+
+        <script src="../js/index.js" charset="utf-8"></script>
+
+  </body>
+
+  </html>

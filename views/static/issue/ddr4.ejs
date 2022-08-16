@@ -1,0 +1,391 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="ddr4"onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-rfour1">
+                    <h3>DDR4 RAM troubleshooting</h3>
+                    <p>Check VREF voltage on pin 1 or 26.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour1 btn option" type="button" type="button" name="button">VREF is
+                            present</button>
+                        <button class="btn-rfour2 btn option" type="button" name="button">VREF is absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Total pin is 260.</p>
+                        <P>VREF voltge is always half of the RAM supply.</P>
+                        <p>The value is 0.6v for ordinary DDR3.</p>
+                        <p>Check with RAM if is possible.</p>
+                        <p>Check at RAM pin number 1.</p>
+                    </details>
+                </div>
+                <div class="d-rfour2 invisible">
+                    <h3>VREF is present</h3>
+                    <p>Check VTT voltage on pin 258.</p>
+                    <div class="arrow">
+                        <button class="btn-rfour3 btn option" type="button" name="button">VTT is present</button>
+                        <button class="btn-rfour4 btn option" type="button" name="button">VTT is absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <P>VTT is know as the termination voltage.</P>
+                        <p>The value is 0.6v</p>
+                        <p>Check with RAM if is possible.</p>
+                        <p>Check at RAM pin 256.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='ddr4.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-rfour3 invisible">
+                    <h3>VREF is absent</h3>
+                    <p>Back-trace the voltage.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>VREF is mostly generated out of a voltage divider which input is always feeded from RAM
+                            supply.</p>
+                        <P>The value is 0.6V</P>
+                    </details>
+                    <button class="btn option" onclick="location.href='ddr4.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-rfour4 invisible">
+                    <h3>VTT is present</h3>
+                    <p>Check VDDSPD on pin 255.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour5 btn option" type="button" name="button">VDDSPD is present</button>
+                        <button class="btn-rfour6 btn option" type="button" name="button">VDDSPD is absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This pin is feeded directly from the VS(3v DC-DC output) voltage.</p>
+                        <p>The voltage value is 3.3v</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour5 invisible">
+                    <h3>VTT is absent</h3>
+                    <p>Back-trace the voltage.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>VTT is mostly generated out of RAM supply IC.</p>
+                        <P>The value is 0.6V</P>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour6 invisible">
+                    <h3>VDDSPD is present</h3>
+                    <p>Check RAM supply voltage on pin 12(it has multiple pins, just pick on one. Also
+                        consider (optional) to confirm on at least one pin each for the three blocks that uses the
+                        supply VDD, CB and DM).</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour7 btn option" type="button" name="button">RAM supply is present</button>
+                        <button class="btn-rfour8 btn option" type="button" name="button">RAM supply is absent</button>
+                    </div>
+                    <details>
+                        <summary>RAM supply</summary>
+                        <p>This is the main power voltage for the RAM section.</p>
+                        <p>The value is 1.2V</p>
+                        <P>Show me the VDD, CB and DM.</P>
+                        <img class="hint-img1" src="../../images/nav/r4.jpg" alt="R4">
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour7 invisible">
+                    <h3>VDDSPD is absent</h3>
+                    <p>Back-trace the voltage.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This pin is feeded directly from the VS(3v DC-DC output) voltage.</p>
+                        <p>The voltage value is 3.3V</p>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour8 invisible">
+                    <h3>RAM supply is present</h3>
+                    <p>Check VPP voltage on pin 257 or 259.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour9 btn option" type="button" name="button">VPP voltage is
+                            present</button>
+                        <button class="btn-rfour10 btn option" type="button" name="button">VPP voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always issued by a small regulator example G9661. You can replace the IC with
+                            APL5930.</p>
+                        <P>APL5930 is commonly found in series of 1st and 2nd generation motherboard</P>
+                        <p>The voltage value is 2.5V</p>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour9 invisible">
+                    <h3>VPP voltage is present</h3>
+                    <p>Check SCLK voltage on pin 253.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour11 btn option" type="button" name="button">SCLK voltage is
+                            present</button>
+                        <button class="btn-rfour12 btn option" type="button" name="button">SCLK voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always pulled up with a resistor which input voltage is 3.3</p>
+                        <p>The voltage value is 3.3V</p>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour10 invisible">
+                    <h3>VPP voltage is absent</h3>
+                    <p>Back-trace the voltage to it's source.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always issued by a small regulator example G9661. You can replace the IC with
+                            APL5930</p>
+                        <P>APL5930 is commonly found in series of 1st and 2nd generation motherboards.</P>
+                        <p>The voltage value is 2.5V</p>
+                        <p>Follow the below steps to troubleshoot the regulator:</p>
+                        <ul>
+                            <li>Confirm the impedance of the VPP line.</li>
+                            <li>Check the input voltage, it is usually 3.3V</li>
+                            <li>Check the drive voltage, it is usually 5V.</li>
+                            <li>Check the enable voltage.</li>
+                            <li>If all the above is fine, replace the regulator.</li>
+                        </ul>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour11 invisible">
+                    <h3>RAM supply is absent</h3>
+                    <p>Back-trace the RAM supply voltage to it's source voltage (RAM PWM section).</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>RAM supply</summary>
+                        <p>Re-check voltage at the RAM supply coil.</p>
+                        <P>Check continuity between RAM supply coil and RAM pin.</P>
+                    </details>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour12 invisible">
+                    <h3>SCLK voltage is present</h3>
+                    <p>Check SDAT voltage on pin 253.</p>
+                    <div class="arrow">
+                        <button class="btn-rfour13 btn option" type="button" name="button">SDAT voltage is
+                            present</button>
+                        <button class="btn-rfour14 btn option" type="button" name="button">SDAT voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always pulled up with a resistor which input voltage is 3.3V</p>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour13 invisible">
+                    <h3>SCLK voltage is absent</h3>
+                    <p>Back-trace the voltage to its pullup resistor.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always pulled up with a resistor which input voltage is 3.3V</p>
+                        <P>Locate the connected resistor and check the resistor input voltage, output voltage and
+                            resistance value.</P>
+                    </details>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour14 invisible">
+                    <h3>SDAT voltage is present</h3>
+                    <p>Check SCLK signal.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour15 btn option" type="button" name="button">SCLK signal is
+                            present</button>
+                        <button class="btn-rfour16 btn option" type="button" name="button">SCLK signal is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The signal appears and disappear in less than a second.</p>
+                        <p>Set your oscilloscope at dc mode and place your oscilloscope probe at the testing point, then
+                            trigger the motherboard to check the signal.</p>
+                        <p>It is a good idea to flash the main BIOS with your trusted BIN even if the SCLK and SDAT is
+                            present.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=JWju5kNftok">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour15 invisible">
+                    <h3>SDAT voltage is absent</h3>
+                    <p>Back-trace the voltage to it's pullup resistor.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always pulled up with a resistor which input voltage is 3.3V</p>
+                        <P>Locate the connected pull up resistor and check the resistor voltage and resistance.</P>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour16 invisible">
+                    <h3>SCLK signal is present</h3>
+                    <p>Check SDAT signal.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour17 btn option" type="button" name="button">SDAT signal is
+                            present</button>
+                        <button class="btn-rfour18 btn option" type="button" name="button">SDAT signal is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The signal appears and disappear in less than a second.</p>
+                        <p>Set your oscilloscope at dc mode and place your oscilloscope probe at the testing point, then
+                            trigger the board to check the signal.</p>
+                        <p>It is a good idea to flash the main BIOS with your trusted BIN even if the SCLK and SDAT is
+                            present.</p>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour17 invisible">
+                    <h3>SCLK signal is absent</h3>
+                    <p>Flash MAIN BIOS chip.</p>
+                    <p>If flashing bios does'nt help, check LPC freme signal.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>SCLK signal appears and disappear in less than a second.</p>
+                        <p>You can check LPC frame at the super SIO pin.</p>
+                    </details>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour18 invisible">
+                    <h3>SDAT signal is present</h3>
+                    <p>Check DRAMRST# voltage at pin 108.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour19 btn option" type="button" name="button">DRAMRST# signal is
+                            present</button>
+                        <button class="btn-rfour20 btn option" type="button" name="button">DRAMRST# signal is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage value is 1.2V</p>
+                        <p>It is a good idea to flash the main BIOS with your trusted BIN even if the SCLK and SDAT is
+                            present.</p>
+                    </details>
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour19 invisible">
+                    <h3>SDAT signal is absent</h3>
+                    <p>Flash MAIN BIOS chip.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour20 invisible">
+                    <h3>DRAMRST# signal is present</h3>
+                    <p>Check LPC Frame communication.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rfour21 btn option" type="button" name="button">LPC frame communication is
+                            perfect</button>
+                        <button class="btn-rfour22 btn option" type="button" name="button">LPC frame communication is
+                            wrong</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can check LPC frame at the super SIO pin</p>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour21 invisible">
+                    <h3>DRAMRST# signal is absent</h3>
+                    <p>Flash the MAIN BIOS.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current of your motherboard.</p>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour22 invisible">
+                    <h3>LPC frame communication is perfect</h3>
+                    <p>Check frequency and sign wave of all the available crystals on your motherboard.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='clock-32-768khz.ejs'" type="button"
+                            name="button">Use clock 32.768khz</button>
+                    </div>
+                    <details>
+                        <summary></summary>
+                        <p>This include 32.768KHz, 12MHz, 14MHz, 25MHz </p>
+                        <p>The concept of clock is the same for all the crystals except green clock that uses one IC to
+                            handle all the motherboard clocks required, you can use the troubleshooting guide for
+                            32.768KHz crystal provided in navigator.</p>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rfour23 invisible">
+                    <h3>LPC frame communication is wrong</h3>
+                    <p>There is high probability your motherboard problem is betweeen super SIO and chipset(ICH/PCH).
+                    </p>
+                    <P>Replace super SIO first, if the problem remain the same, you have to replace the chipset.</P>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <!-- <a href="LPC frame"></a> -->
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

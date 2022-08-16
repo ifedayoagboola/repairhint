@@ -1,0 +1,938 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="no-display" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+
+        <div class="d-display1">
+          <p>The first and most important step in troubleshooting is to carefully check for physical damages.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display1 btn option" type="button" name="button">Not clear from physical
+              damages</button>
+            <button class="btn-no-display2 btn option" type="button" name="button">All clear from physical
+              damages</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What is physical damage? This is motherboard damage that can be physically seen e.g corrosion, track
+              damage, liquid damage, broken tracks, missing components e.t.c. </p>
+            <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/burnt.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/physical-damage.jpg" alt="physical-damage1">
+            <p>Physical damage can be small to the extent that you won't observe it and yet it can cause any kind of
+              issue on your motherboard, depending on where the damage is.</p>
+            <p>It is ideal and best practice to check for physical damages for at least 7 minutes.</p>
+            <a target="_blank"
+              href="https://www.google.com/search?q=laptop+motherboard+damages&tbm=isch&ved=2ahUKEwjxuo3H5774AhUE3hoKHWHpDc0Q2-cCegQIABAA&oq=laptop+motherboard+damages&gs_lcp=CgNpbWcQA1CZBljVEWDaFWgAcAB4AIAB5wOIAYsRkgEHMi00LjIuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=5dyxYrG0OIS8a-HSt-gM">Check
+              out more physical damages</a>
+          </details>
+        </div>
+
+        <div class="d-display2 invisible">
+          <h3>Not clear from physical damages</h3>
+          <p>Physical damages includes liquid damage, corrossion, rust, dry joint, burnt part or component,
+            broken tracks, missing components e.t.c </p>
+          <p>Follow the below steps to successfully take care of physical damages such as liquid damage, corrosion, and
+            rust.</p>
+          <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+          <ol>
+            <li>Remove all the removable pheripheral devices such as Processor, WLAN, RAM, Cmos battery, cabbles e.t.c.
+              from the motherboard </li>
+            <li>Prepare warm water that in a container that contains the entire motherboard board and apply shampoo.
+            </li>
+            <li>Soak the motherboard in a warm wather and shampoo for 30min.</li>
+            <li>Watch the motherboard carefully and make sure every part of the motherboard is shinning</li>
+            <img class="hint-img1" src="../../images/nav/soak.jpg" alt="naked board">
+            <li>Dry it in an industrial oven for 20min at 150degree temp</li>
+            <li>Wait for 10min, for motherboard to cool off </li>
+            <li>Finally, retest motherboard and if your case is not resolved, continue with navigator </li>
+
+            <details>
+              <summary>Hint</summary>
+              <p>Best game of chance in motherboard repair is <em>discharging.</em> Learn to do it right.</p>
+              <p>What is liquid damage? It is basically physical damages caused by any liquid substance.</p>
+              <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+              <a target="_blank"
+                href="https://www.google.com/search?q=motherboard+liquid+damage&sxsrf=ALiCzsYo4ZDL5T8Gdax5uyuClquiOLfCmw:1655785339114&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi25diH2b34AhVP0IUKHRO0DosQ_AUoAXoECAEQAw&biw=1366&bih=657&dpr=1">Liquid
+                damage</a>
+              <p>What is corrosion? Corrosion is the process of oxidation that happens when oxygen bonds with metal,
+                producing rust and causing the metal to flake off and lose its valuable chemical properties.
+                <a target="_blank"
+                  href="https://www.google.com/search?q=laptop+motherboard+corrosion&sxsrf=ALiCzsa-Fa6GF7pSCv9ODPLy8QCFGnROwg:1655825942635&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiSk_uo8L74AhU2SfEDHURWBzgQ_AUoAXoECAEQAw&biw=1366&bih=600&dpr=1"></a>
+              </p>
+              <p>What is rust? Rust is a specific type of corrosion related to iron.</p>
+              <p>Why warm water and shampoo? It helps to soften the corrosions, rust e.t.c. Hence, it helps to clean
+                motherboard
+                as shinning as new after watching.</p>
+              <p>Why industrial oven? It helps to dry the motherboard quickly and also slightly heat the motherboard,
+                this helps againt dry joint.</p>
+              <p>Is there any other alternative for industrial oven? Build an incubator with 100WATT and carton or
+                non-metalic box and keep the board in it for 3-4hours</p>
+              <p>Is there any other alternative for manual incubator? Sunlight for averagely 48hours</p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=yV9Vwl1Gebs">AFS SOLUTION</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=S-au1-2mNe8">SpaceJamTartzv3</a><br>
+              <a target="_blank"
+                href="https://www.shutterstock.com/video/clip-24318833-bowl-motherboard-electronics-gets-final-wash-funny">Shutter
+                Stock</a>
+            </details>
+          </ol>
+          <p>In a case of dry joint follow the bellow steps</p>
+          <ol>
+            <li>Slightly resolder the suspected section or component</li>
+            <li>Or, Slightly heat the entire motherboard excluding the chipset (PCH/ICH), processor and GFX chip </li>
+            <details>
+              <summary>Hint</summary>
+              <p>What is dry joint? Dry joints are the main form of problem solder joint. These solder joints may be
+                completely open circuit, or they may be intermittent, high resistance or noisy. It is therefore
+                essential that no dry solder joints are present in any electronics equipment.</p>
+            </details>
+          </ol>
+          <p>In a case of burnt component, follow the bellow steps.</p>
+          <ol>
+            <li>Carefully take out the burnt component</li>
+            <li>Replace or Don't replace (optional) the burnt component and proceed to next troubleshooting.</li>
+            <li><em>Strong warning:</em> Do not give supply without PWM regulator.
+              <details>
+                <summary>Hint</summary>
+                <p>What is PWM? Pulse width modulation (PWM) is a modulation technique that generates variable-width
+                  pulses to represent the amplitude of an analog input signal. In relation to motherboard, it is
+                  actually to regulate 19V supply to generate exact required voltage.</p>
+                <p>What is PWM regulator? It is the IC in the PWM circuit.</p>
+                <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+                <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+                <p>Why can't I give supply without PWM regulator? Because the top MOSFET will short or somtimes both top
+                  and lower MOSFET.</p>
+                <p>What if I really need to check without PWM regulator? You have to take out the top and lower MOSFET.
+                </p>
+                <p>What is supply? Supply means the input given to make a system or section work. Supply here, I mean
+                  adapter</p>
+              </details>
+          </ol>
+          <li>In some cases, burnt component or part will lead to total condemn of that particullar section. Check
+            <em>Hint</em> for some materials that can help you understand the concept of bypassing through the use of
+            buck regulator. Check and see if bypass can work for your case.
+          </li>
+          <details>
+            <summary>Hint</summary>
+            <a target="_blank"
+              href="https://m.facebook.com/adityaa11ttt/videos/297473970964494/?locale=en_GB&_rdr">Adityatt111</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+            <br>
+            <br>
+            <p>In a case of broken tracks, correct the connection and if component is missing, put the appropriate one
+            </p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=ref9JHUf-uw">Branchus Creations</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=vx50YtEC2S8">RetroGameModz</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=pqEwtfFjqD8">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=OCjWE_hy0KQ">Aditya11ttt</a>
+          </details>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button">THANK YOU</button>
+          </div>
+
+          <button class="btn option" onclick="location.href='no-display.ejs'" type="button">Previous</button>
+        </div>
+
+        <div class="d-display3 invisible">
+          <h3>All clear from physical damages</h3>
+          <p>Next important step is to retest the motherboard nakedly to see if the case is still the same.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display3 btn option" type="button" name="button">Working after testing nakedly but
+              won't work after assembling the PC</button>
+            <button class="btn-no-display4 btn option" type="button" name="button">Still the same after testing
+              nakedly</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What does it means to test motherboard nakedly? It simply means testing the motherboard without
+              connecting any of the followings screen, flex, WLAN card, power switch, HDD, RAM and any removable
+              accessories.</p>
+            <img class="hint-img1" src="../../images/nav/naked-board.jpg" alt="physical-damage1">
+            <p>How do I power my motherboard without power switch? </p>
+            <ul>
+              <li>Tune your multimeter to diode range.</li>
+              <li>Place the red probe at the ground (GND) </li>
+              <li>Use the black probe to torch NBSWON# (ON/OFF) or gently brush through at the pins on the
+                switch connector without bridging 2 pins.</li>
+            </ul>
+            <p>It is a go idea to remove the CMOS battery and short the CMOS connector positive to ground for 15-20
+              seconds before testing nakedly</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=9b350urN2S0">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=1LqScrdpop4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=BEVs9LLeE2Q">Laptex</a>
+          </details>
+          <button class="btn option" onclick="location.href='no-display.ejs'" type="button"
+            name="button">Previous</button>
+        </div>
+        <div class="d-display4 invisible">
+          <h3>Working after testing nakedly but won't work after assembling the PC.</h3>
+          <P>Major cause of this kind of issue is short, this can occur as a result of the followings.</P>
+          <ol>
+            <li>Faulty pheripheral device e.g HDD, RAM, Screen cable, WLAN, ribon cables, camera e.t.c.</li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NX0Q-B2W9MU">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Brvi4g6mzHE">Laptop Repair Zone</a>
+            <li>Faliure to properly return necessary insulating nylons.</li>
+            <li>Using wrong nut.</li>
+            <li>Failure to use nut where it's necessary.</li>
+            <li>Improper connection of connectors.</li>
+          </ol>
+          <details>
+            <summary>Hint</summary>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along an
+              unintended path with no or very low electrical impedance. In a practical idea, short is a direct contact
+              between supply (positive) and ground (GND or negative).</p>
+            <p>What is ribbon cable? A ribbon cable is a cable with many conducting wires running parallel to each other
+              on the same flat plane.</p>
+            <a target="_blank"
+              href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.parts-people.com%2Fimages%2Fproducts%2FBAL20TPcbl1.JPG&imgrefurl=https%3A%2F%2Fwww.parts-people.com%2Findex.php%3Faction%3Ditem%26id%3D24931&tbnid=XDaXa6IWEWl5IM&vet=12ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ..i&docid=2txtoNE1JhhBUM&w=1200&h=899&q=laptop%20motherboard%20cable&hl=en&ved=2ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ">
+              Ribbon cable</a>
+            <p>what is insulating nylons? This are nylons like tape used to insulate exposed surface.</p>
+            <img class="hint-img1" src="../../images/nav/insulator.jpg" alt="insulator">
+          </details>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <br>
+          <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display5 invisible">
+          <h3>Still the same after testing nakedly</h3>
+          <p>Test motherboard with keyboard and check weather it is responding to capslock or not.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display5 btn option" type="button" name="button">Motherboard is responding to
+              capslock</button>
+            <button class="btn-no-display6 btn option" type="button" name="button">Motherboard is not responding to
+              capslock</button>
+          </div>
+
+          <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display6 invisible">
+          <h3>Motherboard is responding to capslock</h3>
+          <p>Since the motherboard is responding to capslock, focus on LVDS section.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='lvds.ejs'" type="button" name="button">Let check LVDS
+              section</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>In as much as your laptop is responding to capslock, it means your display is ready only that you don't
+              have display on your screen. Therefore, focus on LVDS section.</p>
+            <p>Where can I check the LVDS signals? At LVDS connector (screen connector on the motherboard).</p>
+          </details>
+          <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display7 invisible">
+          <h3>Motherboard is not responding to capslock</h3>
+          <p>Check impedance of all PWM output coils and all USBs positive terminals.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display7 btn option" type="button" name="button">All PWM output coils impedance is
+              fine</button>
+            <button class="btn-no-display8 btn option" type="button" name="button">One or more PWM output coil impedance
+              is bad</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>All PWM section of the motherboard has it's range of impedance. Therefore, be sure of the expected value
+              for each PWM coils:</p>
+            <ul>
+              <p>Using diode range of the multimeter:</p>
+              <li>Main supply rail (CLR): Minimum of 0.120</li>
+              <li>RAM coil: Minimum of 0.040 </li>
+              <li>PCH/ICH coil: Minimum of 0.010</li>
+              <li>Auxiliary coil: Minimum of 0.100</li>
+              <li>GFX coil: Minimum of 0.005</li>
+              <li>CPU core coil: Minimum of 0.005 with processor connected.</li>
+              <li>CPU core coil: Minimum of 0.170 without processor connected.</li>
+              <li>USB positive terminals: Minimum of 0.400</li>
+            </ul>
+            <p>How do I check inpudence of USB positive terminal? On every USB ports, it is always basically 4
+              terminals, one is ground and one is positive. Therefore, one out of the 2 is not expected to short.</p>
+            <p>If short is found in the USB section, it Is important to clear the short or isolate the USB section by
+              removing the USB IC.</p>
+          </details>
+          <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display8 invisible">
+          <h3>All PWM output coils impedance is fine</h3>
+          <p>Turn on the motherboard and check CLR voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display9 btn option" type="button" name="button">No drop in CLR voltage after
+              power</button>
+            <button class="btn-no-display10 btn option" type="button" name="button">CLR voltage has dropped after
+              power</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Why do I need to check CLR voltage since my motherboard is turning on? Because CLR voltage might be
+              dropping or flunctuating on load and this can cause no dispaly or restarting.</p>
+          </details>
+          <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display9 invisible">
+          <h3>One or more PWM output coil impedance is bad</h3>
+          <p>All coils impedance has to be cleared before proceeding.</p>
+
+          <div class="arrow">
+            <button class="btn option btn option" onclick="location.href='short-in-pwm-coil.ejs'" type="button"
+              name="button">Show me how to clear short on coil</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>All PWM section of the motherboard has it's range of impedance. Therefore, be sure of the expected value
+              for each PWM coils:</p>
+            <ul>
+              <p>Using diode range of the multimeter:</p>
+              <li>Main supply rail (CLR): Minimum of 0.120</li>
+              <li>RAM coil: Minimum of 0.040 </li>
+              <li>PCH/ICH coil: Minimum of 0.010</li>
+              <li>Auxiliary coil: Minimum of 0.100</li>
+              <li>GFX coil: Minimum of 0.005</li>
+              <li>CPU core coil: Minimum of 0.005 with processor connected.</li>
+              <li>CPU core coil: Minimum of 0.170 without processor connected.</li>
+              <li>USB positive terminals: Minimum of 0.400</li>
+            </ul>
+          </details>
+          <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display10 invisible">
+          <h3>No drop in CLR voltage after power</h3>
+          <p>Check voltage on standby PWM output coils after turning motherboard on.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display11 btn option" type="button" name="button">No drop in standby PWM coils voltage
+              after power</button>
+            <button class="btn-no-display12 btn option" type="button" name="button">Standby PWM coil voltage has dropped
+              or is fluctuating after power</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>Why do I need to check standby PWM coil voltage since my motherboard is turning on? Because the standby
+              PWM coil voltage might be dropping or flunctuating on load and this can cause no dispaly or restarting
+              issue.</p>
+            <p></p>
+          </details>
+          <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display11 invisible">
+          <h3>CLR voltage has dropped after power</h3>
+          <p>In cases like this, you have to go back to charging section and perfect the 19v switching part.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='no-19v-at-clr.ejs'" type="button" name="button">Go
+              ahead</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Mostly this will be caused by switching MOSFET gate voltage.</p>
+          </details>
+          <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display12 invisible">
+          <h3>No drop in standby PWM coil voltage after power</h3>
+          <p>Check if motherboard has token capacitor.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display13 btn option" type="button" name="button">Motherboard has token
+              capacitor</button>
+            <button class="btn-no-display14 btn option" type="button" name="button">Motherboard has no token
+              capacitor</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How does token capacitor looks like? </p>
+            <img class="hint-img1" src="../../images/nav/token.jpg" alt="token">
+            <p>How do I locate token capacitor? It is mostly under the processor and sometimes beside</p>
+            <p>At times when the token capacitor is faulty, it will cause the PWM coil voltage to be absent and it
+              does'nt stop the PWM coil voltage from generating some times. In a nutshell, it is the top weakness of the
+              motherboard that possess the capacitor</p>
+            <p>How do I replace token capacitor with SMD electrolytic capacitors? </p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+          </details>
+
+          <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display13 invisible">
+          <h3>Standby PWM coil voltage has dropped or is fluctuating after power</h3>
+          <p>Check TONSEL pin(Time on select) voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display15 btn option" type="button" name="button">TONSEL voltage is fine</button>
+            <button class="btn-no-display16 btn option" type="button" name="button">TONSEL voltage is bad</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>TONSEL determines the switching of the lower and top MOSFET. Switching on and off top and lower MOSFET
+              determines the output voltage.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+            <p>Improper feedback voltage can also cause drop or fluctuation in output voltage (feedback resistors).
+              Therefore, check feedback circuit of the standby too in accordance to the resistors used.</p>
+          </details>
+          <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display14 invisible">
+          <h3>All PWM output coil voltage is fine</h3>
+          <p>Check All DC to DC voltages.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display17 btn option" type="button" name="button">All DC to DC voltage is
+              good</button>
+            <button class="btn-no-display18 btn option" type="button" name="button">Not all DC to DC voltage is
+              good</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>Checking DC-DC is not the next to be checked since all PWM coils voltage is present, but is wise to be
+              sure of all the DC-DC voltage. Just one missing DC-DC voltage can cause no display.</p>
+          </details>
+          <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display15 invisible">
+          <h3>Not all PWM output coil voltage is fine</h3>
+          <p>PWM output coil voltages are generated in a sequential order, if a coil that is expected to generate
+            voltage before anoother fails to generate, there is a very high chance that the subsequents will not
+            generate.</p>
+          <p>Check voltage of all PWM coils and choose where your motherboard falls.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='no-cpu-core.ejs'" type="button" name="button">Only CPU
+              core PWM output coil voltage is missing</button>
+            <button class="btn option" onclick="location.href='no-pch-ich-voltage.ejs'" type="button"
+              name="button">PCH/ICH PWM output coil voltage is absent</button>
+            <button class="btn option" onclick="location.href='no-ram-voltage.ejs'" type="button" name="button">RAM PWM
+              output coil voltage is absent</button>
+            <button class="btn option" onclick="location.href='no-aux-voltage.ejs'" type="button"
+              name="button">Auxiliary PWM output coil voltage is absent</button>
+            <button class="btn-no-display19 btn option" type="button" name="button">No voltage on all PWM output coil
+              voltage except standby coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <P>You can use schematic to identify each coil on the motherboard.</P>
+            <p>In many cases, you will not find 1.05v written on it's supply coil instead, another suc as VCCSA, VCCSAP,
+              VCCP, VRP1V05S, PWR_1D0V, 1.0VALWP e.t.c. Looking at these naming conventions, one can tell in some
+              cases it is 1.0v </p>
+            <p>If any PWM coil voltage is missing, don't expect VCORE and GFX PWM voltage.</p>
+            <p>On some motherboards, mostly the recent motherboards there use to be more of auxiliary voltages that are
+              very important fo motherboard to work. Thes voltages include 1.0v, 1.1v, 1.8v. With this been said, it
+              means in some cases there will be more coil voltage to be checked.</p>
+            <p>Watch out for those motherboard architectures that there auxiliary voltage will not be generated by a
+              PWM, instead it will be generated by just a single IC like RT9025, APL5930, RT9043GB e.t.c</p>
+            <p>Watch out for those auxiliary voltages that does not use regular PWM out put coil.</p>
+            <p>If the auxiliary supply is non PWM auxiliary supply, check at the output pin of the IC.</p>
+
+          </details>
+          <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display16 invisible">
+          <h3>TONSEL voltage is fine</h3>
+          <p>Change PWM filter capacitor.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>TONSEL determines the switching of the lower and top MOSFET.</p>
+            <p>Improper feedback voltage can also cause drop or fluctuation in output voltage (feedback resistors).
+              Therefore, check feedback circuit of the standby too in accordance to the resistors used.</p>
+          </details>
+          <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display17 invisible">
+          <h3>TONSEL voltage is bad</h3>
+          <p>Check resistance of resistor connected to TONSEL.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display20 btn option" type="button" name="button">TONSEL resistor is fine</button>
+            <button class="btn-no-display21 btn option" type="button" name="button">TONSEL resistor is bad</button>
+          </div>
+          <br>
+          <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display18 invisible">
+          <h3>All DC to DC voltage is good</h3>
+          <p>Check PLTRST# voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display22 btn option" type="button" name="button">PLTRST# is present</button>
+            <button class="btn-no-display23 btn option" type="button" name="button">PLTRST# is absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Where can I check PLTRST#? At WLAN connector, pin 22 for mini PCEI connector and pin 50 for mini M.2 card
+              connector.</p>
+            <p>What is the expected voltage? 3.3V</p>
+          </details>
+          <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display19 invisible">
+          <h3>Not all DC to DC voltage is good.</h3>
+          <p>All DC to DC voltages has to be perfect for proper display.</p>
+          <p>Back-trace the missing DC-DC voltage.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='dc-dc.ejs'" type="button" name="button">Let troubleshoot
+              DC-DC svwitching</button>
+          </div>
+          <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display20 invisible">
+          <h3>No voltage on all PWM output coil voltage except standby coil</h3>
+          <p>You can start by troubleshooting DC-DC voltage.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='dc-dc.ejs'" type="button" name="button">Let troubleshoot
+              dc-dc svwitching</button>
+          </div>
+
+          <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display21 invisible">
+          <h3>TONSEL resistor is fine</h3>
+          <p>Confirm the input voltage of the resistor.</p>
+          <p>If the input voltage of the resistor is missing, back-trace the voltage.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard</p>
+          <details>
+            <summary>Hint</summary>
+            <p>Where TONSEL is connected determines how TONSEL works and frequency, you can check in the datasheet.</p>
+            <ul>
+              <p>On-time adjustment pin for standby PWM gate:</p>
+              <p>365 kHz for 3.3v/460 kHz for 5v setting : connect to VREG5</p>
+              <p>300 kHz for 3.3v/375 kHz for 5v setting : connect to VREG3</p>
+              <p>245 kHz for 3.3/305 kHz for 5v setting : connect to VREF</p>
+              <p>245 kHz for 3.3/305 kHz for 5v setting : connect to VREF</p>
+            </ul>
+          </details>
+          <br>
+          <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display22 invisible">
+          <h3>TONSEL resistor is bad</h3>
+          <p>Replace the resistor.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard</p>
+          <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display23 invisible">
+          <h3>PLTRST# is present</h3>
+          <p>Check RAM requirements.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display40 btn option" type="button" name="button">RAM requirement is fine</button>
+            <button class="btn option" onclick="location.href='ram-requirement.ejs'" type="button" name="button">proceed
+              to RAM requirements</button>
+          </div>
+          <br>
+          <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display24 invisible">
+          <h3>PLTRST# is absent</h3>
+          <p>Check SYS_PWROK# voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display24 btn option" type="button" name="button">SYS_PWROK# voltage is
+              present</button>
+            <button class="btn-no-display25 btn option" type="button" name="button">SYS_PWROK# voltage is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Sometimes PLTRST# will pass through a component before being distributed on the motherboard. Therefore,
+              be sure to back-trace it to it's original source.</p>
+            <p>What is the other name for SYS_PWROK#? ICH_PWRGD, NB_PWRGD_IN.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=lX69uFGHDj0">Platinum computers</a>
+          </details>
+          <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display25 invisible">
+          <h3>RAM requirement is fine</h3>
+          <p>Check all available crystals frequency one after the other(32.768KHz, 12MHz 14MHz, 24MHz, 25MHz)</p>
+
+          <div class="arrow">
+            <button class="btn-no-display26 btn option" type="button" name="button">All crystals clock frequency is
+              present</button>
+            <button class="btn-no-display27 btn option" type="button" name="button">One crystal clock frequency is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Some of this crystals are embedded inside either super I/O or S.O.C chipset, therfore test the crystals
+              you can find on the motherboard.</p>
+            <p>Beware, some motherboard architectures uses green clock IC, where all the frequencies are generated in a
+              single IC.</p>
+            <p>They all have the same testing process, test all crystals using <a
+                href="clock-32-768khz.ejs">32.768khz</a> as a guide.</p>
+          </details>
+          <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display26 invisible">
+          <h3>SYS_PWROK# voltage is present</h3>
+          <p>Most likely your PCH/ICH is faulty.</p>
+          <p>Let assume PCH/ICH is good because all motherboard architectures are not the same, check all crystals
+            frequency one after the other(32.768KHz, 12MHz 14MHz, 24MHz, 25MHz).</p>
+          <div class="arrow">
+            <button class="btn-no-display28 btn option" type="button" name="button">All crystals clock frequency is
+              present</button>
+            <button class="btn-no-display29 btn option" type="button" name="button">One crystal clock frequency is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Some of this crystals are embedded inside either super I/O or S.O.C chipset, therfore test the crystals
+              you can find on the motherboard.</p>
+            <p>Beware, some motherboard architectures uses green clock IC, where all the frequencies are generated in a
+              single IC.</p>
+            <p>They all have the same testing process, test all crystals using <a
+                href="clock-32-768khz.ejs">32.768khz</a> as a guide.</p>
+          </details>
+          <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display27 invisible">
+          <h3>SYS_PWROK# voltage is absent</h3>
+          <p>Check CPU core PWM regulator PWRGD pin voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display30 btn option" type="button" name="button">CPU core PWM regulator PWRGD voltage
+              is fine</button>
+            <button class="btn-no-display31 btn option" type="button" name="button">CPU core PWM regulator PWRGD voltage
+              is bad</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>SYS_PWROK# is always generated from the output of an advance logic AND gate that only takes two input
+              (one is power good from VCORE and the other one is power good confirming the availability of all pwm
+              power).</p>
+            <p>What is AND gate? It is a logic gate that it's output is only high when all input is high.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=lX69uFGHDj0">Platinum phones & computers</a>
+            <br>
+            <p>What is the other name for VCORE PWRGD? VGATE, VRM_PWRGD (and many more).</p>
+          </details>
+          <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display28 invisible">
+          <h3>All crystals clock frequency is present (32.768KHz, 14MHz, 24MHz, 25MHz)</h3>
+          <p>Check all crystals sine wave</p>
+
+          <div class="arrow">
+            <button class="btn-no-display32 btn option" type="button" name="button">All crystals sine wave
+              present</button>
+            <button class="btn-no-display33 btn option" type="button" name="button">One crystal sine wave out of
+              previous
+              list isabsent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How does the sine wave look like? It is usually in continue U-shape.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+          </details>
+          <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display29 invisible">
+          <h3>One crystal clock frequency is absent</h3>
+          <p>Check resistance value of the particular crystal resistor.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display34 btn option" type="button" name="button">Crystal resistor is fine</button>
+            <button class="btn-no-display35 btn option" type="button" name="button">Crystal resistor is bad</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Which resistor is the crystal resistor? The resistor connecting both X1 & X2 pin together.</p>
+            <p>It is always connected to both input pin(RTCX1) and output pin(RTCX2) of the crytal.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>Check it out in the below motherboards (Using 32.768 crystal as an example)</p>
+              <ul>
+                <li>LA-4494P</li>
+                <P>R1285</P>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>R568</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>R564</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>RH1</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>R994</p>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>RH70</p>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <P>RH70</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display30 invisible">
+          <h3>Crystal resistor is fine</h3>
+          <p>Check impedence of both crystal capacitors.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display36 btn option" type="button" name="button">Impedance of both crystal capacitor
+              is good</button>
+            <button class="btn-no-display37 btn option" type="button" name="button">Impedance of one or both crystal
+              capacitor is bad</button>
+          </div>
+
+          <details>
+            <summary>Reference</summary>
+            <p>Which capacitor is the crystal capacitor? The capacitor connected to each crystal pin.</p>
+            <p>Check it out in the below motherboards (Using 32.768KHz crystal)</p>
+            <ul>
+              <li>LA-4494P</li>
+              <P>C1574 & C1575</P>
+            </ul>
+            <ul>
+              <li>LA-7912P</li>
+              <p>C682 & C686</p>
+            </ul>
+            <ul>
+              <li>R33</li>
+              <p>C808 & C803</p>
+            </ul>
+            <ul>
+              <li>LA-9104P</li>
+              <p>CH4 & CH3</p>
+            </ul>
+            <ul>
+              <li>LA-B101</li>
+              <p>C1009 & C1010</p>
+            </ul>
+            <ul>
+              <li>LA-C361P</li>
+              <p>CH45 & CH46</p>
+            </ul>
+            <ul>
+              <li>LA-D993</li>
+              <p>CH45 & CH46</p>
+            </ul>
+          </details>
+          <button class="btn-previous27 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display31 invisible">
+          <h3>Crystal resistor is bad</h3>
+          <p>Replace faulty resistor.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>The best way to check this resistor is to take it out of the board and check it's value.</p>
+          </details>
+          <button class="btn-previous28 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display32 invisible">
+          <h3>Impedance of both crystal capacitor is good</h3>
+          <p>Replace crystal IC (crystal).</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <button class="btn-previous29 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display33 invisible">
+          <h3>Impedance of one or both crystal capacitor is bad</h3>
+          <p>Replace faulty capacitor</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard</p>
+          <button class="btn-previous30 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display34 invisible">
+          <h3>All crystals sine wave present</h3>
+          <p>Most likely your PCH/ICH is bad.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>Nevertheless, go ahead and check other necessary requirement thereby assuming this is good and proceed.
+              This is reckon because practical can be sometimes tricky.</p>
+          </details>
+          <button class="btn-previous31 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display35 invisible">
+          <h3>One crystal sine wave out of previous list is absent</h3>
+          <p>Repalce the particular crystal.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <button class="btn-previous32 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display36 invisible">
+          <h3>CPU core PWM regulator PWRGD voltage is fine</h3>
+          <p>Check EC_PWRGD/PCH_PWROK voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-no-display38 btn option" type="button" name="button">EC_PWRGD/PCH_PWROK is
+              present</button>
+            <button class="btn-no-display39 btn option" type="button" name="button">EC_PWRGD/PCH_PWROK is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>This voltage (EC_PWRGD/PCH_PWROK) and VRM power good are combined to generate SYS_PWROK#. Therefore,
+              without this (EC_PWRGD/PCH_PWROK), no SYS_PWROK# hence, no display.</p>
+          </details>
+          <button class="btn-previous33 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display37 invisible">
+          <h3>CPU core PWM regulator PWRGD voltage is bad</h3>
+          <p>Replace CPU core PWM regulator IC.</p>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>Check the PWRGD pull up resistor.</p>
+            <p>Beware, in some very rare architectures, the PWRGD will be ative low.</p>
+          </details>
+          <button class="btn-previous34 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-display38 invisible">
+          <h3>EC_PWRGD/PCH_PWROK is present</h3>
+          <p>If this EC_PWRGD/PCH_PWROK voltage is fine, be sure of the continuity from the source the destination.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>EC_PWRGD/PCH_PWROK destination is usually an advance AND logic gate.</p>
+          </details>
+          <button class="btn-previous35 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display39 invisible">
+          <h3>EC_PWRGD/PCH_PWROK is absent</h3>
+          <p>Most likely your source of EC_PWRGD/PCH_PWROK is faulty.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <details>
+            <summary>Hint</summary>
+            <p>The EC_PWRGD mostly comes from super I/O, while the PCH_PWROK comes from PCH or PCH part of SOC.</p>
+            <P>The voltage is the confirmation of the availability of all major power rails.</P>
+          </details>
+          <button class="btn-previous36 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display40 invisible">
+          <h3>Motherboard has token capacitor</h3>
+          <p>Replace token capacitor with four or two SMD electrolytic capacitors (see hint for clue).</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>At times when the token capacitor is faulty, it will cause the VCORE PWM coil voltage to be abasent and
+              it does'nt stop the PWM coil voltage from generating some times. In a nutshell, it is the top weakness of
+              the motherboard that possess the capacitor.</p>
+            <p>How do I replace token capacitor with SMD electrolytic capacitors?</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+          </details>
+          <button class="btn-previous37 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-display41 invisible">
+          <h3>Motherboard has no token capacitor</h3>
+          <P>Check voltage on every coils (Care less about GFX core voltage for now).</P>
+
+          <div class="arrow">
+            <button class="btn-no-display41 btn option" type="button" name="button">All PWM output coil voltage is
+              fine</button>
+            <button class="btn-no-display42 btn option" type="button" name="button">Not all PWM output coil voltage is
+              fine</button>
+          </div>
+          <br>
+          <button class="btn-previous38 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+  </body>
+
+  </html>

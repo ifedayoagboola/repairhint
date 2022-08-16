@@ -1,0 +1,71 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="ex-disp-no-int-disp" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <div class="d-ex-disp1">
+                    <h3>Laptop display on external monitor but no internal display</h3>
+                    <p>Does your motherboard uses graphics chip?</p>
+
+                    <div class="arrow">
+                        <button class="btn-ex-disp1 btn option" type="button" name="button">Yes, it has graphics
+                            chip</button>
+                        <button class="btn-ex-disp2 btn option" type="button" name="button">No, it does not have
+                            graphics chip</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I identify graphics chip?</p>
+                        <img class="hint-img1" src="../../images/nav/gfx.jpg" alt="gfx">
+                    </details>
+                </div>
+                <div class="d-ex-disp2 invisible">
+                    <h3>Yes, it has graphics chip</h3>
+                    <p>This can be one of the weakest part of issues like this, but first make sure you correct all
+                        necessary voltages for LVDS section.</p>
+                    <p>If problem still persist after carefully checking LVDS voltage, refloat the graphic chip.</p>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='lvds.ejs'" type="button" name="button">Let check
+                        LVDS section</button>
+                    </div>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Final and very rare solution is to flash BIOS</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='ex-disp-no-int-disp.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-ex-disp3 invisible">
+                    <h3>No, it does not have graphics chip</h3>
+                    <p>Check LVDS section.</p>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='lvds.ejs'" type="button" name="button">Let
+                            check LVDS section</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Beware cases like this can also be caused by corrupted BIOS. Therefore, you can flash the
+                            main BIOS chip either before of after checking LVDS section.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='ex-disp-no-int-disp.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

@@ -1,0 +1,219 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="me" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-me1">
+                    <h3>Auto shutdown/tripoff after specific or random duration</h3>
+                    <p>When laptop is shutting down or tripping off at a specific duration repeatedly, this is mostly
+                        caused by BIOS ME region issue.</p>
+                    <p>Clean BIOS ME region</p>
+
+                    <div class="arrow">
+                        <button class="btn-me1 btn option" type="button" name="button">BIOS ME region is clear</button>
+                        <button class="btn-me2 btn option" type="button" name="button">Not sure if BIOS ME region is
+                            clear</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is ME region? Management engine region, it is actually particular region of the BIOS.
+                        </p>
+                        <p>Mostly, random BIOS will not work, only if it is already cleaned.</p>
+                        <p>When you are trying to download, some website will state it clearly weather it is clean or
+                            not</p>
+                        <p>Beware, if shutdown is taken place at a time lesser to the time of the earlier shutdown,
+                            mostlikely there is heat sink or fan issue.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=t7JWzFtG9rE">Aditya11ttt</a>
+                    </details>
+                </div>
+                <div class="d-me2 invisible">
+                    <h3>BIOS ME region is clear</h3>
+                    <p>Use the appropriate and recommended thermal paste.</p>
+
+                    <div class="arrow">
+                        <button class="btn-me3 btn option" type="button" name="button">Thermal paste is good</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can download or do the editing by yourself.</p>
+                        <p>Mostly in this senerion, shutdown takes place at a time lesser to the time of the earlier
+                            shutdown.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='me-region-shutdown.ejs'" type="button"
+                        name="button">Previous</button>
+
+                </div>
+                <div class="d-me3 invisible">
+                    <h3>Thermal paste is good</h3>
+                    <p>Check and be sure heat sink and chipset/processor contact properly.</p>
+                    <p>Also tighteen heat zink screws properly.</p>
+
+                    <div class="arrow">
+                        <button class="btn-me4 btn option" type="button" name="button">All the previous steps is
+                            properly handled</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If heat sink is not contacting very well with the chip, there will be nothing for the heat
+                            sink to absort. Hence it cause your motherboard to auto tripoff when it is getting overheated.
+                        </p>
+                        <p>You might not be able to tell by feeling the temprature at the laptop bottom via the casing
+                            or heatzing because the heat sink is not contacting the chipset. Hence, system will remain
+                            cool from outside.</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-me4 invisible">
+                    <h3>All the previous steps is properly handled</h3>
+                    <p>Check processor by replacing it with another one.</p>
+
+                    <div class="arrow">
+                        <button class="btn-me5 btn option" type="button" name="button">Processor is good</button>
+                        <button class="btn-me6 btn option" type="button" name="button">processor is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always good to be sure of the proccessor by confirming on another motherboard.</p>
+                    </details>
+                    <br>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-me5 invisible">
+                    <h3>Not sure if BIOS ME region is clear</h3>
+                    <p>You have to clean and be sure the ME region of the BIOS is clean because this is the most cause
+                        of such fault.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn option" onclick="location.href='me-region-shutdown.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+
+                <div class="d-me6 invisible">
+                    <h3>Processor is good</h3>
+                    <p>Check if motherboard uses token capacitor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-me7 btn option" type="button" name="button">Motherboard has token
+                            capacitor</button>
+                        <button class="btn-me8 btn option" type="button" name="button">Motherboard has no token
+                            capacitor</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does token capacitor looks like?</p>
+                        <img class="hint-img1" src="../../images/nav/token.jpg" alt="token">
+                        <p>How do I locate token capacitor? It is mostly under the processor or arround the it.</p>
+                    </details>
+
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-me7 invisible">
+                    <h3>processor is bad</h3>
+                    <p>Replace processor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <br>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-me8 invisible">
+                    <h3>Motherboard has token capacitor</h3>
+                    <p>Replace token capacitor with four or two SMD electrolytic capacitors (see hint for clue).</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does token capacitor looks like? </p>
+                        <img class="hint-img1" src="../../images/nav/token.jpg" alt="token">
+                        <p>How do I locate token capacitor? It is mostly under the processor and sometimes beside</p>
+                        <p>At times when the token capacitor is faulty, it will cause the PWM coil voltage to be absent
+                            and it does'nt stop the PWM coil voltage from generating some times. In a nutshell, it is
+                            the top weakness of the motherboard that possess the capacitor</p>
+                        <p>How do I replace token capacitor with SMD electrolytic capacitors? </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-me9 invisible">
+                    <h3>Motherboard has no token capacitor</h3>
+                    <p>Check if motherboard uses separate graphics chip.</p>
+
+                    <div class="arrow">
+                        <button class="btn-me9 btn option" type="button" name="button">Motherboard has graphics
+                            chip</button>
+                        <button class="btn-me10 btn option" type="button" name="button">Motherboard has no graphics
+                            chip</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does graphics chip look like?</p>
+                        <img class="hint-img1" src="../../images/nav/gfx.jpg" alt="gfx">
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-me10 invisible">
+                    <h3>Motherboard has graphics chip</h3>
+                    <p>Slightly heat the graphics chip or reball it or replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Heating the chip with only solve your problem temporarily.</p>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-me11 invisible">
+                    <h3>Motherboard has no graphics chip</h3>
+                    <p>Check thermal Section IC/Section.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Thermal section or circuit usually varies in different motherboards, just try to follow the
+                            circuit or check google for information on your motherboard thermal. You can also seek help
+                            of mother repair groups.</p>
+                    </details>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

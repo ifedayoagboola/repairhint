@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- js link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"></script>
+
+    <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/5b9ff68e39.js" crossorigin="anonymous"></script>
+
+    <title>Repairhint</title>
+</head>
+<body>
+    <%- include('partials/case-navbar') %>
+    <div class="container p-5">
+        <div class="card shadow-lg rounded p-3">
+            <div class="row">
+                <div class="col-2">
+                    
+                <a href="/casehome.ejs" class="rounded-pill shadow p-2 d-flex align-items-center justify-content-center" style="text-decoration: none;">
+                    <i class="material-icons mr-2" style="color: black">arrow_left</i> 
+                    <span class="" style="color: black">Back</span>
+                </a>
+                </div>
+                <div class="col-8">
+                    <h1> <%= casestudy.title %></h1>
+                </div>
+                <div class="col-2">
+                    <div class=" more position-relative" style="cursor: pointer;">
+                        <div class="d-none card rounded-lg shadow-sm p-1 position-absolute" style="z-index: 9000;">
+                            <a href="#" class="rounded-pill p-2 mb-2 d-flex align-items-center" style="background: blue">
+                                <i class="material-icons" style="color: white;">create</i>
+                                <span class="" style="color: white;">Edit</span>
+                            </a>
+                            <form action="" method="POST">
+                                <button class="rounded-pill p-2 bg-danger d-flex align-items-center">
+                                    <i class="material-icons" style="color: white">delete
+                                    </i> <span class="" style="color: white">Delete</span>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+           </div>
+           
+           <div class="row">
+               <div class="col-12 card-img">
+                   <img src="/uploads/images/<%= casestudy.img %>" class="card-img" alt="...">
+
+               </div>
+           </div>
+           <div class="d-flex align-items-end mt-3">
+               <div class="mr-2">
+                   <img src="/uploads/images/<%= casestudy.img %>" class="rounded-circle" style="width: 60px; height: 60px;">
+               </div>
+               <div class="flex-grow-1" style="padding-left: 10px;">
+                   <h5 class="" style="font-size: 16px; line-height: 0.5rem;">
+                      <span><b><%= casestudy.author %></b></span></h5>
+                      <p style="font-size: 12px; line-height: 0.2rem;">
+                        <%= casestudy.timeCreated.toLocaleDateString() %> %></p>
+               </div>
+
+           </div>
+           <p class="card-text"> <%- casestudy.description %> </p>
+        </div>
+
+
+    </div>
+
+    <%- include('partials/case-footer') %>
+</body>
+</html>

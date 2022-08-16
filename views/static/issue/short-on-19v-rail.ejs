@@ -1,0 +1,56 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="short-on-19v-rail" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <h3>Adapter light goes of when adapter is plugged in</h3>
+        <p>Follow the below steps to cleared the short.</p>
+        <ol>
+          <li>Reduce the DC supply voltage to arround 10v.</li>
+          <li>Reduce Amps to around 1.5amps or less.</li>
+          <li>Connect negative of DC supply to Ground of the motherboard.</li>
+          <li>Connect positive of DC supply to CLR or Drain of PWM top MOSFET.</li>
+          <li>Turn on your DC supply and gentle search for any heating component.</li>
+          <li>If you can't find heating component, keep increasing the amps and search for any heating component.</li>
+          <li>Do not increase above adapter voltage</li>
+        </ol>
+        <P>Once you find any heating component, take the component out of the motherboard and check impedance again at
+          your testing point.</P>
+        <P>If impedance is good after taking out the component, replace it with good one and proceed by testing
+          motherboard after replacing faulty component.</P>
+        <p>If impedance is still bad, repeat the same process untill the short is clear.</p>
+        <details>
+          <summary>Hint</summary>
+          <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+            direct contact between supply (positive) and ground (GND or negative).</p>
+          <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+          <p>Checkout practical examples:</p>
+          <a target="_blank" href="https://www.youtube.com/watch?v=07pGvpmDQaI">Adamant IT</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=6V1D5YCWBL4">Aditya11ttt</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=j04w3Ry8INg">AFS SOLUTIONS</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=do5P6qDOMiU">Laptop Repair Zone</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=Ht9LinUxWYk">Laptex</a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=E0WfkX7B7YU">Aditya11ttt</a>
+        </details>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+        
+          <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

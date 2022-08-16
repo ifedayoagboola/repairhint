@@ -1,0 +1,35 @@
+<%- include('../../partials/issue-header') %>
+<body id="late-display"  onLoad="bugRoute()">
+<%- include('../../partials/issue-navbar') %>
+
+
+    <div class="direction">
+      <h3>Motherboard takes long before display (20sec-1minute)</h3>
+      <p>The most possible (or only) cause of such issue is ME (region Management Engine) of the BIOS. </p>
+      <p>Best recommendation is to clean the ME region inside the bios file</p>
+    
+    <details>
+        <summary>Hint</summary>
+        <p>You can as well download clear me version of your BIOS online.</p>
+        <a target="_blank" href="https://www.youtube.com/watch?v=t7JWzFtG9rE">Aditya11ttt</a>
+    </details>
+    <div class="arrow">
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+    </div>
+
+    <!-- Bug form using ejs template-->
+    <%- include('../../partials/navigator-bug-form') %>
+    
+    </div>
+  <!-- Footer using ejs template-->
+  <%- include('../../partials/footer') %>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  
+  <script src="../../js/index2.js" charset="utf-8"></script>
+  <!-- Bug for script file using ejs template. It's not working  using external script-->
+  <%- include('../../partials/bug') %>
+  </body>
+  
+  </html>

@@ -1,0 +1,62 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="mb-issue" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <h3>What is the motherboard issue?</h3>
+        <ul>
+          <li><a href="no-pwr.ejs">Motherboard is not turning on</a> </li>
+          <li> <a href="short-on-19v-rail.ejs">Adapter light goes of when adapter is plugged in</a></li>
+          <li><a href="standby-section.ejs">Standby IC heating</a></li>
+          <li><a href="component-heating.ejs">A component is heating up and no power</a></li>
+          <li> <a href="no-display.ejs">Motherboard is turning on but no display</a></li>
+          <li><a href="not-charging.ejs">Motherboard charging problem</a></li>
+          <li><a href="stock-at-logo.ejs">laptop stuck at log</a></li>
+          <li><a href="me-region-shutdown.ejs">Auto shutdown/tripoff after specific Or random duration</a></li>
+          <li><a href="restarting.ejs">laptop restarting and not displaying</a></li>
+          <li><a href="ex-disp-no-int-disp.ejs">Laptop display on external monitor but no internal display</a></li>
+          <li><a href="lvds.ejs">No backlight</a></li>
+          <li><a href="fan-not-spinning.ejs">Fan not spinning</a></li>
+          <li><a href="pwr-with-adapter.ejs">Motherboard power with adapter but does not power with battery</a></li>
+          <li><a href="pwr-with-battery.ejs">Motherboard power with battery but does not power with Adapter</a></li>
+          <li><a href="no-lvds-with-battery.ejs">Motherboard work fine with adapter but no backlight when it's on
+              battery when on battery</a></li>
+          <li><a href="white-screen.ejs">Laptop is showing plain white</a></li>
+
+
+          <li><a href="screen-flickering.ejs">Laptop screen flickering or flashing and no display</a></li>
+          <li><a href="flickering-display.ejs">Laptop display but flickering</a></li>
+          <li><a href="flickering-with-battery.ejs">Laptop display with adapter but flickering with battery</a></li>
+
+
+          <li><a href="stable-without-ram.ejs">Motherboard stable without RAM but restarting with RAM (No display)</a>
+          </li>
+          <li><a href="late-display.ejs">Motherboard takes long before display (20sec-1minute)</a></li>
+          <h1>Specific logic</h1>
+          <li><a href="psid.ejs">DELL: Motherboard charging problem (PS_ID)</a></li>
+          <li><a href="#">Additional guide for HP: Motherboard is not turning on (including adapter not detect)</a></li>
+          <!-- <li><a href="#">Motherboard is turning on automatically after shutdown</a></li> -->
+
+
+          <h1>External troubleshoot</h1>
+          <li><a href="one-restart.ejs">Motherboard restart or trippoff in less than a second</a></li>
+          <li><a href="token-capacitor.ejs">Token capacitor problems</a></li>
+        </ul>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+          <!-- Bug for script file using ejs template. It's not working  using external script-->
+          <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

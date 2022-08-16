@@ -1,0 +1,51 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="fan-not-spinning" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <h3>Fan not spinning</h3>
+        <p>Follow the below steps to bypass the fan</p>
+        <ol>
+          <li>Make sure the fan is good</li>
+          <li>Cut the wires (3 or 4)</li>
+          <li>Connect the negative wire of the fan to ground of the motherboard</li>
+          <li>Connect the positive wire of the fan to 5v run</li>
+          <li>Ignore the remaining wires</li>
+          <p>If you've done the above step right, your fan should be working. </p>
+        </ol>
+        <details>
+          <summary>Implication</summary>
+          <p>Your fan is no longer regulated anymore, it will continue to spine as long as the pc is on.</p>
+          <p>You can reduce the fan speed slightly by including diode in a forward bias on the positive supply to the
+            fan, this will help to drop voltage depending on how much you want. It is best not to drop the 5V supply
+            below 4.2V</p>
+          <p>For hp series, you will always get warning message that looks like below image immediately you turn on the
+            PC.</p>
+          <img class="hint-img1" src="../../images/nav/fan-error.jpg" alt="fan error message">
+          <img class="hint-img1" src="../../images/nav/fan-error2.jpg" alt="fan error message">
+          <p>Checkout series of fan bypass:</p>
+          <a target="_blank" href="https://www.youtube.com/watch?v=td3HdjuVO0Q">Electronics skill</a>
+        </details>
+        <div class="arrow">
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+        </div>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

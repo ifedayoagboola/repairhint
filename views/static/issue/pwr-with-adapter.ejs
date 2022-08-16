@@ -1,0 +1,37 @@
+<%- include('../../partials/issue-header') %>
+<body id="pwr-with-adapter" onLoad="bugRoute()">
+  <%- include('../../partials/issue-navbar') %>
+
+    <div class="direction" >
+        <h3>Motherboard power with adapter but does not power with battery</h3>
+        <p>What the navigator reckon is you approach the motherboard like it a case of motherboard not charging.
+            Basically in faults like this, it is mostly caused by problem with communication of battery and motherboard.
+            Nevertheless, assume the motherboard is not charging and use the navigator to check the needful
+            voltages/signls.</p>
+        <div class="arrow">
+        <button class="btn option" onclick="location.href='not-charging.ejs'" type="button" name="button">Let tackle it as motherboard not
+            powering</button>
+        </div>
+        
+        <details>
+            <summary>Hint</summary>
+            <p>Why do I have to approach this fault like a "motherboard not charging case? Because part of "motherboard
+                not charging" troubleshooting is combination of battery detection confirmation and adapter detection
+                confirmation.</p>
+        </details>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+    </div>
+ <!-- Footer using ejs template-->
+ <%- include('../../partials/footer') %>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+   crossorigin="anonymous"></script>
+   
+   <script src="../../js/index2.js" charset="utf-8"></script>
+   <!-- Bug for script file using ejs template. It's not working  using external script-->
+   <%- include('../../partials/bug') %>
+ 
+ </body>
+ 
+ </html>

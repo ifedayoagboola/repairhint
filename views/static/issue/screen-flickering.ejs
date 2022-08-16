@@ -1,0 +1,78 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="screen-flickering" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <div class="d-screen-flick1">
+                    <h3>Laptop screen flickering or flashing and no display</h3>
+                    <p>This is a fault that is mostly caused by BIOS. However, check weather it is responding to
+                        capslock.</p>
+                    <div class="arrow">
+                        <button class="btn-screen-flick1 btn option" type="button" name="button"> Motherboard is
+                            responding to capslock</button>
+                        <button class="btn-screen-flick2 btn option" type="button" name="button"> Motherboard is not
+                            responding to capslock</button>
+                    </div>
+                </div>
+                <div class="d-screen-flick2 invisible">
+                    <h3>Motherboard is responding to capslock</h3>
+                    <p>Since motherboard is responding to capslock, then check lvds section</p>
+                    <div class="arrow">
+                        <button class="btn option" type="button" onclick="location.href='lvds.ejs'" name="button">Let
+                            check LVDS section</button>
+                    </div>
+                    <br>
+                    <button class="btn option" type="button" onclick="location.href='screen-flickering.ejs'"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-screen-flick3 invisible">
+                    <h3>Motherboard is not responding to capslock</h3>
+                    <p>Flash BIOS with correct BIN file, it should work. However, if it does not, check <em>hint</em>
+                        for clue
+                    </p>
+                    <div class="arrow">
+                        <button class="btn-screen-flick3 btn option" type="button" name="button">No changes after
+                            flashing BIOS</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Make sure you also confirm BIOS pin 8 voltage. It should either be 3.3v or 1.8v and if it
+                            drops below standard of either voltage, back-trace it. It is good to always confirm this, as
+                            it helps in appropriate sucket for the BIOS chip.</p>
+                        <p>Use another BIOs chip of the same size and name. e.g windbond for windbond.</p>
+                        <p>It is ideal to use the same manufacturer BIOS chip as it can also contribute to failure.</p>
+                        <a href="https://www.youtube.com/watch?v=YCuDf729PZY">Laptop Repair Zone</a>
+                    </details>
+                    <button class="btn option" type="button" onclick="location.href='screen-flickering.ejs'"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-screen-flick4 invisible">
+                    <h3>No changes after flashing BIOS</h3>
+                    <p>If you are sure you are using correct BIN file and good bios chip, then let confirm if every
+                        section of the motherboard is working properly.</p>
+                    <div class="arrow">
+                        <button class="btn option" type="button" onclick="location.href='no-display.ejs'"
+                            name="button">Let go ahead</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+
+
+    </body>
+
+    </html>

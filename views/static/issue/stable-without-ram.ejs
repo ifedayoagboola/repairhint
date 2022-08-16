@@ -1,0 +1,82 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="stable-without-ram" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <div class="d-without1">
+          <h3>Motherboard stable without RAM but restarting with RAM</h3>
+          <p><em>Follow these subsequent guides to fix issue like this. If these next step of actions does'nt help in
+              your own case, tackle the fault like it's a <a href="restarting.ejs">motherboard restarting problem</a>
+            </em></p>
+          <p>Check impedance of all the non-ground pins of the RAM.</p>
+
+          <div class="arrow">
+            <button class="btn-without1 btn option" type="button" name="button">All non-ground pin impedance is
+              fine</button>
+            <button class="btn-without2 btn option" type="button" name="button">Found short on non-ground pin</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What is the meaning of non-ground? Pin not connected to ground. You can check that in the schematic.</p>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+              an unintended path with no or very low electrical impedance. In a practical idea, short is a
+              direct contact between supply (positive) and ground (GND or negative).</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+          </details>
+        </div>
+        <div class="d-without2 invisible">
+          <h3>All non-ground pin impedance is fine</h3>
+          <p>Insert RAM and check all RAM requirements in accordance to the type of your motherboard RAM.</p>
+
+          <div class="arrow">
+            <button class="btn-without3 btn option" type="button" name="button">All RAM requirements is fine</button>
+            <button class="btn option" onclick="location.href='ram-requirement.ejs'" type="button" name="button">Select
+              RAM and let check</button>
+          </div>
+
+          <br>
+          <button class="btn option" onclick="location.href='stable-without-ram.ejs'" type="button" name="button">THANK
+            YOU</button>
+        </div>
+        <div class="d-without3 invisible">
+          <h3>Found short on non-ground pin</h3>
+          <p><a href="short.ejs">Clear the short</a> by injecting voltage not exeeding the expected supply.</p>
+
+          <details>
+            <summary>Hint</summary>
+            <a href="short.ejs">How to clear short</a>
+          </details>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigateing to the current
+            state of your motherboard</p>
+          <button class="btn option" onclick="location.href='stable-without-ram.ejs'" type="button"
+            name="button">Previous</button>
+        </div>
+        <div class="d-without4 invisible">
+          <h3>All RAM requirements is fine</h3>
+          <p>Flash Main BIOS</p>
+
+          <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index2.js" charset="utf-8"></script>
+
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+  </body>
+
+  </html>

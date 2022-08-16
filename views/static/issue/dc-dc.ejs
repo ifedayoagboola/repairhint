@@ -1,0 +1,541 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="dc-dc" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-dc-dc1">
+                    <h3>DC - DC troubleshooting</h3>
+                    <p>First thing first, check impedance of all DC-DC outputs.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc1 btn option" type="button" name="button">All DC-DC output impedance is
+                            fine</button>
+                        <button class="btn-dc-dc2 btn option" type="button" name="button">Short on DC-DC output</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+                            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+                            direct contact between supply (positive) and ground (GND or negative).</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+                        <p>What is DC-DC? It is the section where the standby voltage switches.</p>
+                        <p>What is the essence of the switching? Basically to generate voltage that will be used to
+                            activate various sections of the motherboard.</p>
+                        <p>How does it looks like on the motherboard and schematic? Check it out in the reference.</p>
+                        <img class="hint-img1" src="../../images/nav/dc-dc.jpg" alt="physical-damage1">
+                        <p>Some motherboard architecture uses regular 8 pin MOSFET or 6 pins MOSFET, while some uses IC.
+                            Sometimes two of these three types are used in conbination.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check out how DC-DC looks like using the concept of below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>Page 42</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>Page 44</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>Page 39</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Page 35</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>Page 34</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>Page 40 & page 86</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Page 33</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>Page 32, 33 and 34</p>
+                            </ul>
+                        </details>
+                    </details>
+                </div>
+                <div class="d-dc-dc2 invisible">
+                    <h3>All DC-DC output impedance is fine</h3>
+                    <p>Check output voltage of all DC-DC voltages.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc3 btn option" type="button" name="button">All DC-DC output voltage is
+                            fine</button>
+                        <button class="btn-dc-dc4 btn option" type="button" name="button">One or all DC-DC output
+                            voltage is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>What is the expected voltage? complete voltage as input (e.g 5v to 5v, 3v to 3v and 1.5v to
+                            1.5v). Check out practical example:</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zdNr7T_Zj6g">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">
+                            Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=-o52ugfEIWc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=qgGszj7XjdE">Aditya11ttt</a>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check out how DC-DC looks like using the concept of below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>Page 42</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>Page 44</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>Page 39</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Page 35</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>Page 34</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>Page 40 & page 86</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Page 33</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>Page 32, 33 and 34</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn option" onclick="location.href='dc-dc.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc3 invisible">
+                    <h3>Short on DC-DC output</h3>
+                    <p>If there is short in any DC-DC output, you have to clear it before proceeding.</p>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='short-in-dc-dc.ejs'" type="button"
+                            name="button">How to clear short on DC-DC</button>
+                    </div>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state if your motherboard.</p>
+                    <button class="btn option" onclick="location.href='dc-dc.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc4 invisible">
+                    <h3>All DC-DC output voltage is fine</h3>
+                    <p>If you are sure all DC to DC output voltage is fine, proceed to the next step by navigating to
+                        the current state of your motherboard.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-dc-dc5 invisible">
+                    <h3>One or all DC-DC output voltage is bad</h3>
+                    <p>All DC-DC output voltages are ultimately controlled by single game changer, therefore navigator
+                        will focus on general approach.</p>
+                    <p>In as much as your motherboard is responding to power, we start by checking the below.</p>
+                    <p>Check DC-DC MOSFET drain(input) voltage or input pin voltage in the case where IC is use for
+                        DC-DC (Example in reference are R33 and LA-C361P).</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc5 btn option" type="button" name="button">DC-DC input voltage is
+                            available</button>
+                        <button class="btn-dc-dc6 btn option" type="button" name="button">DC-DC input voltage is
+                            missing</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Clue on motherboard responding to power: The fact that you press power button and there no
+                            single indicator doesn't mean that the motherboard is not responding to power. In as much as
+                            there is changes in the current consumption, the motherboard is responding to power
+                            regardless of weather there is indicator or not. Check out practical example: </P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zdNr7T_Zj6g">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">
+                            Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=-o52ugfEIWc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=qgGszj7XjdE">Aditya11ttt</a></p>
+
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-dc-dc6 invisible">
+                    <h3>DC-DC input voltage is available</h3>
+                    <p>Check DC-DC MOSFET gate or EN pin in the case where IC is use for DC-DC </p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc7 btn option" type="button" name="button">MOSFET gate voltage is present
+                            or enable voltage is present in the case where IC is used</button>
+                        <button class="btn-dc-dc8 btn option" type="button" name="button">No gate voltage or enable for
+                            IC</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Some motherboard architecture uses MOSFET while some uses IC. In motherboards that uses
+                            MOSFET, the gate voltage should be at least 5V above the Drain(input) voltage. While in the
+                            architectures where IC is used, the enable voltage is always around 3.3V. Check out
+                            practical example: </P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zdNr7T_Zj6g">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">
+                            Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=-o52ugfEIWc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=qgGszj7XjdE">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc7 invisible">
+                    <h3>DC-DC input voltage is missing</h3>
+                    <p>Back-trace input voltage to it's source</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The switching of DC-DC is ultimately controlled by SLP_S3 & SLP_S4.</p>
+                        <p>SLP_S3 & SLP_S4 are both issued by the ICH/PCH to the Super SIO and super SIO respond by
+                            releasing SUSON & MAINON.</p>
+                        <P>SUSON & MAINON is the enabling voltage for DC-DC switching.</P>
+                        <p>SUSON & MAINON have different names in the schematic.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <p>What is the expected voltage for gate? It actually depends on the architecture, but it should
+                            be at least 5v above the input voltage</p>
+                        <p>What is the expected voltage for gate enable? 3.3v (95% difference is acceptable). Check out
+                            practical example: </P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zdNr7T_Zj6g">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">
+                            Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=-o52ugfEIWc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=qgGszj7XjdE">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-dc-dc8 invisible">
+                    <h3>MOSFET gate voltage is present or enable voltage is present in the case where IC is used</h3>
+                    <p>If DC-DC is a MOSFET, replace the MOSFET</p>
+                    <p>If DC-DC is an IC, replace the IC</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc9 invisible">
+                    <h3>No gate voltage or enable for IC</h3>
+                    <p>All DC-DC output voltages are ultimately controlled by two game changers, therefore navigator
+                        will focus on general approach.</p>
+                    <p>In as much as your motherboard is responding to power, we start by checking SLP_S3 & SLP_S4
+                        voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc9 btn option" type="button" name="button">SLP_S3 & SLP_S4 voltage is
+                            present</button>
+                        <button class="btn-dc-dc10 btn option" type="button" name="button">Either one or both voltage is
+                            missing(SLP_S3/SLP_S4)</button>
+                    </div>
+
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check SLP_S3 & SLP_S4 voltage? Super SIO</p>
+                        <P>What is the expected voltage for SLP_S3 & SLP_S4? 3.3v (95% difference is acceptable) </P>
+                        <p>What is the expected voltage for gate? It actually depends on the architecture, but it should
+                            be at least 5v above the input voltage</p>
+                        <p>What is the expected voltage for gate enable? 3.3v (95% difference is acceptable).Check out
+                            practical example: </P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zdNr7T_Zj6g">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">
+                            Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CFc2fGDJd8M">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=kp1HT1uaQfw">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=-o52ugfEIWc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=qgGszj7XjdE">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-dc-dc10 invisible">
+                    <h3>SLP_S3 & SLP_S4 voltage is present</h3>
+                    <p>Check MAINON & SUSON voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc11 btn option" type="button" name="button">Both MAINON and SUSON voltage
+                            is present (MAINON/SUSON)</button>
+                        <button class="btn-dc-dc12 btn option" type="button" name="button">Either one or both voltage is
+                            missing(MAINON/SUSON)</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check MAINON & SUSON voltage? Super SIO. It can be confusing to locate sometimes,
+                            start by searching SLP_S3 and follow the name given to the pin from the ICH/PCH in the
+                            schematic to super SIO.</p>
+                        <P>What is the expected voltage for MAINON & SUSON? 3.3v (95% difference is acceptable).</P>
+                        <p>What is the expected voltage for MAINON & SUSON? 3.3v (95% difference is acceptable).</p>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc11 invisible">
+                    <h3>Either one or both voltage is missing(SLP_S3/SLP_S4)</h3>
+                    <p>Check impedance of the missing one</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc13 btn option" type="button" name="button">Both impedance is
+                            fine(SLP_S3/SLP_S4)</button>
+                        <button class="btn-dc-dc14 btn option" type="button" name="button">One impedance is
+                            bad(SLP_S3/SLP_S4)</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc12 invisible">
+                    <h3>Both MAINON and SUSON voltage is present (MAINON/SUSON)</h3>
+                    <p>Follow both voltage from source to there final destination.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where is MAINON & SUSON final destination? There destination is always a circuit used to
+                            enable DC-DC MOSFET gate voltage or directly to the enable pin of DC-DC IC in the case where
+                            IC is used for DC-DC.</p>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc13 invisible">
+                    <h3>Either one or both voltage is missing(MAINON/SUSON)</h3>
+                    <p>Check impedance of the missing voltage out of the two.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc15 btn option" type="button" name="button">Impedance is
+                            good(MAINON/SUSON)</button>
+                        <button class="btn-dc-dc16 btn option" type="button" name="button">Impedance is
+                            bad(MAINON/SUSON)</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc14 invisible">
+                    <h3>Both impedance is fine(SLP_S3/SLP_S4)</h3>
+                    <p>If SLP_S3/SLP_S4 are missing, the best practice is to confirm <a href="RTC-section.ejs">RTC
+                            section.</a> You can procced by check AC_PRESENT voltage if your RTC section is perfect.
+                    </p>
+                    <div class="arrow">
+                        <button class="btn-dc-dc17 btn option" type="button" name="button">AC_PRESENT voltage is
+                            fine</button>
+                        <button class="btn-dc-dc18 btn option" type="button" name="button">AC_PRESENT voltage is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Proffessinally, RTC section is the first section to be checked in troubleshoot motherboard.
+                            Many proffessionals will not start from RTC section, instaed it will be checked when
+                            troubleshooting leads to RTC section.</p>
+                        <p>The concept of AC_PRESENT goes thus; ACIN is issued from charging IC and goes to super SIO
+                            and super SIO respond by releasing AC_PRESENT to ICH/PCH. Another way is that the ACIN goes
+                            to the chipset without going through super SIO, there will be a testing point for you in
+                            between such as diode or resistor.</p>
+                    </details>
+                    <br>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc15 invisible">
+                    <h3>AC_PRESENT voltage is fine</h3>
+                    <p>Check RSMRST# voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc19 btn option" type="button" name="button">RSMRST# voltage is
+                            fine</button>
+                        <button class="btn-dc-dc20 btn option" type="button" name="button">RSMRST# voltage is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In some motherboards, RSMRST# comes before power while it comes after power in some
+                            motherboards.</p>
+                        <p>How do I know if it comes before or after power? Through schematic timing sequence and also
+                            by experience.</p>
+                        <a href="RSMRST#"></a>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-dc-dc16 invisible">
+                    <h3>AC_PRESENT voltage is bad</h3>
+                    <p>Back-trace the AC_PRESENT voltage.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The AC_PRESENT voltage is always released by super SIO and it is feeded to the ACPRESENT pin
+                            of the PCH/ICH.</p>
+                        <P>AC_PRESENT is an output of the super SIO after receiving ACIN from charging section.</P>
+                        <p>In some architectures, the ACPRESENT of the super SIO is directly feeded by the ACIN from the
+                            charging section.</p>
+                        <p>The ultimate aim is to feed ICH/PCH ACPRESENT pin with 3v, either from AC_PRESENT or ACIN</p>
+                        <P>AC_PRESENT can also be referred to as AC_PRESENT_EC or ADP_PRES_OUT.</P>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc17 invisible">
+                    <h3>RSMRST# voltage is fine</h3>
+                    <p>Check PCH_PWR_EN voltage(Common on compal motherboards, not all motherboards)</p>
+                    <p>If its not used in your motherboard architecture, assume it is present and follow the next
+                        procedure</p>
+
+                    <div class="arrow">
+                        <button class="btn-dc-dc21 btn option" type="button" name="button">PCH_PWR_EN voltage is
+                            present</button>
+                        <button class="btn-dc-dc22 btn option" type="button" name="button">PCH_PWR_EN voltage is
+                            absent</button>
+                    </div>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc23 invisible">
+                    <h3>RSMRST# voltage is bad</h3>
+                    <p>If you are sure it always come before power button in your motherboard and it is absent, flash
+                        the EC BIOS.</p>
+                    <p>Because in some motherboard architectures RSMRST# comes after power, you can slighty assume its
+                        fine and proceed with troubleshooting for the main time.</p>
+                    <div class="arrow">
+                        <button class="btn-dc-dc23 btn option" type="button" name="button">Let assume RSMRST# is
+                            fine</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I know if it comes before or after power in my motherboard? Check timing sequence in
+                            your motherboard schematic. Your experience too can also tell.</p>
+                    </details>
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc18 invisible">
+                    <h3>PCH_PWR_EN voltage is present</h3>
+                    <p>Be sure crystal clock 32.768KHz frequency is good.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='clock-32-768khz.ejs'" type="button"
+                            name="button">Check clock 32.768KHz crystal for ICH/PCH</button>
+                    </div>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can also confirm 32.768KHz at the super SIO pin.</p>
+                    </details>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc19 invisible">
+                    <h3>One impedance is bad(SLP_S3/SLP_S4)</h3>
+                    <p>Inject voltage on the track of the shorted line. You can check out how to <a
+                            href="short.ejs">clear short.</a></p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Do not inject above 3.3v.</p>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc20 invisible">
+                    <h3>Impedance is good(MAINON/SUSON)</h3>
+                    <p>Most likely your super I/O is bad, replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why Super SIO replacement? Because it is expected of super SIO to release MAINON&SUSON
+                            imediately after receiving SLP_S3/SLP_S4.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Wy7BG6yTXzA">Electronics repair
+                            school</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=i2qFpTdCMt8">Tech Shop</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqmjB0dxnM">Laptex</a>
+                    </details>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc21 invisible">
+                    <h3>Impedance is bad(MAINON/SUSON)</h3>
+                    <p>Inject voltage on shorted line. You can check out how to <a href="short.ejs">clear short.</a></p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Do not inject above 3.3V</p>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-dc-dc22 invisible">
+                    <h3>PCH_PWR_EN voltage is absent</h3>
+                    <p>Back-trace the voltage.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

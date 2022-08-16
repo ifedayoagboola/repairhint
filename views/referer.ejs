@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<body>
+
+  <%- include('partials/home-navbar') %>
+
+    <div class="header-div">
+      <div class="header-text">
+        <h1 class="header">Welcome to Fixhint.com</h1>
+        <h2>Learn by fixing and earning...</h2>
+           
+         <% if (check === 1){ %>
+           <button class="btn" onclick="location.href='/register'" type="button" name="button">Register</button>>
+          <br>
+          <button class="btn" onclick="location.href='/login'" type="button" name="button">Login</button>
+          <% } else { %>
+            <button class="btn" onclick="location.href='/logout'" type="button" name="button">Logout</button>
+         <% } %>
+      </div>
+    </div>
+  </section>
+<!-- Footer using ejs template-->
+  <%- include('partials/footer') %>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+<script src="<%= script %>" charset="utf-8"></script>
+</body>
+
+</html>

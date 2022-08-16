@@ -1,0 +1,339 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="no-pch-volt" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <div class="d-no-pch-volt1">
+                    <h3>PCH/ICH PWM output coil voltage is absent</h3>
+                    <p>Re-confirm impedance of PCH/ICH output coil supply</p>
+
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt1 btn option">Impedance of PCH/ICH output coil supply is
+                            good</button>
+                        <button class="btn-no-pch-volt2 btn option">Impedance of PCH/ICH output coil supply is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In many cases, you will not find 1.05v written on it's supply coil instead, another suc as
+                            VCCSA, VCCSAP, VCCP, VRP1V05S, PWR_1D0V, 1.0VALWP e.t.c. Looking at these naming
+                            conventions, one can tell in some cases it is 1.0v </p>
+                    </details>
+                </div>
+
+                <div class="d-no-pch-volt2 invisible">
+                    <h3>Impedance of PCH/ICH output coil supply is good</h3>
+                    <p>Check input voltage of the PWM regulator.</p>
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt3 btn option">Input voltage is good</button>
+                        <button class="btn-no-pch-volt4 btn option">one or more input voltage is missing</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>For checking any PWM circuit on your motherboard, it is a good practice to always
+                            check drain voltage of top MOSFET.</p>
+                        <p>There can be one, two, three or even more of input voltage for PCH/ICH regulator depending on
+                            the type of regulator. one or two input is the most common you will find around.</p>
+                        <p>If it consist of only one input, it is mostly 5V and sometimes, it will be CLR voltage which
+                            will mostly be <em>VCC or IN or V5IN or PVCC</em> in the regulator pin. You can simply
+                            back-trace the 5V.</p>
+                        <p>If it consist of two inputs, it is also mostly 5V and sometimes, it will be CLR voltage and
+                            5V. One will be feeded direct and the other one will be feeded through a resistor. You can
+                            simply back-trace the missing one.</p>
+                        <p>If it consist of three inputs, two(2) is mostly 5V and the other one will be CLR voltage. You
+                            can simply back-trace the missing on of the three.</p>
+                        <p>Because many other supply is working but only PCH/ICH supply is missing, there is higher
+                            chance that the MAINON is present. Therefore, the issue can be due to missing or faulty
+                            inbetween component. This in most cases will be resistor.</p>
+                        <p>In many cases, you will not find 1.05v written on it's supply coil instead, another such as
+                            VCCSA, VCCSAP, VCCP, VRP1V05S, PWR_1D0V, 1.0VALWP e.t.c. Looking at these naming
+                            conventions, one can tell in some cases it is 1.0v</p>
+
+                    </details>
+                    <button class="btn option" onclick="location.href='no-pch-ich-voltage.ejs'">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt3 invisible">
+                    <h3>Impedance of PCH/ICH output coil supply is bad</h3>
+                    <p>Before any other thing, you need to <a href="short-in-pwm-coil.ejs">clear the short.</a></p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>When ever you have impedance issue on PWM coil, you can always separate the particular PWM
+                            section form the motherboard by lifting one pin or removing the PWM output coil. This is
+                            actually reckoned so as to know weather the faulty is in other section of the motherboard or
+                            the PWM circuit itself is faulty.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='no-pch-ich-voltage.ejs'">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt4 invisible">
+                    <h3>Input voltage is good</h3>
+                    <p>Check enable voltage.</p>
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt5 btn option">Enable voltage is present</button>
+                        <button class="btn-no-pch-volt6 btn option">Enable voltage is absent present</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Mostly the enable pin of the regulator will be name EN or EN1</p>
+                        <p>What is the expected enble voltage? 3.3v</p>
+                        <p>However, for checking any PWM circuit on your motherboard, it is a good practice to always
+                            check drain voltage of top MOSFET.</p>
+                    </details>
+                    <button class="btn-previous1 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt5 invisible">
+                    <h3>one or more input voltage is missing</h3>
+                    <p>Back-trace the missing voltage.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current
+                        state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If it consist of only one input, it is mostly 5V and sometimes, it will be CLR voltage which
+                            will mostly
+                            be <em>VCC or IN or V5IN or PVCC</em> in the regulator pin. You can simply back-trace the
+                            5V.</p>
+                        <p>If it consist of two inputs, it is also mostly 5V and sometimes, it will be CLR voltage and
+                            5V. One will
+                            be feeded direct and the other one will be feeded through a resistor. You can simply
+                            back-trace the
+                            missing one.</p>
+                        <p>If it consist of three inputs, two(2) is mostly 5V and the other one will be CLR voltage. You
+                            can simply
+                            back-trace the missing on of the three.</p>
+                        <p>Because many other supply is working but only PCH/ICH supply is missing, there is higher
+                            chance that the
+                            MAINON is present. Therefore, the issue can be due to missing or faulty inbetween component.
+                            This in
+                            most cases will be resistor.</p>
+                    </details>
+                    <button class=" btn-previous2 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt6 invisible">
+                    <h3>Enable voltage is present</h3>
+                    <p>Replace the PCH/ICH regulator and re-test.</p>
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt7 btn option">Condition still remain the same after regulator
+                            replacement</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If the previouss testing points are all good as you've provided, in many cases the regulator
+                            will be
+                            faulty.</p>
+                    </details>
+                    <button class="btn-previous3 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt7 invisible">
+                    <h3>Enable voltage is absent present</h3>
+                    <p>Back-trace the voltage to it source</p>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The ultimate source of the voltage is mostly always from super SIO. The name of the signal
+                            varies
+                            depending on the motherboard architecture. However, the logic is the same. The followings
+                            can be the
+                            name on super SIO pin MAINON, SUS_P, SBPWR_EN e.t.c </p>
+                        <p>In some rare cases too, it is enable by standby section power good.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+
+                    <button class="btn-previous4 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt8 invisible">
+                    <h3>Condition still remain the same after regulator replacement</h3>
+                    <p>Check feedback circut.</p>
+
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt8 btn option">Feedback circuit is good</button>
+                        <button class="btn-no-pch-volt9 btn option">Feedback circuit is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In many cases this section will not have any issue, but if it by chance does there will
+                            definately
+                            be a problem that will keep causing all you efforts not to have positive result.</p>
+                        <p>How does the feedback circuit looks like? It is actually in form of voltage divider circuit,
+                            output of
+                            the voltage divider will be connected to the regulator feedback(FB) pin.</p>
+                        <p>How do I check this feedback circuit? Check the value of the resistors and confirm it's
+                            respective
+                            connectivity with multimeter.</p>
+                        <p>It is always best to take out the resistor and check it's value off the motherboard.</p>
+                    </details>
+                    <button class="btn-previous5 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt9 invisible">
+                    <h3>Feedback circuit is good</h3>
+                    <p>Check bootstap circuit. If it is not available in your motherboard architecture, we can assume it
+                        is
+                        working fine and proceed.</p>
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt10 btn option">Bootstrap circuit is fine</button>
+                        <button class="btn-no-pch-volt11 btn option">Bootstrap circuit is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This circuit is now integrated inside the regulator in most of the recent motherboards.</p>
+                        <p>In many cases this section will no issue, but if it by chance does there will definately
+                            be a problem that will keep causing all you efforts not to have positive result.</p>
+                        <p>How does the bootstrap cuircit looks like? It always consist of a 2.2ohms resist and a
+                            capasitor. The
+                            resistor and capacitor are always connected in series, the resistor end is connected to the
+                            bootstrap
+                            pin and the end of the capacitor is connected to the phase line of the supply.</p>
+                        <p>How do I check this bootstrap circuit? Check the resistance value of the resistors and
+                            impedance value of
+                            the capacitor. It is ideal to take out the components and check off the motherboard. The
+                            resistor
+                            value on the motherboard can be misleading.</p>
+                    </details>
+                    <button class="btn-previous6 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt10 invisible">
+                    <h3>Feedback circuit is bad</h3>
+                    <p>Replace the faulty component</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous7 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt11 invisible">
+                    <h3>Bootstrap circuit is fine</h3>
+                    <p>Check trip pin voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt12 btn option">Trip pin voltage is present</button>
+                        <button class="btn-no-pch-volt13 btn option">Trip pin voltage is missing</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In many cases this pin will no issue, but if it by chance does there will definately be a
+                            problem that
+                            will keep causing all you efforts not to have positive result.</p>
+                        <p>What is the expected voltage? There is actually no fix voltage. It depends on the regulator
+                            used and the
+                            value of the resistor the manufacturer has choose to use. The main key is:</p>
+                        <li>The value should not be 0v</li>
+                        <li>The resistance value is as stated in the schematic</li>
+                        <p>In some regulators, CS is used in place Trip.</p>
+                    </details>
+                    <button class="btn-previous8 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt12 invisible">
+                    <h3>Bootstrap circuit is bad</h3>
+                    <p>Replace the faulty component</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous9 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt13 invisible">
+                    <h3>Trip pin voltage is present</h3>
+                    <p>Check the Time On Select (TON).</p>
+
+                    <div class="arrow">
+                        <button class="btn-no-pch-volt14 btn option">Time On Select (TON) is good</button>
+                        <button class="btn-no-pch-volt15 btn option">Time On Select (TON) is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This is integrated into the regulator in some regulators. Therefore, there will be no need
+                            for checking
+                            it, instead you can assume its good and proceed.</p>
+                        <p>This is usually defective in the case of under voltage, where you have PCH/ICH output supply
+                            voltage to
+                            be lesser than the standard 1.05v</p>
+                    </details>
+                    <button class="btn-previous10 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt14 invisible">
+                    <h3>Trip pin voltage is missing</h3>
+                    <em>
+                        <p>The main key to check is:</p>
+                        <li>The value should not be 0v</li>
+                        <li>The resistance value should be accurate as stated in the schematic</li>
+                    </em>
+                    <p>Use external buck regulator if all of this is present.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous11 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt15 invisible">
+                    <h3>Time On Select (TON) is good</h3>
+                    <p>Use external buck regulator if all of this is present.</p>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Checkout how to use buck regulator for motherboard:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=il-U7ymZJIY">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+                    </details>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <br>
+                    <button class="btn-previous12 btn option">Previous</button>
+                </div>
+
+                <div class="d-no-pch-volt16 invisible">
+                    <h3>Time On Select (TON) is bad</h3>
+                    <p>Replace the resistor connected.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'">THANK YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <button class="btn-previous13 btn option">Previous</button>
+                </div>
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+
+    </body>
+
+    </html>

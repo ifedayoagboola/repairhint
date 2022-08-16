@@ -1,0 +1,40 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="flickering-display" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <h3>Laptop display but flickering</h3>
+                <p>Since there is display, it means motherboard is responding to capslock. consider to take a look
+                    at<em>hint</em> for clue. Meanwhile, let check lvds section.
+                </p>
+                <div class="arrow">
+                    <button class="btn option" type="button" onclick="location.href='lvds.ejs'" name="button">Let
+                        check LVDS section</button>
+                </div>
+
+                <details>
+                    <summary>Hint</summary>
+                    <p>Make sure it is not drivers issue because using navigator, we assume all that has to do with
+                        software, pheripheral devices such as screen, flex e.t.c are all working fine </p>
+                    <p>checkout similar cases:</p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=5Vl3EmyZX2s&list=LL&index=3&t=385s">
+                        EasyTechs</a>
+                </details>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+
+
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

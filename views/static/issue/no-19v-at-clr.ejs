@@ -1,0 +1,415 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="no-19v" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class=direction>
+
+                <div class="d-clr-voltage1">
+                    <h3>Charging Section</h3>
+                    <p>Aside from charging of the battery, charging section is also responsible for switching of adapter
+                        voltage.</p>
+                    <p>Because we are working towards switching adapter voltage to CLR, this navigator will focus on the
+                        battery IC part responsible for switching of adapter voltage.</p>
+                    <p>First thing first, locate the charging IC.</p>
+                    <p>Check voltage on DCIN pin of charging IC(Check other names for DCIN in the HINT).</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage1 btn option" name="button" type="button">Adapter voltage present
+                            at charging IC DCIN pin </button>
+                        <button class="btn-clr-voltage2 btn option" name="button" type="button">Adapter voltage absent
+                            at charging IC DCIN pin</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate charging IC? It is always close to battery terminal.</p>
+                        <p>What are the other names for DCIN? VCC or PVCC.</p>
+                        <p>Where do I check DCIN voltage? Charging IC pin.</p>
+                        <p>In a not charging case, if a resistor is connected to DCIN pin, you have to confirm the value
+                            because charging is a game of current.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>This is the charging IC location for the below motherboards.</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>PU5</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PU4</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PU9</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PU100</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PU301</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>PU4401</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PU300</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>PU300</p>
+                            </ul>
+                        </details>
+                    </details>
+                </div>
+
+                <div class="d-clr-voltage2 invisible">
+                    <h3>Adapter voltage present at charging IC DCIN pin</h3>
+                    <p>Check charging IC LDO voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage3 btn option" name="button" type="button">LDO voltage
+                            present</button>
+                        <button class="btn-clr-voltage4 btn option" name="button" type="button">LDO voltage
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Charging IC LDO: it depends on the type of IC, It is either REGN or VDD or in few case LDO.
+                        </p>
+                        <p>If it is REGN, the value is 6V (BQ24738). </p>
+                        <p>If it is VDD, the value is 5v.</p>
+                        <p>If it is LDO, The value is around 5.4v (MAX8724 is an example).</p>
+                        <p>If it is VREF, the value is 3.3v (BQ24745 is an example).</p>
+                        <p>The exact voltage is always stated in the particular charging IC datasheet.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='no-19v-at-clr.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage3 invisible">
+                    <h3>Adapter voltage absent at charging IC DCIN pin</h3>
+                    <p>Back-trace the DCIN line and correct it.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage5 btn option" name="button" type="button">Adapter voltage now
+                            present</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>There use to be resistor or diode before the voltage is feeded to the pin, most cases the
+                            resistor or diode will be faulty.</p>
+                        <p>What if I can't trace it out? You can bypass it by fulfilling it requirement as stated in the
+                            IC datasheet.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=BrEsZEI0Dug">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=0713AIibkvs">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=s_MjV2R4lQs">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=DL5nt6AigKg">Laptex</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='no-19v-at-clr.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage4 invisible">
+                    <h3>LDO voltage present</h3>
+                    <p>This step is optional depending on the LDO name.</p>
+                    <p>If it is named VDD or VDDP, check voltage on VDDP too. VDDP is directly feeded from VDD</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage6 btn option" name="button" type="button">VDDP voltage
+                            present</button>
+                        <button class="btn-clr-voltage7 btn option" name="button" type="button">VDDP voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Skip this step if your charging IC don't use the VDD or VDDP.</p>
+                        <p>Charging IC LDO can be named REGN, LDO, VDD or VDDA.</p>
+                        <p>You can have better knowledge of charging IC LDO by checking datasheeet of the IC.</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage5 invisible">
+                    <h3>VDDP voltage present</h3>
+                    <p>Check voltage ACDETECT pin of charging IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage8 btn option" name="button" type="button">ACDETECT voltage
+                            present</button>
+                        <button class="btn-clr-voltage9 btn option" name="button" type="button">ACDETECT voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the exact voltage of ACDETECT? It actually varies between the range of 2.4 - 3.1. Do
+                            the calculation with the given voltage divider to get the exact value. The actual voltage
+                            will be stated in the charging IC datasheet.</p>
+                        <p>What are the other names for ACDETECT? ACIN, ACDET, ACSET and more. By the connection you can
+                            determinine it. It will be connected through a voltage divider, using adapter voltage as
+                            voltage divider input</p>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage6 invisible">
+                    <h3>VDDP voltage absent</h3>
+                    <p>Back-trace the VDDP line and correct it. Without fulfilling this part you can't continue.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage10 btn option" name="button" type="button">VDDP voltage now
+                            present</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage7 invisible">
+                    <h3>LDO voltage absent</h3>
+                    <p>Replace the charging IC with good one and retest.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage11 btn option" name="button" type="button">LDO voltage now
+                            present</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage8 invisible">
+                    <h3>ACDETECT voltage present</h3>
+                    <p>Check ACOK voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage12 btn option" type="button" name="button">ACOK voltage
+                            present</button>
+                        <button class="btn-clr-voltage13 btn option" type="button" name="button">ACOK voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the voltage value of ACOK? It actually depends on the motherboard architecture, best
+                            way to be sure is to check the datasheet of the particular IC. Another option is by the
+                            naming convention.</p>
+                        <ul>
+                            <li>ACOK means it will be high with adapter and low with battery (active high).</li>
+                            <li>ACOK# means it will be low with adapter and high with battery (active low).</li>
+                            <li>ACOK with bar on top, means it will be low with adapter and high with battery (active
+                                low).</li>
+                            <li>ACPRESS means it will be high with adapter and low with battery (active high).</li>
+                        </ul>
+                        <p>Where do I check ACOK voltage? Charging IC.</p>
+                        <p>What is the voltage value for active High? 3V</p>
+                        <p>What are the other names for ACOK? ACIN, ACPRESS and more.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ssb0Ji4hoYE">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=AlEJknY1918">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage9 invisible">
+                    <h3>ACDETECT voltage absent</h3>
+                    <p>Back-trace the ACDETECT pin voltage and correct it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Carefully check it's voltage divider circiut</p>
+                        <P>Remove the two resistors on motherboard and test there value.</P>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage10 invisible">
+                    <h3>ACOK voltage present</h3>
+                    <p>Check ACDRIVE voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage14 btn option" type="button" name="button">ACDRIVE voltage
+                            present</button>
+                        <button class="btn-clr-voltage15 btn option" type="button" name="button">ACDRIVE voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>ACDRIVE is the voltage used to drive the switching MOSFET gate.</p>
+                        <p>For N-channel MOSFET switching, the ACDRIVE will be around 24V.</p>
+                        <p>For P-channel MOSFET switching, the ACDRIVE will be around 8V. In a case where P-channel
+                            MOSFET is used as VIN switching MOSFET, in most cases the gate voltage will be controlled by
+                            a voltage divider circuit. This ACIN/PACIN will be indirectly controlling gate voltage of
+                            switching MOSFET.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=FaUlCiCFw58">AFS SOLUTION</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4OfAp1JSNG4">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=CsYQzNbv6_Y">Laptex</a>
+
+                        <p>Where can I check it? It actually depends on the circiut. The ultimate destination is
+                            switching MOSFET gate. Most N-channel switching MOSFET gate will be directly connected to
+                            charging IC. conclusively check at switching MOSFET gate.</p>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage11 invisible">
+                    <h3>ACOK voltage absent</h3>
+                    <p>Check ACOK impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage16 btn option" type="button" name="button">ACOK impedance is
+                            fine</button>
+                        <button class="btn-clr-voltage17 btn option" type="button" name="button">ACOK impedance is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check out practical example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=AlEJknY1918">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EIFxhGs-KMI">Aditya11ttt</a>
+                    </details>
+
+                    <br>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage12 invisible">
+                    <h3>ACDRIVE voltage present</h3>
+                    <p>Check the track between charging IC ACOK pin to ACFET gate pin(switching MOSFET), if track is
+                        fine, replace ACFET(switching MOSFET)</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Most of the time, there will be resistor inbetween the ACDRIVE line(ACFET gate & charging IC)
+                        </p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>This is the charging IC location for the below motherboards.</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>It's a direct connection between ACDRV (Pin of PU5) to gate of switching
+                                    MOSFET(PQ10). </p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PR46</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PR227</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>ACDRIVE concept is not used here. Instead, ACOK(ACIN) is indirectly used to trigger
+                                    switching MOSFET gate.</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>ACDRIVE concept is not used here. Instead, ACOK(ACPRN#) is indirectly used to trigger
+                                    switching MOSFET gate.</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>This motherboard automatically switch voltage through the connected voltage
+                                    divider (PR213 & PR217).</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>PR325 & PR308</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage13 invisible">
+                    <h3>ACDRIVE voltage absent</h3>
+                    <p>Replace charging IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">Problem solved after IC replacement</button>
+                        <button class="btn-clr-voltage18 btn option" type="button" name="button">Problem still remain
+                            the same</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Beware, when switching MOSFET gate is short to drain or source, this will cause the gate
+                            voltage to be wrong (the same value with MOSFET input) and it will cause the motherboard to
+                            behave abnormally.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=uIfBMkFB10E"></a>
+                        <p>Another senerio can be cause as a result of absent ACOK logic.</p>
+                        <p>Check out practical example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Q_1_wIoUVjc">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=AlEJknY1918">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=BrEsZEI0Dug">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EIFxhGs-KMI">Aditya11ttt</a>
+                        <p>There can be very uncommon senerio where standby section is always first activated before
+                            charging ic. This is peculiar to hp probook series the uses SMSC super SIO.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=yPw3NZ3cRb4">
+                            Platinum phones & computers</a>
+
+                    </details>
+
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage14 invisible">
+                    <h3>ACOK impedance is fine</h3>
+                    <p>Replace charging IC.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage15 invisible">
+                    <h3>ACOK impedance is bad</h3>
+                    <p>Inject voltage not exceeding 3V on ACOK line.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clr-voltage19 btn option" type="button" name="button">Found a heating
+                            component</button>
+                        <button class="btn-clr-voltage20 btn option" type="button" name="button">ACOK impedance is now
+                            fine</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage16 invisible">
+                    <h3>Problem still remain the same</h3>
+                    <p>Replace ACFET(switching MOSFET).</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <a href="ACFET issue"></a>
+                    <br>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-clr-voltage17 invisible">
+                    <h3>Found a heating component</h3>
+                    <p>Replace the haeting component and proceed.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+    <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

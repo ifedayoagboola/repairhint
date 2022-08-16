@@ -1,0 +1,121 @@
+<%- include('partials/header') %>
+
+  <body id="home">
+
+    <%- include('partials/home-navbar') %>
+
+      <div class="header-div">
+        <div class="header-text">
+          <h1 class="header">Welcome to Repairhint.com</h1>
+          <h2>Learn by fixing and earning...</h2>
+
+          <% if (check===1){ %>
+
+            <button class="btn register" type="button" name="button">Register</button>>
+            <br>
+            <button class="btn login" type="button" name="button">Login</button>
+
+            <% } else { %>
+              <button class="btn" onclick="location.href='/logout'" type="button" name="button">Logout</button>
+              <% } %>
+
+
+        </div>
+      </div>
+      </section>
+      <section id="register-form" class="invisible form-space">
+        <div class="form-center">
+        <div class="container mt-5">
+          <h1>Register</h1>
+          <div class="row">
+              <div class="card">
+                <div class="card-body">
+
+                  <!-- Makes POST request to /register route -->
+                  <form action="/" method="POST">
+                    <div class="form-group">
+                      <label for="text">First Name</label>
+                      <input type="text" class="form-control" name="first" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="text">Last Name</label>
+                      <input type="text" class="form-control" name="last" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" name="membername" placeholder="Use unique username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" name="username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" onChange="onChange()" name="password" minlength="5"
+                        required>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirm">Confirm password</label>
+                      <input type="password" class="form-control" onChange="onChange()" name="confirm" required>
+                    </div>
+                    <!-- used to get current url and pass to server -->
+                    <input class="refer invisible" name="url" type="text">
+                    <button type="submit" class="btn btn-dark">Register</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="login-form" class="invisible form-space">
+        <div class="form-center">
+        <div class="container mt-5">
+          <h1>Login</h1>
+          <div class="row">
+            <div class="card">
+              <div class="card-body">
+
+                <!-- Makes POST request to /login route -->
+                <form action="/login" method="POST">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="username" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" required>
+                  </div>
+                  <button type="submit" class="btn btn-dark">Login</button>
+                  <a style="float: right; padding-top: 25px; padding-right: 10px;" href="/static/reset-password/forgot-password">Forgot your password?</a>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="search-bar">
+    <div class="container-fluid">
+      <h4>Dowoload schematic, tested working bios, Motherboard HD image, boardview and repair softwares</h4>
+      <form class="search-engine" action="submit" method="post">
+        <input class="download" type="search" name="" value=""><br>
+        <button for="seach">search</button>
+      </form>
+    </div>
+  </section>   -->
+      <!-- <p class="refer"></p> -->
+
+      <!-- Footer using ejs template-->
+      <%- include('partials/footer') %>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="<%= script %>" charset="utf-8"></script>
+  </body>
+
+  </html>

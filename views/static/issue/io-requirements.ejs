@@ -1,0 +1,982 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="io-requirements" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-io-req1">
+                    <h3>Super I/O troubleshooting</h3>
+                    <p>First basic step while troubleshooting super I/O is to carefully check each pins against physical
+                        damages
+                        such as rust, dust, corrosion, bent pin, crack e.t.c.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req1 btn option" type="button" name="button">Clear from physical
+                            damages</button>
+                        <button class="btn-io-req2 btn option" type="button" name="button">Not clear from physical
+                            damages</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does super I/O looks like?</p>
+                        <img class="hint-img1" src="../../images/nav/sio.jpg" alt="SIO">
+                        <img class="hint-img1" src="../../images/nav/sio2.jpg" alt="SIO">
+                    </details>
+                </div>
+                <div class="d-io-req2 invisible">
+                    <h3>Clear from physical damages</h3>
+                    <p>Check voltage on VCC pins supply pin.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req3 btn option" type="button" name="button">VCC voltage present</button>
+                        <button class="btn-io-req4 btn option" type="button" name="button">VCC voltage absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check VCC (VCC, AVCC and VSTBY) voltage? Super SIO VCC pin.</p>
+                        <P>What is the expected voltage for VCC? 3.3v (95% difference is acceptable).</P>
+                        <P>It is an input to the super SIO and output from the standby section through the LDO3 pin.</P>
+                    </details>
+                    <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-io-req3 invisible">
+                    <h3>Not clear from physical damages</h3>
+                    <p>Do the needful to take care of the damages.</p>
+                    <p>If the super I/O is cracked or any sign of burnt, replace it.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req5 btn option" type="button" name="button">Super I/O now clear from
+                            physical damages</button>
+                    </div>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How to detect cracked IO: Sometimes when I/O has cracked, you don't see it easily even if you
+                            take closer look, one of the best ways to check is by apply litle isopropyl aclcohol or
+                            petrol on the chip and press it with a tweezer a bit. If I/O has cracked, I/O will absorb
+                            the isopropyl aclcohol through the cracked part. Check out practical example: </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Wy7BG6yTXzA">Electronics repair
+                            school</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=i2qFpTdCMt8">Tech Shop</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqmjB0dxnM">Laptex</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-io-req4 invisible">
+                    <h3>VCC voltage present</h3>
+                    <p>Check EC_RST voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req6 btn option" type="button" name="button">EC_RST voltage
+                            present</button>
+                        <button class="btn-io-req7 btn option" type="button" name="button">EC_RST voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>EC_RST is feeded to the SIO through a resistor.</p>
+                        <P>What is the expected voltage for VCC? 3.3v (95% difference is acceptable).</P>
+                        <p>EC_RST has other names in schematic such EC_WRST, WRST or VCC_POR.</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req5 invisible">
+                    <h3>VCC voltage absent</h3>
+                    <p>Back-trace the VCC voltage to it's missing part/source.</p>
+                    <p>After getting it rectified, retest the motherboard and if there is still issue continue by
+                        proceeding to the next step.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Since LDO3 is present, check the components connected inbetween the LDO3 and VCC pin of the
+                            I/O. It is mostly inductor.</p>
+                        <p>It use to be an inductor or resistor, they might be faulty.</p>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req6 invisible">
+                    <h3>EC_RST voltage present</h3>
+                    <p>Check clock signal 32.768KHz frequency on crystal.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req8 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            present</button>
+                        <button class="btn-io-req9 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>What tool can I use to test the frequency? Frequency counter or Oscilloscope.</P>
+                        <p>You can alse confirm the frequency at I/O pin as well, to be double sure the connnection is
+                            perfect.</p>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req7 invisible">
+                    <h3>EC_RST voltage absent</h3>
+                    <P>Back-trace the EC_RST pin</P>
+
+                    <div class="arrow">
+                        <button class="btn-io-req10 btn option" type="button" name="button">EC_RST voltage now
+                            present</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>EC_RST is feeded to the SIO through a resistor.</p>
+                        <P>What is the expected voltage for EC_RST? 3.3V (95% difference is acceptable).</P>
+                        <p>EC_RST other names in schematic include EC_WRST, WRST or VCC_POR.</p>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req8 invisible">
+                    <h3>Clock 32.768KHz frequency present</h3>
+                    <p>Check 32.768KHz sign wave.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req11 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            present</button>
+                        <button class="btn-io-req12 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>What tool can I use to test the frequency? Oscilloscope.</P>
+                        <p>You can alse confirm the frequency at I/O pin as well, to be double sure the connnection is
+                            perfect</p>
+                        <p>How does the sign wave looks like?</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req9 invisible">
+                    <h3>Clock 32.768KHz frequency absent</h3>
+                    <p>Check the value of the 32.768KHz crystal resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req13 btn option" type="button" name="button">Resistor value is
+                            good</button>
+                        <button class="btn-io-req14 btn option" type="button" name="button">Resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Best way to be sure of resistor value is to take it out of the motherboard and test</p>
+                        <p>How do I identify the resistor? It is the resistor connecting both input and output (X1 & X2)
+                            of the crystal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>R1285</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>R568</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>R564</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>RH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>R994</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>RH70</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>RH70</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req10 invisible">
+                    <h3>Clock 32.768KHz sign wave present</h3>
+                    <p>Check S5_ON voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req57 btn option" type="button" name="button">S5_ON is present</button>
+                        <button class="btn-io-req58 btn option" type="button" name="button">S5_ON is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You are to check this at super SIO point or destination.</p>
+                        <p>S5_ON is always issued by the I/O to the standby section used ultimately to activate the the
+                            standby IC. </p>
+                        <p>In some motherboard architecture S5_ON is generated after power. Therefore such architecture
+                            standby coil voltage will be generated after power, only if the standby is activated by it's
+                            self or another section,
+                            architecture where S5_ON is not used, you can assume the voltage to be good and proceed to
+                            the next.</p>
+                        <P>What is the expected voltage for S5_ON? 3.3v (95% difference is acceptable).</P>
+                        <p>What is the function of the S5_ON? Basically to activate S5 state of the motherboard.</p>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req11 invisible">
+                    <h3>Clock 32.768KHz sign wave absent</h3>
+                    <p>Check the value of the 32.768KHz crystal resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req15 btn option" type="button" name="button">Resistor value is
+                            good</button>
+                        <button class="btn-io-req16 btn option" type="button" name="button">Resistor value is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Which resistor it the 32.768KHz resistor? The resistor connecting both input(RTCX1) and
+                            output(RTCX2) of the 32.768KHz crystal.</p>
+                        <p>It is always connected to both input pin(RTCX1) and output pin(RTCX2) of the crytal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>R1285</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>R568</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>R564</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>RH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>R994</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>RH70</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>RH70</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <br>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req12 invisible">
+                    <h3>Resistor value is good</h3>
+                    <p>Check the impedance of the two crystal capacitors.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req17 btn option" type="button" name="button">Crystal capacitor impedance
+                            is fine</button>
+                        <button class="btn-io-req18 btn option" type="button" name="button">Crystal capacitor impedance
+                            is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Best way to be sure of resistor value is to take it out of the motherboard and test.</p>
+                        <p>How do I identify the resistor? It is the resistor connecting both input and output (X1 & X2)
+                            of the crystal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>C1574 & C1575</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>C682 & C686</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>C808 & C803</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>CH4 & CH3</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>C1009 & C1010</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req13 invisible">
+                    <h3>Resistor value is bad</h3>
+                    <p>Replace the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req14 invisible">
+                    <h3>S5_ON is present</h3>
+                    <p>Check ACIN voltage.</p>
+                    <p><em>There use to be AD_AIR before ACIN is some motherboard. check <strong>hint</strong> for
+                            clue</em></p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req19 btn option" type="button" name="button">ACIN present</button>
+                        <button class="btn-io-req20 btn option" type="button" name="button">ACIN absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>What is the expected voltage for ACIN? 3.3v (90% difference is acceptable).</P>
+                        <p>What is the function of the ACIN? It is used to confirm the presence of adapter to the I/O
+                            and I/O respond by releasing AC_PRESENT to ICH/PCH.</p>
+                        <P>Where is the voltage coming from? It is coming from the charging section ACOK.</P>
+                        <p>The name can be different in different motherboards.</p>
+                        <p>As much as AD_AIR is important, it is not used in all motherboards, infact it is mostly used
+                            in HP motherboards (if not HP alone).
+                        <p>Without it's proper voltage, it will cause your laptop not to power.</p>
+                        <p>What is the expected voltage? It actually depends on the voltage divider circuit outputing
+                            the voltage </p>
+                        <p>Ckeckout practical example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=cDCDJWQHiwQ">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req15 invisible">
+                    <h3>S5_ON is absent</h3>
+                    <p>Availability of S5_ON actually depends on the architecture of the motherboard.</p>
+                    <p>In some architectures it comes after power, while in other architectures it comes before.</p>
+                    <p>If it comes before power in your architecture, flash BIOS.</p>
+                    <p>If it comes after power in your architecture, continue troubleshooting.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req21 btn option" type="button" name="button">Assume S5_ON is present
+                            because it comes after power</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>S5_ON is always issued by the I/O to the standby section used ultimately to activate the the
+                            standby IC.</p>
+                        <p>In some motherboard architecture S5_ON is generated after power. Therefore such architecture
+                            standby coil voltage will be generated after power, only if the standby is activated by it's
+                            self or another section, then standby voltage can be generated before power.</p>
+                        <p>In architecture where S5_ON is not used, you can assume the voltage to be good and proceed to
+                            the next step.</p>
+                        <P>What is the expected voltage for S5_ON? 3.3v (95% difference is acceptable).</P>
+                        <p>What is the function of the S5_ON? Basically to activate S5 state of the motherboard.</p>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req16 invisible">
+                    <h3>ACIN present</h3>
+                    <p>Check LIDSW# voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req22 btn option" type="button" name="button">LIDSW# voltage
+                            present</button>
+                        <button class="btn-io-req23 btn option" type="button" name="button">LIDSW# voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the function of the LIDSW#? It is used to activate laptop sleep mode.</p>
+                        <P>What is the expected voltage for ACIN? 3.3v (95% difference is acceptable)</P>
+                        <p>If the voltage is lesser than expectation, it will cause the motherboard not to turn up
+                            because the motherboard will maintain sleep mode.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=VyrG-amUajw">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=lWUbN2rC2-k">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=FpB-AJ1bvDY">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req17 invisible">
+                    <h3>ACIN absent</h3>
+                    <p>Back-trace the ACIN pin voltage.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Where is the voltage coming from? It is coming from the charging section.</P>
+                        <P>What is the expected voltage for ACIN? 3.3v (90% difference is acceptable).</P>
+                        <p>What is the function of the ACIN? It is used to confirm the present of adapter to the I/O and
+                            I/O respond by releasing AC_PRESENT to ICH/PCH.</p>
+                        <P>ACIN is sometimes used to confirm the presence of adapter directly to the ICH/PCH.</P>
+                    </details>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req18 invisible">
+                    <h3>Crystal capacitor impedance is fine</h3>
+                    <p>Replace clock 32.768KHz crystal.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous15" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req19 invisible">
+                    <h3>Crystal capacitor impedance is bad</h3>
+                    <p>Replace faulty capacitor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req20 invisible">
+                    <h3>LIDSW# voltage present</h3>
+                    <p>Check AC_PRESENT voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req24 btn option" type="button" name="button">AC_PRESENT voltage is
+                            present</button>
+                        <button class="btn-io-req25 btn option" type="button" name="button">AC_PRESENT voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Where is the AC_PRESENT coming from? It is coming from the I/O or charging section </P>
+                        <p>What is the function of the AC_PRESENT? It is used to confinm the present of adapter to the
+                            ICH/PCH </p>
+                        <P>What is the expected voltage for AC_PRESENT? 3.3v (90% difference is acceptable).</P>
+                        <p>What is the function of the AC_PRESENT? It is used to confirm the present of adapter to
+                            ICH/PCH.</p>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req21 invisible">
+                    <h3>LIDSW# voltage absent</h3>
+                    <P>Check LIDSW# pin impedance</P>
+
+                    <div class="arrow">
+                        <button class="btn-io-req26 btn option" type="button" name="button">LIDSW# impedance is
+                            fine</button>
+                        <button class="btn-io-req27 btn option" type="button" name="button">LIDSW# impedance is
+                            bad</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req22 invisible">
+                    <h3>AC_PRESENT voltage is present</h3>
+                    <p>Check thermal control pin voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req28 btn option" type="button" name="button">Thermal pin voltage is
+                            present</button>
+                        <button class="btn-io-req29 btn option" type="button" name="button">Thermal pin voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The thermal can be directly connected to the I/O.</p>
+                        <p>The thermal can be small protection circiut that controls important pin.</p>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req23 invisible">
+                    <h3>AC_PRESENT voltage is absent</h3>
+                    <p>Back-trace the voltage on ACPRESENT pin.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Where is the AC_PRESENT? It is at the IO pin, it will be present when ACIN is good </P>
+                        <p>What is the function of the AC_PRESENT? It is used to confinm the present of adapter to the
+                            ICH/PCH </p>
+                        <P>What is the expected voltage for AC_PRESENT? 3.3v (90% difference is acceptable).</P>
+                        <p>What is the function of the AC_PRESENT? It is used to confirm the present of adapter to
+                            ICH/PCH.</p>
+                    </details>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req24 invisible">
+                    <h3>LIDSW# impedance is fine</h3>
+                    <p>Locate LID_SW# pull up resistor and check voltage at the input of the resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req30 btn option" type="button" name="button">Voltage present at the input
+                            of resistor</button>
+                        <button class="btn-io-req31 btn option" type="button" name="button">Voltage absent at the input
+                            of resistor</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected LIDSW# pull up voltage? pull up voltgae is always 3.3V</p>
+                    </details>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req25 invisible">
+                    <h3>LIDSW# impedance is bad</h3>
+                    <p>If power switch is detachable, revome power switch and check impedance of LIDSW# line again.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req32 btn option" type="button" name="button">Impedence is good after
+                            removing power switch</button>
+                        <button class="btn-io-req33 btn option" type="button" name="button">Impedence is still bad after
+                            removing power switch</button>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=VyrG-amUajw">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=lWUbN2rC2-k">AFS SOLUTIONS</a>
+                    </div>
+                    <br>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req26 invisible">
+                    <h3>Thermal pin voltage is present</h3>
+                    <p>Check BIOS communication between EC_BIOS and Super I/O.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req34 btn option" type="button" name="button">EC BIOs communication
+                            present</button>
+                        <button class="btn-io-req35 btn option" type="button" name="button">EC BIOs communication
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Where can I confirm EC_BIOS and Super I/O communication? You can confirm at bios pin 1 by
+                            using oscilloscope to check the data communication.</P>
+                        <p>It is always a good habit to check voltage on bios pin 8 too and flash EC BIOS if you have
+                            properly confirm all of the previous steps.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=cVAEJVAQNyk&t=1984s">AFS SOLUTIONS</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Un9CgLPQmX0">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req27 invisible">
+                    <h3>Thermal pin voltage is absent</h3>
+                    <p>Back-trace the pin supply.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It's mostly connected to a simple protection circuit.</p>
+                    </details>
+                    <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req28 invisible">
+                    <h3>Voltage present at the input of resistor</h3>
+                    <p>Check resistance value of the LID_SW# pullup resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req36 btn option" type="button" name="button">Resistance of LIDSW#
+                            resistor is fine</button>
+                        <button class="btn-io-req37 btn option" type="button" name="button">Resistance of LIDSW#
+                            resistor is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If the resistor pullup voltage is present, the suspect goes to the resistor it self. Most
+                            likely the resistor is bad.</p>
+                        <P>If the resistor pullup voltage is present and the resistor value is good and yet there is no
+                            voltage at LIDSW# line, inject voltage not exceeding 3V on the line of LIDSW# and watch out
+                            for heating component.</P>
+                    </details>
+                    <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req29 invisible">
+                    <h3>Voltage absent at the input of resistor</h3>
+                    <p>Check continuity between the pullup resistor input pin and source of the expected voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req38 btn option" type="button" name="button">No continuity between
+                            them</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req30 invisible">
+                    <h3>Impedence is good after removing power switch</h3>
+                    <p>Replace power switch or repair it if you can.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>On the power switch, look for any shorting componet.</p>
+                        <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+                            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+                            direct contact between supply (positive) and ground (GND or negative).</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+                        <p>This is mostly caused by the magnetic transistor on the switch.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=VyrG-amUajw">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous27 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req31 invisible">
+                    <h3>Impedance is still bad after removing power switch</h3>
+                    <p>Lift up the LID_SW# pin of the I/O and check impedance of the track on motherboard.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req39 btn option" type="button" name="button">Track line impedance on the
+                            motherboard is fine</button>
+                        <button class="btn-io-req40 btn option" type="button" name="button">Track line impedance on the
+                            motherboard is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why should I lift the LIDSW# pin of the IO? It is basically to separate the I/O from the
+                            motherboard. By doing this, it will help you to understand what is actually the fault.</p>
+                    </details>
+                    <button class="btn-previous28 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req32 invisible">
+                    <h3>EC BIOs communication present</h3>
+                    <p>Check RSMRST# voltage</p>
+                    <p>RSMRST# availability varies depending on architecture of the motherboard.</p>
+                    <p>In some architectures it comes after power, while in other architectures it comes before.</p>
+                    <p>If RSMRST# is confirmed faulty, Flash EC_BIOS and if flashing does not work, replace super I/O.
+                    </p>
+                    <p>Confirm this part and proceed.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req41 btn option" type="button" name="button">Continue assuming RSMRST# is
+                            fine</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always advisable to flash EC_BIO even when the EC_BIO and I/O communication is
+                            present, so far all other important voltages too are present.</p>
+                    </details>
+                    <button class="btn-previous29 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req33 invisible">
+                    <h3>EC BIOs communication absent</h3>
+                    <p>Flash EC_BIOS.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Note</summary>
+                        <p>Try to check other requirments before flashing BIOS at this stage.</p>
+                    </details>
+                    <button class="btn-previous30 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req34 invisible">
+                    <h3>Resistance of LIDSW# resistor is fine</h3>
+                    <p>Resolder the resistor</p>
+                    <p>Also, check and make sure there is continuity between super I/O LIDSW# pin and LIDSW# pullup
+                        output </p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous31 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req35 invisible">
+                    <h3>Resistance of LIDSW# resistor is bad</h3>
+                    <p>Replace resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous32 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req36 invisible">
+                    <h3>No continuity between them</h3>
+                    <p>Jump the voltage from the source or any one of it exact voltage(example: 3ALWY for 3ALWY or 3VPCU
+                        for 3VPCU).</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous33 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req37 invisible">
+                    <h3>Track line impedance on the motherboard is fine</h3>
+                    <p>Replace Super I/O.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check out practical example: </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Wy7BG6yTXzA">Electronics repair
+                            school</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=i2qFpTdCMt8">Tech Shop</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqmjB0dxnM">Laptex</a>
+                    </details>
+                    <button class="btn-previous34 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req38 invisible">
+                    <h3>Track line impedance on the motherboard is bad</h3>
+                    <p>Clear the short by injecting 3v on the line and find out which component is heating.</p>
+                    <p>Replace the heating component.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous35 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req39 invisible">
+                    <h3>RSMRST# is fine</h3>
+                    <p>Check LID_OUT# voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req42 btn option" type="button" name="button">LID_OUT# is present</button>
+                        <button class="btn-io-req43 btn option" type="button" name="button">LID_OUT# is absent</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous36 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req40 invisible">
+                    <h3>LID_OUT# is present</h3>
+                    <p>Check NBSWON#.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req44 btn option" type="button" name="button">NBSWON# 3v_0v_3v logic is
+                            perfect</button>
+                        <button class="btn-io-req45 btn option" type="button" name="button">NBSWON# 3v_0v_3v logic not
+                            good</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does the 3-0-3 logic work? The NBS_ON# voltage is 3.3v, it goes to 0v when power button
+                            is preesed and when the power button is released, it goes back to 3.3V</p>
+                        <P>What is the implication when NBS_ON# pin remain 0v? The motherboard will not turn on.</P>
+                        <p>What is the minimum voltage? 2.7v</p>
+                        <p>What is the maximum voltage? It use to be 3.3v maximum</p>
+                        <P>What are the other names for NBS_ON#? On/Off, PWR_BTN.</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=XMmDHyq_UEk">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous37 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req41 invisible">
+                    <h3>LID_OUT# is absent</h3>
+                    <p>Check impedance of LID_OUT#.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req46 btn option" type="button" name="button">LID_OUT# impedance is
+                            fine</button>
+                        <button class="btn-io-req47 btn option" type="button" name="button">LID_OUT# impedance is
+                            bad</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous38 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req42 invisible">
+                    <h3>NBSWON# 3v_0v_3v logic is perfect.</h3>
+                    <p>Check RTC section</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='RTC-section.ejs'" type="button"
+                            name="button">Let check RTC section</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why do I need to check RTC section? Because the ICH/PCH is suppose to respond to the NBSWON#
+                            by releasing some voltages. Therefore, if ICH/PCH is not responding, maybe the ICH/PCH is
+                            not getting power from RTCVCC. RTCVCC voltage is used to partially power the ICH/PCH.</p>
+                    </details>
+                    <button class="btn-previous39 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req43 invisible">
+                    <h3>NBSWON# 3v_0v_3v logic not good</h3>
+                    <p>Which of the options is the fault.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req48 btn option" type="button" name="button">3.3V is present on the
+                            NBSWON# pin but not responding
+                            to trigger</button>
+                        <button class="btn-io-req49 btn option" type="button" name="button">3.3V is absent on the
+                            NBSWON# pin</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous40 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req44 invisible">
+                    <h3>LID_OUT# impedance is fine</h3>
+                    <p>Follow the below guides to rectify what ever challenges you might be having on this line.</p>
+                    <ol>
+                        <li>Check and make sure the LID_OUT# pullup resistor has expected voltage on it's input.</li>
+                        <li>Check and make sure pullup resistor value is as expected.</li>
+                        <li>Check and make sure there is perfect contunuity between the super LID_OUT# pin and it's
+                            pullup resistor output.</li>
+                    </ol>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous41 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req45 invisible">
+                    <h3>LID_OUT# impedance is bad</h3>
+                    <p>Inject 3v on LID_OUT# line. Find and replace what is heating on the motherboard</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the maximum voltage to be injected? 3.3V</p>
+                    </details>
+                    <button class="btn-previous42 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req46 invisible">
+                    <h3>3.3V is present on the NBSWON# pin but not responding to trigger.</h3>
+                    <p>If this occur, check continuity between the trigger pin, pull up resistpr and super I/O NBSWON#
+                        pin.</p>
+                    <p>If this is corrected, your motherboard should be fine.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <button class="btn-previous43 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req47 invisible">
+                    <h3>3.3V is absent on the NBSWON# pin</h3>
+                    <p>Check impedance of super I/O NBSWON# pin.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req50 btn option" type="button" name="button">NBSWON# impedance is
+                            fine</button>
+                        <button class="btn-io-req51 btn option" type="button" name="button">NBSWON# impedeace is
+                            bad</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous44 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req48 invisible">
+                    <h3>NBSWON# impedance is fine</h3>
+                    <p>Check continuity between the trigger pin, pull up resistor and super I/O NBSWON# pin.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req52 btn option" type="button" name="button">Continuity is
+                            perfect</button>
+                        <button class="btn-io-req53 btn option" type="button" name="button">No perfect
+                            continuity</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous45 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req49 invisible">
+                    <h3>NBSWON# impedance is bad</h3>
+                    <p>Inject 3V on NBS_ON# line. Find and replace what is heating on the motherboard.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the maximum voltage to be injected? 3.3V</p>
+                    </details>
+                    <button class="btn-previous46 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req50 invisible">
+                    <h3>Continuity is perfect</h3>
+                    <p>Check pull up resistor output voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req54 btn option" type="button" name="button">NBSWON# pull up resistor
+                            output voltage is absent</button>
+                        <p>In as must as the continuity between the trigger pin, pull up resistor and super I/O NBSWON#
+                            pin is fine, that is the only mostlikely fault</p>
+                    </div>
+
+                    <button class="btn-previous47 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req51 invisible">
+                    <h3>No perfect continuity</h3>
+                    <p>Correct the missing expected continuity by jumping the voltage</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <button class="btn-previous48 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req52 invisible">
+                    <h3>NBSWON# pull up resistor output voltage is absent</h3>
+
+                    <p>Check NBSWON# pull up resistor input voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-io-req55 btn option" type="button" name="button">NBSWON# pull up resistor
+                            input voltage is present</button>
+                        <button class="btn-io-req56 btn option" type="button" name="button">NBSWON# pull up resistor
+                            input voltage is absent</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous49 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req53 invisible">
+                    <h3>NBSWON# pull up resistor input voltage is present.</h3>
+                    <p>Resolder the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous50 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-io-req54 invisible">
+                    <h3>NBSWON# pull up resistor input voltage is absent</h3>
+                    <p>Jump the voltage from the source or any one of it exact voltage(example: 3ALWY for 3ALWY or 3VPCU
+                        for 3VPCU).</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <button class="btn-previous51 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

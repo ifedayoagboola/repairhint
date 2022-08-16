@@ -1,0 +1,48 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="flick-with-batt" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <div class="d-flick-with-batt1">
+                    <h3>Laptop display with adapter but flickering with battery</h3>
+                    <p>This type of issues usually occur as a result of one particular voltage dropping or missing in
+                        battery
+                        mode. Therefore, insert battery and check lvds section first.</p>
+
+                    <div class="arrow">
+                        <button class="btn-flick-with-batt1 btn option" type="button" name="button"> LVDS section is
+                            working
+                            fine</button>
+                        <button class="btn option" type="button" onclick="location.href='lvds.ejs'" name="button">Let
+                            check LVDS section</button>
+                    </div>
+                </div>
+                <div class="d-flick-with-batt2 invisible">
+                    <h3>LVDS section is working fine</h3>
+                    <p>If you are sure the whole of LVDS requirements are available as expected, then let check all the
+                        neccessery voltages using battery and not adapter or DC supply.</p>
+                    <div class="arrow">
+                        <button class="btn option" type="button" onclick="location.href='no-display.ejs'"
+                            name="button">Let check LVDS section</button>
+                    </div>
+                    <br>
+                    <button class="btn option" type="button" onclick="location.href='flickering-with-battery.ejs'"
+                        name="button">Previous</button>
+
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

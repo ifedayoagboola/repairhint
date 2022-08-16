@@ -1,0 +1,40 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="no-lvds-with-battery" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+
+        <h3>Motherboard works fine with adapter but no backlight when on battery</h3>
+        <p>For issues like this, carefully check your LVDS section using battery alone. Beware, the main supply voltage
+          that is suppose to be adapter voltage will now be battery voltage because you are troubleshooting with
+          battery.
+        </p>
+        <div class="arrow">
+          <button class="btn option" onclick="location.href='lvds.ejs'" type="button" name="button">Let tackle it as no
+            backlight in motherboard</button>
+        </div>
+        <details>
+          <summary>Hint</summary>
+          <p>What is battery voltage value? It actually depends on the battery. It ranges between 7V-16V. <img src=""
+              alt=""></p>
+        </details>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+
+      <!-- footer -->
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>       
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

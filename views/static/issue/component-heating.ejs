@@ -1,0 +1,61 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="component-heating" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div>
+                    <h3>A component is heating up and no power</h3>
+                    <p>First important step is to identify the component and it's function. By doing this, it will help
+                        to understand how much the component is related to the current condition of your motherboard.
+                    </p>
+                    <p>In most cases like this, it's usually within <a href="standby-section.ejs">standby section</a>
+                    </p>
+                    <p>In few cases, it will be super SIO. If it is, first thing first replace super sio or start by
+                        checking <a href="standby-section.ejs">standby section</a> basic requirement before replacing
+                        super SIO. Check out practical example:</p>
+                    <a target="_blank" href="https://www.youtube.com/watch?v=YCuDf729PZY">Laptop Repair Zone</a>
+                    <br>
+                    <br>
+
+                    <p>In very few cases, processor or chipset(PCH/ICH) will be heating up immediately you insert dc
+                        supply, this is usually caused by faulty top MOSFET of processor or chipset(PCH/ICH) PWM. If it
+                        is not the top MOSFET, then the chipset is most likely short.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+                            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+                            direct contact between supply (positive) and ground (GND or negative).</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+                        <p>Most common components that use to be victeem includes</p>
+                        <ul>
+                            <li>Standby IC (One of the sign that there is short in standby section, it is mostly VREG3
+                                line). Check out practical example:</li>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=FpCwhOb1bdQ">AFS SOLUTIONS</a>
+                            <li>Switching MOSFET (one of the sign that VIN line is short).</li>
+                            <li>CPU (Mostly caused by short in Vcore top MOSFET or CPU).</li>
+                            <li>Chipset (Mostly caused by short in PCH/ICH top MOSFET or PCH/ICH).</li>
+                            <li>Charging IC.</li>
+                        </ul>
+                    </details>
+                </div>
+                <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                    name="button">Previous</button>
+            </div>
+            <!-- Bug form using ejs template-->
+            <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+                
+                    <script src="../../js/index2" charset="utf-8"></script>
+                    <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+
+    </body>
+
+    </html>

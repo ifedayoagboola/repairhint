@@ -1,0 +1,1250 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="not-charging-19v" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-not-charging1">
+                    <h3>Since 19v switching is Perfect</h3>
+                    <p>Check battery PWM coil impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging1 btn option" type="button" name="button">Battery PWM coil
+                            impedance is good</button>
+                        <button class="btn option" onclick="location.href='short-in-pwm-coil.ejs'" type="button"
+                            name="button">Battery PWM coil impedance is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is impedance? Measure of the total opposition that a circuit or a part of a circuit
+                            presents to electric current.</p>
+                        <p>What is the expected impedance of battery PWM coil? Minimun of 0.200 in diode range of the
+                            multimeter.</p>
+                    </details>
+                </div>
+                <div class="d-not-charging2 invisible">
+                    <h3>Battery PWM coil impedance is good</h3>
+                    <p>Check impedance of both top and lower charging MOSFETs.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging2 btn option" type="button" name="button">Impedance of both
+                            MOSFETs is good</button>
+                        <button class="btn-not-charging3 btn option" type="button" name="button">Impedance of one or
+                            both MOSFETs is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How to check MOSFET? MOSFET can either be N-channel or P-channel.</p>
+                        <ul>
+                            <li>For testing P-channel: Place red probe at the drain, place black probe at the source,
+                                there should be at least 0.300 in diode range of the multimeter. If you reverse the
+                                probe, there should be no value. Both drain and source is not to be connected or beep
+                                with gate.</li>
+                            <li>For testing N-channel: Place black probe at the drain, place red probe at the source,
+                                there should at least 0.300 in diode range of the multimeter. If you reverse the probe,
+                                there should be no value. Both drain and source is not to be connected or beep with
+                                gate.</li>
+                        </ul>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=dbhAmSe9O0Y">Platinum phones &
+                            computers</a>
+                        <p>PWM MOSFET is always N-channel.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='not-charging-19v.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-not-charging3 invisible">
+                    <h3>Impedance of both MOSFETs is good</h3>
+                    <p>Check battery CLK voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging4 btn option" type="button" name="button">Battery CLK voltage is
+                            Good</button>
+                        <button class="btn-not-charging5 btn option" type="button" name="button">Battery CLK voltage is
+                            Bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected CLK voltage? 3.3V minimun value is 3V.</p>
+                        <p>It always best to confirm CLK at battery terminal, charging IC and super I/O.</p>
+                        <P>In some rare architectures CLK is not availabe in charging IC.</P>
+                        <P>In some architectures CLK is not available in charging IC.</P>
+                        <p>It is always best to take out this resistor and check it's value.</p>
+                        <P>Also confirm CLK voltage at its destination super SIO pin</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PbgYjmafOR8">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GdK0BJEYNhU">Laptex</a>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging4 invisible">
+                    <h3>Impedance of one or both MOSFETs is bad</h3>
+                    <p>Replace faulty MOSFET with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The value of the MOSFET is always influence by the current section.</p>
+                        <p>Lower MOSFET will have coil value if it is tested individually on motherboard.</p>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging5 invisible">
+                    <h3>Battery CLK voltage is Good</h3>
+                    <p>Check resistance value of the CLK pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging6 btn option" type="button" name="button">CLK resistor value is
+                            good</button>
+                        <button class="btn-not-charging7 btn option" type="button" name="button">CLK resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the output voltage of the pull up resistor, it is best practice to check the
+                            value of the pull up resistor as changes in the value might not affect voltage but will
+                            greatly affect communication and that will lead to not charging. </p>
+                        <p>It is always best to take out this resistor and check it's value off the motherboard.</p>
+                        <img class="hint-img1" src="../../images/nav/battery-clk-data.jpg" alt="battery">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GdK0BJEYNhU">Laptex</a>
+                        <P>Also confirm CLK voltage at its destination super SIO pin</P>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging6 invisible">
+                    <h3>Battery CLK voltage is Bad</h3>
+                    <p>The voltage is always feeded through a pull up resistor.</p>
+                    <p>Check input voltage of the pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging8 btn option" type="button" name="button">CLK Pull up resistor
+                            input voltage present</button>
+                        <button class="btn-not-charging9 btn option" type="button" name="button">CLK pull up resistor
+                            input voltage absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? 3.3V minimun of 3V.</p>
+                        <p>The voltage is always feeded from the standby section LDO3.</p>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging7 invisible">
+                    <h3>CLK resistor value is good</h3>
+                    <p>Check battery CLK communication.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging10 btn option" type="button" name="button">Battery CLK
+                            communication is present</button>
+                        <button class="btn-not-charging11 btn option" type="button" name="button">Battery CLK
+                            communication is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to test this signal with adapter and battery simultaneously.</p>
+                        <p>You can only test this signal with oscilloscope.</p>
+                        <P>In some rare architectures clock is not availabe in charging IC.</P>
+                        <P>Sometimes there use to be a JFET between this communication line. Be sure to check any
+                            component connected inbetween the line.</P>
+                        <img class="hint-img1" src="../../images/nav/battery-clk-data.jpg" alt="battery">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PbgYjmafOR8"></a>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging8 invisible">
+                    <h3>CLK resistor value is bad</h3>
+                    <p>Replace the faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging9 invisible">
+                    <h3>Battery CLK communication is present</h3>
+                    <p>Check battery DATA voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging12 btn option" type="button" name="button">Battery DATA voltage
+                            is good</button>
+                        <button class="btn-not-charging13 btn option" type="button" name="button">Battery DATA voltage
+                            is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected DATA voltage? 3.3V minimun value is 3V.</p>
+                        <p>It always best to confirm DATA at battery terminal, charging IC and super I/O.</p>
+                        <P>In some rare architectures DATA is not available in charging IC.</P>
+                        <P>In some architectures DATA is not available in charging IC.</P>
+                        <p>It is always best to take out this resistor and check it's value.</p>
+                        <P>Also confirm DATA voltage at its destination super SIO pin</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PbgYjmafOR8">Laptex</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GdK0BJEYNhU">Laptex</a>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging10 invisible">
+                    <h3>Battery CLK communication is absent</h3>
+                    <p>Flash EC_BIOS.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Confirm and make sure the voltage and signal is also present at sure SIO.</P>
+                        <p>Make sure you confirm presence of battery voltage at battery terminal and charging IC. In
+                            some rare archirctures, battery voltage will not be present if charging section is not good.
+                        </p>
+                        <p>If the problem still persist after flashing BIOS, super I/O or charging IC can be faulty
+                            because they are also in the communication line.</p>
+                        <P>In some architectures DATA is not always available in charging IC.</P>
+                        <p>If the problem still persist, be sure you are using good recommended battery.</p>
+                        <p>Sometime, there is always a transistor inbetween the communication line, check communication
+                            at the input and output of the transistor.</p>
+                    </details>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging11 invisible">
+                    <h3>CLK pull up resistor input voltage present</h3>
+                    <p>Check resistance value of CLK pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging14 btn option" type="button" name="button">CLK pull up resistor
+                            value is good</button>
+                        <button class="btn-not-charging15 btn option" type="button" name="button">CLK pull up resistor
+                            value is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to take out this resistor and check it's value.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GdK0BJEYNhU">Laptex</a>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging12 invisible">
+                    <h3>CLK pull up resistor input voltage absent</h3>
+                    <p>Most likely the track is internally damaged.</p>
+                    <p>Tap voltage to the input of the resistor from its expected source.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging13 invisible">
+                    <h3>Battery DATA voltage is good</h3>
+                    <p>Check resistance value of the DATA pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging16 btn option" type="button" name="button">DATA resistor value is
+                            good</button>
+                        <button class="btn-not-charging17 btn option" type="button" name="button">DATA resistor value is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the output voltage of the pull up resistor, it is best practice to check the
+                            value of the pull up resistor as changes in the value might not affect voltage but will
+                            greatly affect communication.</p>
+                        <img class="hint-img1" src="../../images/nav/battery-clk-data.jpg" alt="battery">
+                        <p>It is always best to take out this resistor and check it's value.</p>
+
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging14 invisible">
+                    <h3>Battery DATA voltage is bad</h3>
+                    <p>The voltage is always feeded through a pull up resistor.</p>
+                    <p>Check input voltage of the pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging18 btn option" type="button" name="button">DATA Pull up resistor
+                            input voltage present.</button>
+                        <button class="btn-not-charging19 btn option" type="button" name="button">DATA pull up resistor
+                            input voltage absent.</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? 3.3V minimun of 3V.</p>
+                        <p>The voltage is always feeded from the standby section LDO3.</p>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging15 invisible">
+                    <h3>CLK pull up resistor value is good</h3>
+                    <p>Confirm and be sure of continuity from the pull up resistor to it's destination.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>There can be internal track damage.</p>
+                        <img class="hint-img1" src="../../images/nav/battery-clk-data.jpg" alt="battery">
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging16 invisible">
+                    <h3>CLK pull up resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging17 invisible">
+                    <h3>DATA resistor value is good</h3>
+                    <p>Check battery DATA communication.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging20 btn option" type="button" name="button">Battery DATA
+                            communication is present</button>
+                        <button class="btn-not-charging21 btn option" type="button" name="button">Battery DATA
+                            communication is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to test this signal with adapter and battery simultaneously.</p>
+                        <p>You can only test this signal with oscilloscope.</p>
+                        <P>In some rare architectures clock is not availabe in charging IC.</P>
+                        <img class="hint-img1" src="../../images/nav/battery-clk-data.jpg" alt="battery">
+                        <a target="_blank" href="https://www.youtube.com/watch?v=PbgYjmafOR8"></a>
+                    </details>
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging18 invisible">
+                    <h3>DATA resistor value is bad</h3>
+                    <p>Replace the faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging19 invisible">
+                    <h3>Battery DATA communication is present</h3>
+                    <p>Check BATT_TEMP voltage both with adapter and adapter + battery mode</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging22 btn option" type="button" name="button">BATT_TEMP voltage
+                            perfect</button>
+                        <button class="btn-not-charging23 btn option" type="button" name="button">BATT_TEMP voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check BATT_TEMP? At battery terminal or super I/O</p>
+                        <p>How can I locate BATT_TEMP? It is usually next to CLK and DATA at the battery terminal.</p>
+                        <p>What is the expected voltage with battery? 0v</p>
+                        <p>What is the expected voltage without battery? Winthin 2.8v-3V</p>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging20 invisible">
+                    <h3>Battery DATA communication is absent</h3>
+                    <p>Flash EC_BIOS.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <P>Confirm and make sure the voltage and signal is also present at sure SIO.</P>
+                        <p>If the problem still persist after flashing BIOS, super I/O or charging IC can be faulty
+                            because they are also in the communication line.</p>
+                        <P>In some architectures DATA is not always available in charging IC.</P>
+                        <p>If the problem still persist, be sure you are using good recommended battery.</p>
+                        <p>Sometime, there is always a transistor inbetween the communication line, check communication
+                            at the input and output of the transistor.</p>
+                    </details>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging21 invisible">
+                    <h3>DATA Pull up resistor input voltage present</h3>
+                    <p>Check resistance value of DATA pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging24 btn option" type="button" name="button">DATA pull up resistor
+                            value is good</button>
+                        <button class="btn-not-charging25 btn option" type="button" name="button">DATA pull up resistor
+                            value is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to take out the resistor and check the value outside the motherboard.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=GdK0BJEYNhU">Laptex</a>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging22 invisible">
+                    <h3>DATA pull up resistor input voltage absent</h3>
+                    <p>Most likely the track is internally damaged.</p>
+                    <p>Tap voltage to the input of the resistor from its expected source.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging23 invisible">
+                    <h3>BATT_TEMP voltage perfect</h3>
+                    <p>Check ACIN at super I/O.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging26 btn option" type="button" name="button">ACIN present at super
+                            I/O</button>
+                        <button class="btn-not-charging27 btn option" type="button" name="button">ACIN absent at super
+                            I/O</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>It is important to also check AD_AIR at super SIO pin if it is used in your motherboard. It
+                            is mostly used in quanta and compal architectures. It's voltage depends on the voltage
+                            divider circuit connected. It always ranges between 2.6v-3v.</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=cDCDJWQHiwQ">Aditya11ttt</a>
+                        <br>
+                        <p>What is the expected voltage for ACIN? 3.3V minimun of 2.8V</p>
+                        <p>Where can I check ACIN voltage? Super I/O or charging IC. In charging IC, ACIN can be 0V
+                            depending on the archircture of the motherboard. Mostly when the name has #, it is OV e.g
+                            ACIN#</p>
+                        <p>What are the other names for ACIN at the charging IC point? ACOK, ACOK#, ADP_DET, ACPRES
+                            e.t.c. When it is getting confusing, you can check for more information in the datasheet.
+                        </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EIFxhGs-KMI">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=AlEJknY1918">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging24 invisible">
+                    <h3>BATT_TEMP voltage absent</h3>
+                    <p>This error don't usually occur, if it does replace the super I/O.</p>
+                    <p>Before super I/O replacement, be sure of it pull up voltage and pull up resistance value.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>For working condition, BATT_TEMP will be within 2.8v-3V with without battery and 0v with
+                            battery.</p>
+                    </details>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging25 invisible">
+                    <h3>DATA pull up resistor value is good</h3>
+                    <p>Confirm and be sure of continuity from the pull up resistor to it's destination.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <br>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging26 invisible">
+                    <h3>DATA pull up resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging27 invisible">
+                    <h3>ACIN present at super I/O</h3>
+                    <p>Check AC_PRESENT voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging28 btn option" type="button" name="button">AC_PRESENT voltage is
+                            present</button>
+                        <button class="btn-not-charging29 btn option" type="button" name="button">AC_PRESENT voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage for AC_PRESENT? 3.3V minimun of 2.8V</p>
+                        <P>ACIN has 2 methodology of getting feeded: </P>
+                        <ol>
+                            <li>The voltage is generated from charging IC as ACIN or ACOK and feeded to super I/O to as
+                                ACIN, super I/O use the ACIN as an input to generate AC_PRESENT which is feeded to the
+                                ACPRESENT pin of PCH/ICH.
+                            </li>
+                            <li>The voltage is generated from charging IC as ACIN and feeded directly to ACPRESENT pin
+                                of PCH/ICH.
+                            </li>
+                        </ol>
+                        <p>What is the other name for AC_PRESENT? AC_PRESENT_EC, ADP_PRES_OUT.</p>
+                        <p>Where can I check AC_PRESENT voltage? Super I/O or the resistor inputting it to PCH/ICH.</p>
+                        <P>Ultimate aim of ACIN is to get feeded to the ACPRESENT pin of the PCH/ICH.</P>
+                        <P>Be sure to check the last component feeding the voltage to ACPRESENT.</P>
+                        <p>How to easily locate AC_PRESENT in the schematic? Scroll to the PCH/ICK System Power
+                            Management block.</p>
+
+                        <p>Another option to easily locate it in the schematic is by easily search ACPRESENT and see
+                            what is connected to it.</p>
+                    </details>
+                    <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging28 invisible">
+                    <h3>ACIN absent at super I/O</h3>
+                    <p>Back trace the voltage.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The Ultimate source of ACIN is charging IC.</p>
+                    </details>
+                    <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging29 invisible">
+                    <h3>AC_PRESENT voltage is present</h3>
+                    <p>Check discharging MOSFET gate voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging30 btn option" type="button" name="button">Discharging MOSFET
+                            gate is fine</button>
+                        <button class="btn-not-charging31 btn option" type="button" name="button">Discharging MOSFET
+                            gate is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage for discharging MOSFET gate? It actually depends on the type of
+                            MOSFET channel used in the architecture, most of the times it is always P-channel which gate
+                            voltage will be CLR voltage. CLR voltage is mostly 19v.</p>
+                        <p>Weather the discharging MOSFET is P-channel or N-channel, it will be connected in such a way
+                            that the MOSFET will stop the adapter voltage from crossing to battery connector.</p>
+                        <ol>
+                            <li>For N-channel: The gate voltage should be at last 3v lesser than CLR voltage.</li>
+                            <li>For P-channel: The gate voltage shouldn't be lower to CLR voltage (Maximum difference
+                                2v).</li>
+                        </ol>
+                        <p>What is the other name for discharging MOSFET? BATFET or Battery MOSFET.</p>
+                        <p>What is the aim of the gate voltage? To turn off BATFET to avoid adapter and battery voltage
+                            colliding.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>This is the location of discharging MOSFET of the below motherboards </p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>PQ12</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PQ11</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PQ23</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PQ102</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PQ303</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>PQ4401</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PQ301</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>PQ303</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous27 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging30 invisible">
+                    <h3>AC_PRESENT voltage is absent</h3>
+                    <p>Back-trace the voltage to it's source.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>AC_PRESENT voltage is usully pull up by a resistor</p>
+                        <p>In some motherboard archirctures, it is directly feeded by ACOK generated in charging IC.</p>
+                        <p>Voltage value of us 3.3V</p>
+                    </details>
+                    <button class="btn-previous28 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging31 invisible">
+                    <h3>Discharging MOSFET gate is fine</h3>
+                    <p>Insert battery and adapter or only battery.</p>
+                    <p>Check battery positive voltage at battery connector.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging32 btn option" type="button" name="button">Battery positive
+                            voltage is present</button>
+                        <button class="btn-not-charging33 btn option" type="button" name="button">Battery positive
+                            voltage is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is advisable to also check the presence of the battery voltage at charging IC too(SRP &
+                            SRN). The two connections between battery CLR and charging IC.</p>
+                        <p>In some archirctures, battery voltage will not be present if charging section is not good.
+                        </p>
+                    </details>
+                    <button class="btn-previous29 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging32 invisible">
+                    <h3>Discharging MOSFET gate is bad</h3>
+                    <p>Back-trace the voltage to it's source.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is usually controlled by simple circuit or directly by charging IC.</p>
+                    </details>
+                    <button class="btn-previous30 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging33 invisible">
+                    <h3>Battery positive voltage is present</h3>
+                    <p>Insert battery and adapter or only battery.</p>
+                    <p>Check battery sense positive (SRP) voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging34 btn option" type="button" name="button">SRP voltage is
+                            present</button>
+                        <button class="btn-not-charging35 btn option" type="button" name="button">SRP voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check SRP voltage? Charging IC.</p>
+                        <p>What is the expected SRP voltage? Battery voltage available at battery connector.</p>
+                    </details>
+                    <button class="btn-previous31 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging34 invisible">
+                    <h3>Battery positive voltage is absent</h3>
+                    <p>Most likely battery is bad, replace the battery with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In some rare archirctures, battery voltage will not be present if charging section is not
+                            good.</p>
+                    </details>
+                    <button class="btn-previous32 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging35 invisible">
+                    <h3>SRP voltage is present</h3>
+                    <p>Check the resistance value of SRP resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging36 btn option" type="button" name="button">SRP resistor value is
+                            fine</button>
+                        <button class="btn-not-charging37 btn option" type="button" name="button">SRP resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the availability of the voltage at the testing point, it is best practice to
+                            check the value of the resistor in between the line as changes in the resistance value might
+                            not affect voltage but will greatly affect charging.</p>
+                        <p>The resistor inbetween the SRP and battery CLR feeding the voltage to the IC.</p>
+                        <img class="hint-img1" src="../../images/nav/srp-srn.jpg" alt="srp-srn">
+                        <p>The resistor value will be stated in the schematic.</p>
+                    </details>
+                    <button class="btn-previous33 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging36 invisible">
+                    <h3>SRP voltage is absent</h3>
+                    <p>Check line between the charging IC SRP pin and Battery CLR. It is either the SRP resistor is
+                        faulty or the track is internally damaged.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous34 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging37 invisible">
+                    <h3>SRP resistor value is fine</h3>
+                    <p>Insert battery and adapter or only battery.</p>
+                    <p>Check battery sense negative (SRN) voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging38 btn option" type="button" name="button">SRN voltage is
+                            present</button>
+                        <button class="btn-not-charging39 btn option" type="button" name="button">SRN voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check SRN voltage? Charging IC.</p>
+                        <p>What is the expected SRN voltage? Battery voltage available at battery connector.</p>
+                    </details>
+                    <button class="btn-previous35 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging38 invisible">
+                    <h3>SRP resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous36 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging39 invisible">
+                    <h3>SRN voltage is present</h3>
+                    <p>Check the resistance value of SRN resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging40 btn option" type="button" name="button">SRN resistor value is
+                            fine</button>
+                        <button class="btn-not-charging41 btn option" type="button" name="button">SRN resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the availability of the voltage at the testing point, it is best practice to
+                            check the value of the resistor in between the line as changes in the resistance value might
+                            not affect voltage but will greatly affect charging.</p>
+                        <p>The resistor inbetween the SRN and battery CLR feeding the voltage to the IC.</p>
+                        <img class="hint-img1" src="../../images/nav/srp-srn.jpg" alt="srp-srn">
+                        <p>The resistor value should be as stated in the schematic</p>
+                    </details>
+                    <button class="btn-previous37 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging40 invisible">
+                    <h3>SRN voltage is absent</h3>
+                    <p>Check line between the charging IC SRN pin and Battery CLR. It is either the SRN resistor is
+                        faulty or the track is internally damaged.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous38 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging41 invisible">
+                    <h3>SRN resistor value is fine</h3>
+                    <p>Remove Battery sense boosting capacitor and check impedance of the capacitor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging42 btn option" type="button" name="button">Battery sense boosting
+                            capacitor is good</button>
+                        <button class="btn-not-charging43 btn option" type="button" name="button">Battery sense boosting
+                            capacitor is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Battery sense boosting capacitor:</p>
+                        <img class="hint-img1" src="../../images/nav/batter-sense-capacitor.jpg" alt="batter-sense">
+                    </details>
+                    <button class="btn-previous39 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging42 invisible">
+                    <h3>SRN resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous40 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging43 invisible">
+                    <h3>Battery sense boosting capacitor is good</h3>
+                    <p>Return the capacitor and check adapter current positive (ACP) voltage at charging IC pin</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging44 btn option" type="button" name="button">ACP voltage is
+                            present</button>
+                        <button class="btn-not-charging45 btn option" type="button" name="button">ACP voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <P>ACP: Alternating Current Positive.</P>
+                        <p>Where can I check ACP voltage? Charging IC.</p>
+                        <p>What is the expected ACP voltage? Adapter voltage available at CLR.</p>
+                        <img class="hint-img1" src="../../images/nav/acn-acp.jpg" alt="acn-acp">
+                    </details>
+                    <button class="btn-previous41 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging44 invisible">
+                    <h3>Battery sense boosting capacitor is bad</h3>
+                    <p>Replace faulty capacitor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous42 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging45 invisible">
+                    <h3>ACP voltage is present</h3>
+                    <p>Check the resistance value of ACP resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging46 btn option" type="button" name="button">ACP resistor value is
+                            fine</button>
+                        <button class="btn-not-charging47 btn option" type="button" name="button">ACP resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the availability of the voltage at the testing point, it is best practice to
+                            check the value of the resistor in between the line as changes in the resistance value might
+                            not
+                            affect voltage but will greatly affect charging.</p>
+                        <p>The resistor inbetween the ACP and CLR feeding the voltage to the IC.</p>
+                        <img class="hint-img1" src="../../images/nav/acn-acp.jpg" alt="acn-acp">
+                        <p>The resistor value should be as stated in the schematic.</p>
+                        <p>Some times, it is just a straight connection without resistor inbetween.</p>
+                    </details>
+                    <button class="btn-previous43 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging46 invisible">
+                    <h3>ACP voltage is absent</h3>
+                    <p>Check line between the charging IC ACP pin and CLR. It is either the ACP resistor is faulty or
+                        the track is internally damaged.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <img class="hint-img1" src="../../images/nav/acn-acp.jpg" alt="acn-acp">
+                    </details>
+                    <button class="btn-previous44 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging47 invisible">
+                    <h3>ACP resistor value is fine</h3>
+                    <p>Check Adapter sense negative(ACN).</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging48 btn option" type="button" name="button">ACN voltage is
+                            present</button>
+                        <button class="btn-not-charging49 btn option" type="button" name="button">ACN voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check ACN voltage? Charging IC.</p>
+                        <p>What is the expected ACN voltage? Minimum of 10mV difference from adapter voltage available
+                            at CLR (e.g 19V-10mV = 18.990V). Maximum of 2Omv depending on the amount of charging amps
+                            consumption</p>
+                    </details>
+                    <button class="btn-previous45 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging48 invisible">
+                    <h3>ACP resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous46 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging49 invisible">
+                    <h3>ACN voltage is present</h3>
+                    <p>Check the resistance value of ACN resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging50 btn option" type="button" name="button">ACN resistor value is
+                            fine</button>
+                        <button class="btn-not-charging51 btn option" type="button" name="button">ACN resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Regardless of the availability of the voltage at the testing point, it is best practice to
+                            check the value of the resistor in between the line as changes in the resistance value might
+                            not affect voltage but will greatly affect charging.</p>
+                        <p>The resistor inbetween the ACN and CLR feeding the voltage to the IC.</p>
+                        <img class="hint-img1" src="../../images/nav/acn-acp.jpg" alt="acn-acp">
+                        <p>The resistor value will be stated in the schematic</p>
+                        <p>Some times, it is just a straight connection without resistor inbetween.</p>
+                    </details>
+                    <button class="btn-previous47 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging50 invisible">
+                    <h3>ACN voltage is absent</h3>
+                    <p>Check line between the charging IC ACN pin and CLR. It is either the ACN resistor is faulty or
+                        the track is internally damaged.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous48 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging51 invisible">
+                    <h3>ACN resistor value is fine</h3>
+                    <p>Check and confirm voltage difference of adapter sense positive(ACP) and adapter sense
+                        negative(ACN).</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging52 btn option" type="button" name="button">Differencial voltage
+                            is good</button>
+                        <button class="btn-not-charging53 btn option" type="button" name="button">Differencial voltage
+                            is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the voltage difference? 10mv 0.01</p>
+                        <p>You need good multimeter to check this differential voltage.</p>
+                    </details>
+                    <button class="btn-previous49 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging52 invisible">
+                    <h3>ACN resistor value is bad</h3>
+                    <p>Replace faulty resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous50 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging53 invisible">
+                    <h3>Differencial voltage is good</h3>
+                    <p>Check voltage value at the kathod side of charging IC bootstrap diode</p>
+                    <div class="arrow">
+                        <button class="btn-not-charging54 btn option" type="button" name="button">Voltage at kathod side
+                            is good</button>
+                        <button class="btn-not-charging55 btn option" type="button" name="button">Voltage at kathod side
+                            is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Beware, in most of the recent motherboards, the diode is embelded inside the charging IC. If
+                            your case is such architecture, continue by first assuming it is bad by clicking the
+                            related button and check the next few steps. Then re-attempt by assuming it is good
+                            by clicking the related button too.</p>
+                        <p>How do I locate bootstrap diode? With time and experiece, you can easily identify bootstrap
+                            diode. To keep it simple, it is the diode which it's anode pin is connected to REGN pin of
+                            the charging IC.</p>
+                        <p>What is the expected voltage at the charging IC kathod side? It will be almost twice(X2)
+                            availabe battery voltage. Note, the input voltage of the diode is feeded from REGN voltage
+                            of charging I.C, which we have confirmed in the early troubleshooting.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PD10</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PD7</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PD14</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PD101</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PD301</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>Not used here, instead it is embelded inside the cgarging IC</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Not used here, instead it is embelded inside the cgarging IC</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>Not used here, instead it is embelded inside the cgarging IC</p>
+                            </ul>
+                        </details>>
+                    </details>
+                    <button class="btn-previous51 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging54 invisible">
+                    <h3>Differencial voltage is bad</h3>
+                    <p>Most likely, the current limit resistor is bad</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous52 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging55 invisible">
+                    <h3>Voltage at kathod side is good</h3>
+                    <p>Check gate voltage of charging IC top MOSFET</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging56 btn option" type="button" name="button">Top MOSFET gate
+                            voltage is good</button>
+                        <button class="btn-not-charging57 btn option" type="button" name="button">Top MOSFET gate
+                            voltage is bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected value? There is actually no precise value simply because we have
+                            different motherboard archirctures. The value shouldn't be lower than 1.5V, in most cases,
+                            its always arround 2v</p>
+                    </details>
+                    <button class="btn-previous53 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging56 invisible">
+                    <h3>Voltage at kathod side is bad</h3>
+                    <p>Remove bootstrap capacitor and check impedance of the capacitor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging58 btn option" type="button" name="button">Bootstrap capacitor
+                            is good</button>
+                        <button class="btn-not-charging59 btn option" type="button" name="button">Bootstrap capacitor
+                            is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to take it out of the motherboard and check. Checking it on the motherboard
+                            will only read short weather it is good or not.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PC51</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PC29</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PC84</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PC136</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PC315</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>PC4431</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PC321</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>PC304</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous54 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging57 invisible">
+                    <h3>Top MOSFET gate voltage is good</h3>
+                    <p>Replace both top and lower MOSFETs of charging IC.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous55 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging58 invisible">
+                    <h3>Top MOSFET gate voltage is bad</h3>
+                    <p>Replace charging IC</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous56 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging59 invisible">
+                    <h3>Bootstrap capacitor is good</h3>
+                    <p><em>Return bootstrap capacitor and proceed</em></p>
+                    <p>Check resistance value of bootstrap resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging60 btn option" type="button" name="button">Bootstrap resistor is
+                            good</button>
+                        <button class="btn-not-charging61 btn option" type="button" name="button">Bootstrap resistor is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is best practice to take out the resistor and check the value off the motherboard. The
+                            resistor value is always 2.2ohms in all motherboards</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>PR61</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PR48</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PR110</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PR114</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PR317</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>PC4438</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PR307</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>PR311</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous57 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging60 invisible">
+                    <h3>Bootstrap capacitor is bad</h3>
+                    <p>replace the capacitor with exactly the same type. Beware, if you choose to replace with random
+                        capacitor, it will not help rather it can complicate your issue.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I get exactly the same type?</p>
+                        <li>You can use that of similar motherboard if you have exact scrap.</li>
+                        <li>You can take from another motherboard where similar IC or equivalent IC is used.</li>
+                        <li>You can copy and search the complete number of the capacitor in the schematic and search
+                            in schematic of another motherboard you intend to take from.</li>
+                    </details>
+                    <button class="btn-previous58 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging61 invisible">
+                    <h3>Bootstrap resistor is good</h3>
+                    <p>Replace boostsrap diode with exactly the same type.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I get exactly the same type?</p>
+                        <li>You can use that of similar motherboard if you have exact scrap.</li>
+                        <li>You can take from another motherboard where similar IC or equivalent IC is used.</li>
+                        <li>You can copy and search the complete number of the diode in the schematic and search
+                            on another motherboard you intend to take from.</li>
+                    </details>
+                    <button class="btn-previous59 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging62 invisible">
+                    <h3>Bootstrap resistor is bad</h3>
+                    <p>Replace with good one that tally with what is stated in the schematic. It is always 2.2ohms</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>When you check and you are getting around 2.8ohm on your multimeter, don't worry it is
+                            actually fine. In most cases, it is due to slight inaccurate of multimeter.</p>
+                    </details>
+                    <button class="btn-previous60 btn option" type="button" name="button">Previous</button>
+                </div>
+
+
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

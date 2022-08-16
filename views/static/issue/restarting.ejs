@@ -1,0 +1,37 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="restarting" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+      <div class="direction">
+        <h3>Laptop restarting and not displaying</h3>
+        <p>Best key is to troubleshoot the board from the angle of no display.</p>
+        <p>Use <em>ON & TEST</em> method</p>
+
+        <div class="arrow">
+          <button class="btn option" onclick="location.href='no-display.ejs'" type="button"
+            name="button">Proceed</button>
+        </div>
+        <details>
+          <summary>Hint</summary>
+          <p>What is ON & Test: Set your multimeter at your testing point before power, then power your motherboard and
+            check weather the expected voltage is present or not.</p>
+        </details>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index2.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+
+
+  </body>
+
+  </html>

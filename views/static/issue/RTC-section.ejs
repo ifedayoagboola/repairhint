@@ -1,0 +1,832 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="rtc-section" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+
+                <div class="d-rtc1">
+                    <h3>RTC section troubleshooting</h3>
+                    <p>It is always best practice to test RTC section with CMOS battery alone(without adapter).</p>
+                    <p>After Testing with CMOS battery alone, you can go ahead and test with adapter too.</p>
+                    <p>Check to confirm CMOS battery voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc1 btn option" type="button" name="button">CMOS battery voltage is
+                            good</button>
+                        <button class="btn-rtc2 btn option" type="button" name="button">CMOS battery voltage is bad or
+                            poor </button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>RTC section is the first testing point of the motherboard.</p>
+                        <p>We have differnt type of CMOS cells with similar required voltage, very few CMOS cells has
+                            different voltage.</p>
+                        <p>What is the expected CMOS cell voltage? It's actually depends on the type of CMOS cell used
+                            in your motherboard:</p>
+                        <ul>
+                            <li>For regular cells commonly refers to as<a target="_blank"
+                                    href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.sparkfun.com%2F%2Fassets%2Fparts%2F2%2F6%2F4%2F00338-07_replace.jpg&imgrefurl=https%3A%2F%2Fwww.sparkfun.com%2Fproducts%2F338&tbnid=9n3OPZPDLhGEkM&vet=12ahUKEwjjsO2Oy6b5AhVWQvEDHeF5CgYQMygBegUIARCcAg..i&docid=mX_jOmrMt2Gm6M&w=600&h=600&q=coin%20cell%20battery&ved=2ahUKEwjjsO2Oy6b5AhVWQvEDHeF5CgYQMygBegUIARCcAg">
+                                    coin cell</a>: 3V minimun of 2.8V</li>
+                            <li>For some<a target="_blank"
+                                    href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fus.community.sony.com%2Fsfc%2Fservlet.shepherd%2Fversion%2FrenditionDownload%3Frendition%3DTHUMB720BY480%26versionId%3D0680B0000042JVy%26operationContext%3DCHATTER%26contentId%3D05T0B00000Biqfr%26page%3D0&imgrefurl=https%3A%2F%2Fus.community.sony.com%2Fs%2Fquestion%2F0D50B00004QlaHISAZ%2Fhowtogetting-sony-vaio-svt14126cxs-bios-enter-onetime-password%3Flanguage%3Des&tbnid=iB6CFce1PV7x4M&vet=12ahUKEwiG467Izab5AhXaQPEDHb2UCPsQMygjegUIARChAg..i&docid=pKU9bGwyNSbB3M&w=313&h=279&itg=1&q=sony%202.4%20cmos%20cell&ved=2ahUKEwiG467Izab5AhXaQPEDHb2UCPsQMygjegUIARChAg">
+                                    sony cells</a>(2/V15H 15M): 2.4v minimun of 2.2V </li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="d-rtc2 invisible">
+                    <h3>CMOS battery voltage is good</h3>
+                    <p>Insert CMOS battery on motherboard and check battery voltage at motherboard CMOS positive pin.
+                    </p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc3 btn option" type="button" name="button">CMOS battery voltage present at
+                            motherboard CMOS positive pin</button>
+                        <button class="btn-rtc4 btn option" type="button" name="button">CMOS battery voltage absent at
+                            motherboard CMOS positive pin</button>
+                        <br>
+                    </div>
+                    <button class="btn option" onclick="location.href='RTC-section.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-rtc3 invisible">
+                    <h3>CMOS battery voltage is bad or poor</h3>
+                    <p>Replace CMOS battery with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check the motherboard or the motherboard documentation to determine the actual battery
+                            voltage requirements. One can tell with the type of CMOS cell used in the motherboard.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='RTC-section.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-rtc4 invisible">
+                    <h3>CMOS battery voltage present at motherboard CMOS positive pin</h3>
+                    <p>Check input voltage of RTC diode.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc5 btn option" type="button" name="button">Input voltage of RTC diode is
+                            present</button>
+                        <button class="btn-rtc6 btn option" type="button" name="button">Input voltage of RTC diode is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate RTC diode? It is directly or indirectly connected to the RTC cell connector
+                            via a resistor.</p>
+                        <p>The diode use to be 2in1 diode receiving 2 inputs, first input from the RTC cell and second
+                            input from LDO3 and if any of the inputs is available, the diode will generate output (OR
+                            gate logic).</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Checkout RTC diode of the below reference motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>D52</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>D13</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>D20</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>DH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PD101</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>D2501</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>D122</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>DC2</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc5 invisible">
+                    <h3>CMOS battery voltage absent at motherboard CMOS positive pin</h3>
+                    <p>Fix CMOS pin connection.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This will be cause be physical or internal track damage or RTC connector issue.</p>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc6 invisible">
+                    <h3>Input voltage of RTC diode is present</h3>
+                    <p>Check output voltage of RTC diode.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc7 btn option" type="button" name="button">Output voltage of RTC diode is
+                            present(RTC_VCC)</button>
+                        <button class="btn-rtc8 btn option" type="button" name="button">Output voltage of RTC diode is
+                            absent(RTC_VCC)</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is ideal to check with only CMOS battery alone first and then check with adapter.</p>
+                        <p>The diode use to be 2in1 diode receiving 2 inputs, first input from the RTC cell and second
+                            input from LDO3 and if any of the inputs is available, the diode will generate output (OR
+                            gate logic).
+                        </p>
+                        <p>What is the expected output voltage? Maximum of 0.2V drop from the input voltage (e.g 3V
+                            input volatge - 0.2V = 2.8V).</p>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc7 invisible">
+                    <h3>Input voltage of RTC diode is absent</h3>
+                    <p>Replace the resistor inbetween the connection and make sure the connection is good.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This will be caused by internal track damage or faulty resistor in-between.</p>
+                    </details>
+                    <button class="btn-previous4 btn previous" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc8 invisible">
+                    <h3>Output voltage of RTC diode is present(RTC_VCC)</h3>
+                    <p>Check RTCRST# voltage at its pad or last testable point before entering ICH/PCH/SOC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc9 btn option" type="button" name="button">RTCRST# voltage is
+                            present</button>
+                        <button class="btn-rtc10 btn option" type="button" name="button">RTCRST# voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? Maximum of 0.1V drop from the RTC_VCC.</p>
+                        <p>RTC_VCC is the output voltage of the RTC diode</p>
+                        <P>Where is the last testable point? Any last testable part (componet or jumper pad) on the line
+                            be for the voltage enters chipset. It is mostly jumper pad.</P>
+                        <img class="hint-img1" src="../../images/nav/rtcrst.jpg" alt="RTCRST#">
+                        <p>Checkout practical examples: </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4nz1BqU4o_4">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H5FsbLlI5ck">Aditya11ttt</a>
+
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc9 invisible">
+                    <h3>Output voltage of RTC diode is absent(RTC_VCC)</h3>
+                    <p>Replace RTC diode</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check and be sure the output inpudance is good.</p>
+                    </details>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc10 invisible">
+                    <h3>RTCRST# voltage is present</h3>
+                    <p>Check SRTCRST# voltage at its pad or last testable point before entering ICH/PCH/SOC</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc11 btn option" type="button" name="button">SRTCRST# voltage is
+                            present</button>
+                        <button class="btn-rtc12 btn option" type="button" name="button">SRTCRST# voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? Maximum of 0.1V drop from the RTC_VCC.</p>
+                        <p>RTC_VCC is the output voltage of the SRTC diode</p>
+                        <P>Where is the last testable point? Any last testable part (componet or jumper pad) on the line
+                            be for the voltage enters chipset. It is mostly jumper pad.</P>
+                        <img class="hint-img1" src="../../images/nav/srtcrst.jpg" alt="RTCRST#">
+                        <p>Checkout similar practical examples:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4nz1BqU4o_4">Laptop Repair Zone</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H5FsbLlI5ck">Aditya11ttt</a>
+
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc11 invisible">
+                    <h3>RTCRST# voltage is absent</h3>
+                    <p>Check RTCRST# impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc13 btn option" type="button" name="button">RTCRST# impedance is
+                            fine</button>
+                        <button class="btn-rtc14 btn option" type="button" name="button">RTCRST# impedance is
+                            bad</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous8" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc12 invisible">
+                    <h3>SRTCRST# voltage is present</h3>
+                    <p>Check INTRUDER# voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc15 btn option" type="button" name="button">INTRUDER# voltage is
+                            fine</button>
+                        <button class="btn-rtc16 btn option" type="button" name="button">INTRUDER# voltage is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? Maximum drop of 1.5V to RTC_VCC</p>
+                        <p>RTC_VCC is the output voltage of the SRTC diode</p>
+                        <p>Where can I check this voltage? At the output of the resistor inbetween the track. It is
+                            usually 1Mohms</p>
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc13 invisible">
+                    <h3>SRTCRST# voltage is absent</h3>
+                    <p>Check SRTCRST# impedance</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc17 btn option" type="button" name="button">SRTCRST# impedance is
+                            fine</button>
+                        <button class="btn-rtc18 btn option" type="button" name="button">SRTCRST# impedance is
+                            bad</button>
+                    </div>
+
+                    <br>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc14 invisible">
+                    <h3>RTCRST# impedance is fine</h3>
+                    <p>Check the resistance value of RTCRST# resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc19 btn option" type="button" name="button">RTCRST# resistor is
+                            fine</button>
+                        <button class="btn-rtc20 btn option" type="button" name="button">RTCRST# resistor is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the RTCRST# resistor? It is the resistor connected inbetween the line,
+                            usually close to the jumper pad.</p>
+                        <p>It's expected value is always stated in the schematic. In most cases it will be 20k.</p>
+
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc15 invisible">
+                    <h3>RTCRST# impedance is bad</h3>
+                    <p>Remove the RTCRST# capacitor and check impedance again.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc21 btn option" type="button" name="button">RTCRST# impedance is fine after
+                            removing capacitor</button>
+                        <button class="btn-rtc22 btn option" type="button" name="button">RTCRST# impedance remain bad
+                            after removing capacitor</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the RTCRST# capacitor? It is the capacitor connected inbetween the line,
+                            usually close to the jumper pad.</p>
+                        <img class="hint-img1" src="../../images/nav/rtcrst.jpg" alt="rtcrst">
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc16 invisible">
+                    <h3>INTRUDER# voltage is fine</h3>
+                    <p>Check INTVRMEN voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc23 btn option" type="button" name="button">INTVRMEN voltage is
+                            fine</button>
+                        <button class="btn-rtc24 btn option" type="button" name="button">INTVRMEN voltage is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? Maximum drop of 0.8V to RTC_VCC</p>
+                        <p>RTC_VCC is the output voltage of the SRTC diode</p>
+                        <p>Where can I check this voltage? At the output of the resistor inbetween the track. It is
+                            usually 330K</p>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc17 invisible">
+                    <h3>INTRUDER# voltage is bad</h3>
+                    <p>Check INTRUDER# impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc25 btn option" type="button" name="button">INTRUDER# impedance is
+                            fine</button>
+                        <button class="btn-rtc26 btn option" type="button" name="button">INTRUDER# impedance is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Where can I check this INTRUDER# impedance? At the output of the inbetween resistor.</p>
+                    </details>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc18 invisible">
+                    <h3>SRTCRST# impedance is fine</h3>
+                    <p>Check resistance value of SRTCRST# resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc27 btn option" type="button" name="button">SRTCRST# resistor is
+                            fine</button>
+                        <button class="btn-rtc28 btn option" type="button" name="button">SRTCRST# resistor is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the SRTCRST# resistor? It is the resistor connected inbetween the line,
+                            usually close to the jumper pad.</p>
+                        <p>It's expected value is always stated in the schematic. In most cases it will be 20k.</p>
+
+                    </details>
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc19 invisible">
+                    <h3>SRTCRST# impedance is bad</h3>
+                    <p>Remove SRTCRST# capacitor and check SRTCRST# impedance.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc29 btn option" type="button" name="button">SRTCRST# impedance is fine
+                            after removing capacitor</button>
+                        <button class="btn-rtc30 btn option" type="button" name="button">SRTCRST# impedance remain bad
+                            after removing capacitor</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the SRTCRST# capacitor? It is the capacitor connected inbetween the line,
+                            usually close to the jumper pad.</p>
+                        <img class="hint-img1" src="../../images/nav/srtcrst.jpg" alt="srtcrst">
+                    </details>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc20 invisible">
+                    <h3>RTCRST# resistor is fine</h3>
+                    <p>Replace RTCRST# capacitor because it might be leaky</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If problem persist, most likely your PCH/ICH is bad.</p>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc21 invisible">
+                    <h3>RTCRST# resistor is bad</h3>
+                    <p>Replace RTCRST# resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc22 invisible">
+                    <h3>RTCRST# impedance is fine after removing capacitor</h3>
+                    <p>Replace the capacitor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc23 invisible">
+                    <h3>RTCRST# impedance remain bad after removing capacitor</h3>
+                    <p>The PCH/ICH chipset is bad, replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc24 invisible">
+                    <h3>INTVRMEN voltage is fine</h3>
+                    <p>Check clock 32.768KHz crystal frequency on crystal</p>
+
+                    <!-- <button onclick="location.href='clock-32-768khz.ejs'" name="button" type="button">Proceed to 32.768KHz
+            troubleshooting</button> -->
+
+                    <div class="arrow">
+                        <button class="btn-rtc31 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            present</button>
+                        <button class="btn-rtc32 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected frequency value? 32.768KHz</p>
+                        <p>Where and how can I locate the crystal? It is always located close to the Super SIO. You can
+                            have one or 2 on the motherboard, if you check in the schematic one will be directly
+                            connected to super SIO and one will be directly connected to the ICH/PCH. It's best practice
+                            to check the two 32.768KHz frequency.</p>
+                        <p>What if I can't find any crystal placed beside the super SIO or ICH/PCH? It is embelded
+                            inside the Super SIO</p>
+                        <p>Baware of some motherboards that uses green clock. In such motherboard, there will be
+                            single IC that controls everything that has to do with clock.</p>
+                        <p>What if I dont't have oscilloscope? Assume it is working fine and proceed.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+                    </details>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc25 invisible">
+                    <h3>INTVRMEN voltage is bad</h3>
+                    <p>Check resistance value of INTVRMEN.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc33 btn option" type="button" name="button">INTVRMEN resistor value is
+                            fine</button>
+                        <button class="btn-rtc34 btn option" type="button" name="button">INTVRMEN resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the INTVRMEN? It is the resistor connected to the INTVRMEN.</p>
+                        <p>It's expected value is always stated in the schematic. In most cases it will be 330k.</p>
+                    </details>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc26 invisible">
+                    <h3>INTRUDER# impedance is fine</h3>
+                    <p>Check resistance value of INTRUDER#.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc35 btn option" type="button" name="button">INTRUDER# resistor value is
+                            fine</button>
+                        <button class="btn-rtc36 btn option" type="button" name="button">INTRUDER# resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate the INTRUDER#? It is the resistor connected to the INTRUDER#.</p>
+                        <p>It's expected value is always stated in the schematic. In most cases it will be 1m.</p>
+                    </details>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc27 invisible">
+                    <h3>INTRUDER# impedance is bad</h3>
+                    <p>The PCH/ICH chipset is bad, replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc28 invisible">
+                    <h3>SRTCRST# resistor is fine</h3>
+                    <p>Replace SRTCRST# capacitor because it might be leaky.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Checkout similar example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H5FsbLlI5ck">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4nz1BqU4o_4">Laptop Repair Zone</a>
+                        <br>
+                        <p>If problem persist, most likely your PCH/ICH is bad.</p>
+                    </details>
+                    <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc29 invisible">
+                    <h3>SRTCRST# resistor is bad</h3>
+                    <p>Replace the resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc30 invisible">
+                    <h3>SRTCRST# impedance is fine after removing capacitor</h3>
+                    <p>Replace the capacitor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Checkout similar example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H5FsbLlI5ck">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4nz1BqU4o_4">Laptop Repair Zone</a>
+                    </details>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous27 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc31 invisible">
+                    <h3>SRTCRST# impedance remain bad after removing capacitor</h3>
+                    <p>The PCH/ICH chipset is bad, replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous28 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc32 invisible">
+                    <h3>Clock 32.768KHz frequency present</h3>
+                    <p>Check 32.768KHz sign wave.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc37 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            present</button>
+                        <button class="btn-rtc38 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does the signal looks like? </p>
+                        <p>Input sign wave will be smaller compared to output sign wave</p>
+                        <p>What if I dont't have oscilloscope? Assume it is working fine and proceed</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+                    </details>
+                    <button class="btn-previous29 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc33 invisible">
+                    <h3>Clock 32.768KHz frequency absent</h3>
+                    <p>Check the value of the 32.768KHz crystal resistor</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc39 btn option" type="button" name="button">32.768KHz resistor value is
+                            good</button>
+                        <button class="btn-rtc40 btn option" type="button" name="button">32.768KHz resistor value is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Which resistor it the 32.768KHz resistor? The resistor connecting both input(RTCX1) and
+                            output(RTCX2) of the 32.768KHz crystal.</p>
+                        <p>It is always connected to both input pin(RTCX1) and output pin(RTCX2) of the crytal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>R1285</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>R568</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>R564</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>RH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>R994</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>RH70</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>RH70</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous30 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc34 invisible">
+                    <h3>INTVRMEN resistor value is fine</h3>
+                    <p>Make sure you confirm the availability of the RTC_VCC voltage at the resistor input.</p>
+                    <p>If the resistor input voltage is availabe, most likely there is internal track damage.</p>
+                    <p>Most likely your PCH/ICH is bad. Replace it </p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Remember to check impedance of output of resistor in between the track.</p>
+                    </details>
+                    <button class="btn-previous31 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc35 invisible">
+                    <h3>INTVRMEN resistor value is bad</h3>
+                    <p>Replace the resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous32 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc36 invisible">
+                    <h3>INTRUDER# resistor value is fine</h3>
+                    <p>Make sure you confirm the availability of the RTC_VCC voltage at the resistor input.</p>
+                    <p>If the resistor input voltage is availabe, most likely there is internal track damage.</p>
+                    <p>Most likely your PCH/ICH is bad, replace it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Remember to check impedance of output of resistor in between the track.</p>
+                    </details>
+                    <button class="btn-previous33 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc37 invisible">
+                    <h3>INTRUDER# resistor value is bad</h3>
+                    <p>Replace INTRUDER# resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous34 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc38 invisible">
+                    <h3>Clock 32.768KHz sign wave present</h3>
+                    <p>If 32.768KHz sign wave and all previous steps has been properly confirmed to be good, your RTC
+                        section is perfect.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous35 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc39 invisible">
+                    <h3>Clock 32.768KHz sign wave absent</h3>
+                    <p>Check impedance value of 32.768KHz crystal capacitor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-rtc41 btn option" type="button" name="button">Capacitor impedance is
+                            good</button>
+                        <button class="btn-rtc42 btn option" type="button" name="button">Capacitor impedance is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I identify these capacitors? These are the two capacitors connected to the input and
+                            output pin of the crystal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <img class="hint-img1" src="../../images/nav/crystal-cap.jpg" alt="crysta-cap">
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>C1574 & C1575</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>C682 & C686</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>C808 & C803</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>CH4 & CH3</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>C1009 & C1010</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous36 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc40 invisible">
+                    <h3>32.768KHz resistor value is good</h3>
+                    <p>Replace 32.768KHz crystal.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check and be sure of impedance of the two 32.768KHz capacitors before replacing the
+                            crystal.</p>
+                        <p>How do I locate these capacitors? they are always next to the crystal and white in colour.
+                        </p>
+                        <img class="hint-img1" src="../../images/nav/crystal-cap.jpg" alt="crysta-cap">
+                    </details>
+                    <button class="btn-previous37 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc41 invisible">
+                    <h3>32.768KHz resistor value is bad</h3>
+                    <p>Replace the faulty resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous38 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc42 invisible">
+                    <h3>Capacitor impedance is good</h3>
+                    <p>Replace 32.768KHz crystal.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Check and be sure that impedance of both crystal capacitor is good.</p>
+                    </details>
+                    <button class="btn-previous39 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-rtc43 invisible">
+                    <h3>Capacitor impedance is bad</h3>
+                    <p>Replace faulty capacitor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous40 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+
+    </body>
+
+    </html>

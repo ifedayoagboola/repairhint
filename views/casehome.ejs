@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/string-strip-html/dist/string-strip-html.umd.js"></script>
+
+    <!-- js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <!-- font awesome -->
+    <!-- <script src="https://kit.fontawesome.com/5b9ff68e39.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/e5fd7eb4c3.js" crossorigin="anonymous"></script>
+
+
+    <title>Repairhint</title>
+</head>
+
+<body>
+    <%- include('partials/case-navbar') %>
+        <div class="container">
+            <div class="m-4 text-center">
+                <h1 style="color: white; font-size: 60px">Case Studies</h1>
+                <p class="text-white">Experience | Discovery | Innovation</p>
+            </div>
+            <!-- <div class="row mb-3 new-case">
+                <a href="casestudies/new" class="btn btn-success d-flex align-items-center"><i
+                        class="fa-solid fa-circle-plus"></i>
+                    New Case</a>
+            </div> -->
+            <button class="btn btn-success case-btn" onclick="location.href='casestudies/new'"><i
+                    class="fa-solid fa-circle-plus" style="padding-right: 5px;"></i>New Case</button>
+
+            <div class="row">
+                <% if(casestudies.length<1){ %>
+
+                    <p class="text-white">No posts yet, create new one</p>
+
+                    <% } %>
+
+                        <% casestudies.forEach(casestudy=>{ %>
+
+
+                            <div class="col-lg-6 card mt-2 mr-0" style="margin: 0px;">
+                                <div class="row p-2">
+
+                                    <div class="col-5 overflow-hidden">
+                                        <img src="/uploads/images/<%= casestudy.img %>" style="height: 140px;"
+                                            class="card-img" alt="...">
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="d-flex align-items-start">
+                                            <h5 class="w-100"><b>
+                                                    <%= casestudy.title %>
+                                                </b></h5>
+
+
+                                            <!-- commented because i dont want editing functionality -->
+
+                                            <!-- <div class="more position-relative" style="cursor: pointer;">
+                                <i class="material-icons p-2">more_vert</i>
+                                <div class="d-none options card rounded-pill shadow-sm p-1 position-absolute">
+                                    <a href="#" class="rounded-circle p-2 mb-2" style="background:blue;">
+                                        <i class="material-icons" style="color:white">create</i>
+                                    </a>
+
+                                </div>
+                            </div> -->
+                                        </div>
+
+                                        <span class="align-self-stretch ">
+                                            <%= casestudy.snippet %>
+
+                                        </span>
+                                        <div class="d-flex align-items-end">
+                                            <div class="mr-2">
+                                                <img src="/uploads/images/<%= casestudy.img %>" class="rounded-circle"
+                                                    style="width: 40px; height: 40px;">
+                                            </div>
+                                            <div class=" flex-grow-1">
+                                                <h5 class=""
+                                                    style="font-size: 14px; line-height: 0.5rem; padding-left:6px;">
+                                                    <span><b>
+                                                            <%= casestudy.author%>
+                                                        </b></span>
+                                                </h5>
+                                                <p style="font-size: 8px; line-height: 0.2rem; padding-left:6px;">
+                                                    <%= casestudy.timeCreated.toLocaleDateString() %>
+                                                </p>
+                                            </div>
+                                            <a href="casestudies/<%= casestudy.slug %>" class=" align-self-end">
+                                                <i class='material-icons ml-3 text-black'>send</i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+
+            </div>
+        </div>
+        <!-- <script src="/js/index.js"></script> -->
+        <%- include('partials/case-footer') %>
+</body>
+
+</html>

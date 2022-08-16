@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+<body>
+  <%- include('../partials/navbar') %>
+ 
+  
+  <section id="features">
+  <div class="row">
+       <div class="feature-box col-sm-6">
+        <img class="quiz-image" src="../images/quiz/stb.jpg" alt="img"><br>
+        <button class="btn option" onclick="location.href='no-picture-quiz.ejs'">Quiz</button>     
+       </div> 
+       <div class="feature-box col-sm-6">
+        <img class="quiz-image" src="../images/quiz/test.jpg" alt="img"><br>
+         <button class="btn option" onclick="location.href='picture-quiz.ejs'">Picture Quiz</button> 
+       </div>
+       
+        
+       <!-- <div class="feature-box col-lg-2">
+        <img class="quiz-image" src="../images/load.png" alt="img">
+        <button class="btn option" onclick="location.href='no-picture-quiz.php'">Quiz</button>
+        <p>qeqercs hvwdy yuwdvogw yd o wxtvwx ow xtyx gwox</p>
+       </div>  -->
+    </div>   
+  </section>
+    
+    
+<!-- Footer using ejs template-->
+<%- include('../partials/footer') %>
+
+</body>
+
+</html>

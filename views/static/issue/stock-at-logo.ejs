@@ -1,0 +1,94 @@
+<%- include('../../partials/issue-header') %>
+
+  <body class="stock-at-logo" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <h3>Motherboard Stock at brand logo</h3>
+        <p>First, make sure you test nakedly.</p>
+        <p>Be sure to use good ram and processor(if they are detachable).</p>
+        <p>Flash MAIN BIOS.</p>
+        <p>Discharge motherboard by washing.</p>
+        <div class="arrow">
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+        </div>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+          state of your motherboard.</p>
+        <details>
+          <summary>Hint</summary>
+          <p>What does it means to test motherboard nakedly? It simply means testing the motherboard without connecting
+            any of the followings screen, flex, WLAN card, power switch, HDD, RAM and any removvable accessories.</p>
+          <p>How do I power my motherboard without power switch? </p>
+          <ul>
+            <li>Tune your multimeter to diode range.</li>
+            <li>Place the red probe at the ground (GND).</li>
+            <li>Just use the black probe to torch NBSWON# (ON/OFF) at the power switch connector or carefully brush
+              through at the pins on the switch connector.</li>
+          </ul>
+          <p>Why do i need to discharge the motherboard? There can be very small physical damage that is not to obvious.
+          </p>
+          <p>Physical damages includes liquid damage, corrossion, rust, dry joint, burnt part or component,
+            broken tracks, missing components e.t.c </p>
+          <p>Follow the below steps to successfully take care of physical damages such as liquid damage, corrosion, and
+            rust </p>
+          <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+          <ol>
+            <li>Remove all the removeable pheripheral devices such as Processor, WLAN, RAM, Cmos battery, cabbles e.t.c.
+              from the motherboard </li>
+            <li>Prepare warm water that in a container that contains the entire motherboard board and apply shampoo.
+            </li>
+            <li>Soak the motherboard in a warm wather and shampoo for 30min.</li>
+            <li>Watch the motherboard carefully and make sure every part of the motherboard is shinning</li>
+            <img class="hint-img1" src="../../images/nav/soak.jpg" alt="naked board">
+            <li>Dry it in an industrial oven for 20min at 150degree temp</li>
+            <li>Wait for 10min, for motherboard to cool off </li>
+            <li>Finally, retest motherboard and if your case is not resolved, continue with navigator </li>
+
+            <details>
+              <summary>Hint</summary>
+              <p>Best game of chance in motherboard repair is <em>discharging.</em> Learn to do it right.</p>
+              <p>What is liquid damage? It is basically physical damages caused by any liquid substance.</p>
+              <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+              <a target="_blank"
+                href="https://www.google.com/search?q=motherboard+liquid+damage&sxsrf=ALiCzsYo4ZDL5T8Gdax5uyuClquiOLfCmw:1655785339114&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi25diH2b34AhVP0IUKHRO0DosQ_AUoAXoECAEQAw&biw=1366&bih=657&dpr=1">Liquid
+                damage</a>
+              <p>What is corrosion? Corrosion is the process of oxidation that happens when oxygen bonds with metal,
+                producing rust and causing the metal to flake off and lose its valuable chemical properties.
+                <a target="_blank"
+                  href="https://www.google.com/search?q=laptop+motherboard+corrosion&sxsrf=ALiCzsa-Fa6GF7pSCv9ODPLy8QCFGnROwg:1655825942635&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiSk_uo8L74AhU2SfEDHURWBzgQ_AUoAXoECAEQAw&biw=1366&bih=600&dpr=1"></a>
+              </p>
+              <p>What is rust? Rust is a specific type of corrosion related to iron.</p>
+              <p>Why warm water and shampoo? It helps to soften the corrosions, rust e.t.c. Hence, it helps to clean
+                motherboard as shinning as new after watching.</p>
+              <p>Why industrial oven? It helps to dry the motherboard quickly and also slightly heat the motherboard,
+                this helps againt dry joint.</p>
+              <p>Is there any other alternative for industrial oven? Build an incubator with 100WATT and carton or
+                non-metalic box and keep the board in it for 3-4hours</p>
+              <p>Is there any other alternative for manual incubator? Sunlight for averagely 48hours</p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=yV9Vwl1Gebs">AFS SOLUTION</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=S-au1-2mNe8">SpaceJamTartzv3</a><br>
+              <a target="_blank"
+                href="https://www.shutterstock.com/video/clip-24318833-bowl-motherboard-electronics-gets-final-wash-funny">Shutter
+                Stock</a>
+            </details>
+
+            <!-- Bug form using ejs template-->
+            <%- include('../../partials/navigator-bug-form') %>
+
+        </details>
+      </div>
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

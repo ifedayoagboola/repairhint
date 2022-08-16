@@ -1,0 +1,35 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="ram-requirement" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <div>
+          <h3>RAM requirement troubleshooting</h3>
+          <p>Select the type of RAM your motherboard is using.</p>
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='ddr1.ejs'" type="button" name="button">DDR1</button>
+            <button class="btn option" onclick="location.href='ddr2.ejs'" type="button" name="button">DDR2</button>
+            <button class="btn option" onclick="location.href='ddr3.ejs'" type="button" name="button">DDR3</button>
+            <button class="btn option" onclick="location.href='ddr4.ejs'" type="button" name="button">DDR4</button>
+          </div>
+        </div>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script src="../../js/index2.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+
+
+  </body>
+
+  </html>

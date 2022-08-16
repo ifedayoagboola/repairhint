@@ -1,0 +1,13 @@
+<%- include('../../partials/issue-header') %>
+<body>
+    <%- include('../../partials/password-navbar') %>
+  <div class="direction">
+    <% if (search) { %>
+      <h1>A user with the given username is already registered</h1>
+    <% } else { %>
+      <h1>A user with the given email is already registered</h1>
+    <% } %>
+  </div>
+    <%- include('../../partials/footer') %>
+</body>
+</html> 

@@ -1,0 +1,962 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="pwr" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <div class="d-pwr1">
+          <h3>Motherboard is not turning on</h3>
+          <p>The first and most important step in troubleshooting is to carefully check for physical damages.</p>
+
+          <div class="arrow">
+            <button class="btn-pwr1 btn option" type="button" name="button">Not clear from physical damages</button>
+            <button class="btn-pwr2 btn option" type="button" name="button">All clear from physical damages</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What is physical damage? This is motherboard damage that can be physically seen e.g corrosion, track
+              damage, liquid damage, broken tracks, missing components e.t.c. </p>
+            <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/burnt.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/physical-damage.jpg" alt="physical-damage1">
+            <p>Physical damage can be small to the extent that you won't observe it and yet it can cause any kind of
+              issue on your motherboard, depending on where the damage is.</p>
+            <p>It is ideal and best practice to check for physical damages for at least 7 minutes.</p>
+            <a target="_blank"
+              href="https://www.google.com/search?q=laptop+motherboard+damages&tbm=isch&ved=2ahUKEwjxuo3H5774AhUE3hoKHWHpDc0Q2-cCegQIABAA&oq=laptop+motherboard+damages&gs_lcp=CgNpbWcQA1CZBljVEWDaFWgAcAB4AIAB5wOIAYsRkgEHMi00LjIuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=5dyxYrG0OIS8a-HSt-gM">Check
+              out more physical damages</a><br><br>
+            <p>See why you need to watch closely for physical damages</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=lX69uFGHDj0">Platinum computers</a>
+          </details>
+        </div>
+
+        <div class="d-pwr2 invisible">
+          <h3>Not clear from physical damages</h3>
+          <p>Physical damages includes liquid damage, corrossion, rust, dry joint, burnt part or component,
+            broken tracks, missing components e.t.c </p>
+          <p>Follow the below steps to successfully take care of physical damages such as liquid damage, corrosion, and
+            rust </p>
+          <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+          <ol>
+            <li>Remove all the removable pheripheral devices such as Processor, WLAN, RAM, Cmos battery, cabbles e.t.c.
+              from the motherboard </li>
+            <li>Prepare warm water that in a container that contains the entire motherboard board and apply shampoo.
+            </li>
+            <li>Soak the motherboard in a warm wather and shampoo for 30min.</li>
+            <li>Watch the motherboard carefully and make sure every part of the motherboard is shinning</li>
+            <img class="hint-img1" src="../../images/nav/soak.jpg" alt="naked board">
+            <li>Dry it in an industrial oven for 20min at 150degree temp</li>
+            <li>Wait for 10min, for motherboard to cool off </li>
+            <li>Finally, retest motherboard and if your case is not resolved, continue with navigator </li>
+
+            <details>
+              <summary>Hint</summary>
+              <p>Best game of chance in motherboard repair is <em>discharging.</em> Learn to do it right.</p>
+              <p>What is liquid damage? It is basically physical damages caused by any liquid substance.</p>
+              <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+              <a target="_blank"
+                href="https://www.google.com/search?q=motherboard+liquid+damage&sxsrf=ALiCzsYo4ZDL5T8Gdax5uyuClquiOLfCmw:1655785339114&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi25diH2b34AhVP0IUKHRO0DosQ_AUoAXoECAEQAw&biw=1366&bih=657&dpr=1">Liquid
+                damage</a>
+              <p>What is corrosion? Corrosion is the process of oxidation that happens when oxygen bonds with metal,
+                producing rust and causing the metal to flake off and lose its valuable chemical properties.
+                <a target="_blank"
+                  href="https://www.google.com/search?q=laptop+motherboard+corrosion&sxsrf=ALiCzsa-Fa6GF7pSCv9ODPLy8QCFGnROwg:1655825942635&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiSk_uo8L74AhU2SfEDHURWBzgQ_AUoAXoECAEQAw&biw=1366&bih=600&dpr=1"></a>
+              </p>
+              <p>What is rust? Rust is a specific type of corrosion related to iron.</p>
+              <p>Why warm water and shampoo? It helps to soften the corrosions, rust e.t.c. Hence, it helps to clean
+                motherboard as shinning as new after watching.</p>
+              <p>Why industrial oven? It helps to dry the motherboard quickly and also slightly heat the motherboard,
+                this helps againt dry joint.</p>
+              <p>Is there any other alternative for industrial oven? Build an incubator with 100WATT and carton or
+                non-metalic box and keep the board in it for 3-4hours</p>
+              <p>Is there any other alternative for manual incubator? Sunlight for averagely 48hours</p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=yV9Vwl1Gebs">AFS SOLUTION</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=S-au1-2mNe8">SpaceJamTartzv3</a><br>
+              <a target="_blank"
+                href="https://www.shutterstock.com/video/clip-24318833-bowl-motherboard-electronics-gets-final-wash-funny">Shutter
+                Stock</a>
+            </details>
+          </ol>
+          <p>In a case of dry joint follow the bellow steps</p>
+          <ol>
+            <li>Slightly resolder the suspected section or component</li>
+            <li>Or, Slightly heat the entire motherboard excluding the chipset (PCH/ICH), processor and GFX chip </li>
+            <details>
+              <summary>Hint</summary>
+              <p>What is dry joint? Dry joints are the main form of problem solder joint. These solder joints may be
+                completely open circuit, or they may be intermittent, high resistance or noisy. It is therefore
+                essential that no dry solder joints are present in any electronics equipment.</p>
+            </details>
+          </ol>
+          <p>In a case of burnt component, follow the bellow steps.</p>
+          <ol>
+            <li>Carefully take out the burnt component</li>
+            <li>Replace or Don't replace (optional) the burnt component and proceed to next troubleshooting.</li>
+            <li><em>Strong warning:</em> Do not give supply without PWM regulator.
+              <details>
+                <summary>Hint</summary>
+                <p>What is PWM? Pulse width modulation (PWM) is a modulation technique that generates variable-width
+                  pulses to represent the amplitude of an analog input signal. In relation to motherboard, it is
+                  actually to regulate 19V supply to generate exact required voltage.</p>
+                <p>What is PWM regulator? It is the IC in the PWM circuit.</p>
+                <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+                <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+                <p>Why can't I give supply without PWM regulator? Because the top MOSFET will short or somtimes both top
+                  and lower MOSFET.</p>
+                <p>What if I really need to check without PWM regulator? You have to take out the top and lower MOSFET.
+                </p>
+                <p>What is supply? Supply means the input given to make a system or section work. Supply here, I mean
+                  adapter</p>
+              </details>
+          </ol>
+          <li>In some cases, burnt component or part will lead to total condemn of that particullar section. Check
+            <em>Hint</em> for some materials that can help you understand the concept of bypassing through the use of
+            buck regulator. Check and see if bypass can work for your case.
+          </li>
+          <details>
+            <summary>Hint</summary>
+            <a target="_blank"
+              href="https://m.facebook.com/adityaa11ttt/videos/297473970964494/?locale=en_GB&_rdr">Adityatt111</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+            <br>
+            <br>
+            <p>In a case of broken tracks, correct the connection and if component is missing, put the appropriate one
+            </p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=ref9JHUf-uw">Branchus Creations</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=vx50YtEC2S8">RetroGameModz</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=pqEwtfFjqD8">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=OCjWE_hy0KQ">Aditya11ttt</a>
+          </details>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button">THANK YOU</button>
+          </div>
+
+          <button class="btn option" onclick="location.href='no-pwr.ejs'" type="button">Previous</button>
+        </div>
+
+        <div class="d-pwr3 invisible">
+          <h3>All clear from physical damages</h3>
+          <p>Next important step is to retest the motherboard nakedly to see if the case is still the same.</p>
+
+          <div class="arrow">
+            <button class="btn-pwr3 btn option" type="button" name="button">Working after testing nakedly but won't work
+              after assembling the PC</button>
+            <button class="btn-pwr4 btn option" type="button" name="button">Still the same after testing
+              nakedly</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What does it means to test motherboard nakedly? It simply means testing the motherboard without
+              connecting any of the followings screen, flex, WLAN card, power switch, HDD, RAM and any removable
+              accessories.</p>
+            <img class="hint-img1" src="../../images/nav/naked-board.jpg" alt="physical-damage1">
+            <p>How do I power my motherboard without power switch? </p>
+            <ul>
+              <li>Tune your multimeter to diode range.</li>
+              <li>Place the red probe at the ground (GND) </li>
+              <li>Use the black probe to torch NBSWON# (ON/OFF) or gently brush through at the pins on the
+                switch connector without bridging 2 pins.</li>
+            </ul>
+            <p>It is a go idea to remove the CMOS battery and short the CMOS connector positive to ground for 15-20
+              seconds before testing nakedly</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=9b350urN2S0">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=1LqScrdpop4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=BEVs9LLeE2Q">Laptex</a>
+          </details>
+          <button class="btn option" onclick="location.href='no-pwr.ejs'" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr4 invisible">
+          <h3>Working after testing nakedly but won't work after assembling the PC.</h3>
+          <P>Major cause of this kind of issue is short, this can occur as a result of the followings.</P>
+          <ol>
+            <li>Faulty pheripheral device e.g HDD, RAM, Screen cable, WLAN, ribon cables, camera e.t.c.</li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NX0Q-B2W9MU">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Brvi4g6mzHE">Laptop Repair Zone</a>
+            <li>Faliure to properly return necessary insulating nylons.</li>
+            <li>Using wrong nut.</li>
+            <li>Failure to use nut where it's necessary.</li>
+            <li>Improper connection of connectors.</li>
+          </ol>
+          <details>
+            <summary>Hint</summary>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along an
+              unintended path with no or very low electrical impedance. In a practical idea, short is a direct contact
+              between supply (positive) and ground (GND or negative).</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+            <p>What is ribbon cable? A ribbon cable is a cable with many conducting wires running parallel to each other
+              on the same flat plane.</p>
+            <a target="_blank"
+              href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.parts-people.com%2Fimages%2Fproducts%2FBAL20TPcbl1.JPG&imgrefurl=https%3A%2F%2Fwww.parts-people.com%2Findex.php%3Faction%3Ditem%26id%3D24931&tbnid=XDaXa6IWEWl5IM&vet=12ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ..i&docid=2txtoNE1JhhBUM&w=1200&h=899&q=laptop%20motherboard%20cable&hl=en&ved=2ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ">
+              Ribbon cable</a>
+            <p>What is insulating nylons? This are nylons like tape used to insulate exposed surface.</p>
+            <img class="hint-img1" src="../../images/nav/insulator.jpg" alt="insulator">
+          </details>
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+              YOU</button>
+          </div>
+          <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr5 invisible">
+          <h3>Still the same after testing nakedly</h3>
+          <p>Check impedance of main supply rail(19v rail)</p>
+
+          <div class="arrow">
+            <button class="btn-pwr5 btn option" type="button" name="button">Main suppy rail impedance is bad</button>
+            <button class="btn-pwr6 btn option" type="button" name="button">Main suppy rail impedance is fine</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What is impedance? Measure of the total opposition that a circuit or a part of a circuit presents to
+              electric current.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=j04w3Ry8INg">AFS SOLUTION</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=6V1D5YCWBL4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=07pGvpmDQaI">Adamant IT</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=do5P6qDOMiU">Laptop Repair Zone</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=E0WfkX7B7YU">Laptex</a>
+            <p>What is main supply rail? Main supply rail is also know as the main suppy path, it the line of the
+              adapter and battery voltage.</p>
+            <p>About 19v rail and CLR: It is a current limit resistor and it is the point where battery and adapter
+              voltage meet each other.</p>
+            <p>Where is the CLR? Check reference for clue.</p>
+            <p>What is the expected impedance of 19v rail? Minimun of O.150 in diode range of the multimeter</p>
+            <p>Many recent motherboards uses narrow voltage controller(NVDC) structure, this is the type of
+              architectures that generate main rail voltage at the charging coil line. There will also be a CLR at the
+              point. </p>
+            <p>How do I identify NVDC structure? In many cases, there will be 2 MOSFETs connected as charging IC PWM Top
+              MOSFET. Check LA-C361P in <em>Hint</em> for clue.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>Here are the CLR location for the below motherboards</p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>PR56</p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>PR41</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>PR122</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>PR102</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>PR302</p>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <P>PR4426</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <P>This architecture is an example of one of those architectures that generate main rail voltage at
+                  the charging coil line. There will also be a CLR at the point, therefore you have to check impedance
+                  of both CLR and make sure they are good before any further troubleshooting.</P>
+                <P>PR300 & PR310</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <P>PR302</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr6 invisible">
+          <h3>Main suppy rail impedance is bad</h3>
+          <p>If the impedance of main supply rail is bad, it must be cleared before proceeding.</p>
+          <p>Follow the below steps to clear the short.</p>
+          <ol>
+            <li>Reduce the DC supply voltage to arround 10v.</li>
+            <li>Reduce Amps to around 1.5amps or less.</li>
+            <li>Connect negative of DC supply to Ground of the motherboard.</li>
+            <li>Connect positive of DC supply to CLR or Drain of PWM top MOSFET.</li>
+            <li>Turn on your DC supply and gentle search for any heating component.</li>
+            <li>If you can't find heating component, keep increasing the amps and search for any heating component.
+            </li>
+            <li>Do not increase above adapter voltage</li>
+          </ol>
+          <P>Once you find any heating component, replace it and proceed by testing motherboard after replacing faulty
+            component</P>
+          <details>
+            <summary>Hint</summary>
+            <a target="_blank" href="https://www.youtube.com/watch?v=j04w3Ry8INg">AFS SOLUTIONS</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=6V1D5YCWBL4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=07pGvpmDQaI">Adamant IT</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=do5P6qDOMiU">Laptop Repair Zone</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=E0WfkX7B7YU">Laptex</a>
+          </details>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard</p>
+          <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr7 invisible">
+          <h3>Main suppy rail impedance is fine</h3>
+          <p>Plug motherboard to DC supply, and check voltage at CLR</p>
+          <div class=arrow>
+            <button class="btn-pwr7 btn option" type="button" name="button">19V present at CLR</button>
+            <button class="btn-pwr8 btn option" type="button" name="button">19V absent at CLR</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Beware of the latest architectures which there main CLR voltage is generated at the charging CLR.
+              Consider to also check availability of the volatge if your motherboard is the type that generate B+
+              voltage at battery coil. The voltage use to range between 8.5V to 16v, depending on the architecture.</p>
+            <p>What is CLR? It is a current limit resistor and it is the point where battery and adapter voltage meet
+              each other. In many cases, its always close to charging point and it is always next to second VIN
+              MOSFET.
+            </p>
+            <img class="hint-img1" src="../../images/nav/clr.jpg" alt="clr">
+            <P>How to detect CLR? It is always next to the second VIN MOSFET and mostly close to the charging port. In
+              the schematic, it's input and output is always connected to charging IC ACP and ACN respectively.</P>
+            <img class="hint-img1" src="../../images/nav/schematic-clr.jpg" alt="schematic-clr">
+            <P>What is the expected voltage? It actually depends on the adapter voltage and the motherboard
+              architecture, it is mostly 19V range. Some motherboards uses 15V.</P>
+            <p>Many recent motherboards uses narrow voltage controller(NVDC) structure. This is the type of
+              architectures that generate main rail voltage at the charging coil line. There will also be a CLR at the
+              point and this is the voltage feeded to every section of the motherboard that requires CLR voltage. The
+              voltage at this point is always lesser than adapter voltage. It is always within 12V to 17v.</p>
+
+            <p>How do I identify NVDC structure? In many cases, there will be 2 MOSFETs connected as charging IC PWM Top
+              MOSFET. Check LA-C361P in <em>Hint</em> for clue.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>Here are the CLR location for the below motherboards</p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>PR56</p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>PR41</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>PR122</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>PR102</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>PR302</p>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <P>PR4426</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <P>This architecture is an example of one of those architectures that generate main rail voltage at
+                  the charging coil line. There will also be a CLR at the point, therefor you have to check voltage of
+                  both CLR. Adapter voltage present at PR300 does not mean your main supply rail voltage is present.
+                  The main supply feeded to the entire motherboard is generated at PR310. If voltage is present at the
+                  battery CLR(PR310), for this kinds of architectures then your main supply rail is present. This
+                  voltage is always between 8.5V-16V</P>
+                <P>PR300 & PR310</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <P>PR302</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr8 invisible">
+          <em>If your motherboard uses NVDC structure your major concern is the battery CLR voltage. check <strong>Hint</strong> clue.</em>
+          <h3>19V present at CLR</h3>
+          <p>Check impedance of all PWM output coils</p>
+          <div class="arrow">
+            <button class="btn-pwr20 btn option" type="button" name="button">All PWM output coil is fine</button>
+            <button class="btn-pwr21 btn option" type="button" name="button">One or more PWM output coil is
+              short</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>Many recent motherboards uses narrow voltage controller(NVDC) structure. This is the type of
+              architectures that generate main rail voltage at the charging coil line. There will also be a CLR at the
+              point and this is the voltage feeded to every section of the motherboard that requires CLR voltage. The
+              voltage at this point is always lesser than adapter voltage. It is always within 12V to 17v.</p>
+
+            <p>How do I identify NVDC structure? In many cases, there will be 2 MOSFETs connected as charging IC PWM Top
+              MOSFET. Check LA-C361P in <em>Hint</em> for clue.</p>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+              an unintended path with no or very low electrical impedance. In a practical idea, short is a
+              direct contact between supply (positive) and ground (GND or negative).</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+            <p>If there is short on any of the PWM output coil, make sure it is cleared before proceeding. Each PWM
+              output coil represent each section of the motherboard.</p>
+            <p>Place more attention on the major PWM output coils, this include the followings:</p>
+            <li>3.3V PWM output coil</li>
+            <li>5V PWM output coil</li>
+            <li>RAM PWM output coil</li>
+            <li>PCH/ICH PWM output coil</li>
+            <li>CPU core PWM output coil</li>
+            <li>Gfx PWM output coil</li>
+            <p>The above list of PWM output coils are the major sections. Some section can have 2 coils just like the
+              CPU coils, regardless of the major important PWM output coils, it is important to check impedance of all
+              the PWM output coil available on the motherboard.</p>
+            <p>Each PWM output coils have it's expected value depending on the motherboard section.</p>
+            <p>What is the expected impedance value of each section? The minimum value of each section goes below</p>
+            <li>Battery PWM output coil in 0.150</li>
+            <li>3.3V PWM output coil is 0.100</li>
+            <li>5V PWM output coil 0.100</li>
+            <li>RAM PWM output coil is 0.040</li>
+            <li>PCH/ICH PWM output coil is 0.15</li>
+            <li>CPU core PWM output coil is 0.005 if the processor is present on the motherboard, if you are checking
+              without processor 0.170</li>
+            <li>Gfx PWM output coil 0.005</li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=EgNpnS8fnl0">AFS SOLUTIONS</a>
+            <p>Don't be confused, your multimeter can give you value like this 0.150 or 150 they are still the same
+              value</p>
+          </details>
+          <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+        </div>
+        <!-- div 20&21 where later updated -->
+        <div class="d-pwr20 invisible">
+          <h3>All PWM output coil is fine</h3>
+          <P>Next step is to check LDO3(VREG3), LDO5(VREG5) and reference(VREF) voltages of standby section.</P>
+          <div class="arrow">
+            <button class="btn-pwr9 btn option" type="button" name="button">LDO 3&5 present at testing point</button>
+            <button class="btn-pwr10 btn option" onclick="location.href='standby-section.ejs'" type="button"
+              name="button">LDO 3&5 or one LDO is absent at testing point</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>Beware of some standby ICs that uses enable to activate LDO. This means, enable LDO voltage has to be
+              present before getting all LDOs e.g ISL6237, SN0806081 and more</p>
+            <p>What is the voltage of enable LDO? It actually depends on the circuit. In many cases, it is usually
+              archived by dropping arround 5V from VIN voltage through the use of zener diode and it will be used as
+              input of voltage divider, output of the voltage divider will be the final enable LDO value.</p>
+            <p>Where can I check LDOs voltage? At standby section.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=PPZDBQ9ARPA">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=MOPhRCklxm4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=d35DszdjafU">Aditya11ttt</a>
+            <p>What is the expected LDOs voltage? 3.3V, 5v and 2vref.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>Using the reference motherboards this will provide answer to your questions concerning the checking
+                of
+                LDO3(VREG3), LDO5(VREG5) and reference(VREF) voltages of standby section.</p>
+              <p>Here are the locations and testing points for the below motherboards.</p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>This is an example of standby IC that uses enable LDO</p>
+                <p>Standby IC location: PU4</p>
+                <P>Enable LDO: Pin 4 of PU4. Here, PD8 is the zener diode used to drop 5.1v out of 19v()VS, PR46 &
+                  PR47
+                  are the voltage divider circuit.</P>
+                <p>LDO 3: Pin5 of PU4</p>
+                <P>LDO 5: Pin7 of PU4</P>
+                <P>VREF: Pin1 of PU4</P>
+                <p>Clue: 2VREF_ISL6237 written on pin1 of PU4 simply means that you can replace SN0806081 with ISL6237
+                </p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>Standby IC location: PU5</p>
+                <p>LDO 3: Pin8 of PU5</p>
+                <P>LDO 5: Pin17 of PU5</P>
+                <P>VREF: Pin3 of PU5</P>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>Standby regulator location: PU8</p>
+                <p>LDO 3: Pin8 of PU8</p>
+                <P>LDO 5: Pin17 of PU8</P>
+                <P>VREF: Pin3 of PU8</P>
+                <p>Clue: 8205 written on pin13 of PU8 simply means you can replace UP1585 with 8205.</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>Standby regulator location: PU200</p>
+                <p>LDO 3: Pin8 of PU200</p>
+                <P>LDO 5: Pin17 of PU200</P>
+                <P>VREF: Pin3 of PU200</P>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>In this architecture, individual standby regulator is used and there top and lower MOSFET is
+                  embedded
+                  inside the regulator</p>
+                <p>Standby regulators location: PU401 & PU402</p>
+                <p>LDO 3: Pin5 of PU401</p>
+                <P>LDO 5: Pin7 of PU402</P>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <p>Standby regulator location: PU4503</p>
+                <p>LDO 3: Pin3 of PU4503</p>
+                <P>LDO 5: Pin13 of PU4503</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <p>Standby regulator location: PU400</p>
+                <p>LDO 3: Pin3 of PU400</p>
+                <P>LDO 5: Pin13 of PU400</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>Standby regulator location: PU400</p>
+                <p>LDO 3: Pin3 of PU400</p>
+                <P>LDO 5: Pin13 of PU400</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr21 invisible">
+          <h3>One or more PWM output coil is short</h3>
+          <p>First thing first, clear the short</p>
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='short-in-pwm-coil.ejs'" type="button" name="button">Show
+              me how to clear short on PWM section</button>
+          </div>
+          <details>
+            <summary>Hint</summary>
+            <p>It is best to clear the founded short before proceeding as it can be the cause of your motherboard
+              problem.</p>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+              an unintended path with no or very low electrical impedance. In a practical idea, short is a
+              direct contact between supply (positive) and ground (GND or negative).</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+          </details>
+          <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr9 invisible">
+          <h3>19V absent at CLR</h3>
+          <p>Locate switching MOSFET (ACFET) and check input voltage of the Switching MOSFET</p>
+
+          <div class="arrow">
+            <button class="btn-pwr11 btn option" type="button" name="button">Adapter voltage present at ACFET
+              Input</button>
+            <button class="btn-pwr12 btn option" type="button" name="button">Adapter voltage absent at ACFET
+              Input</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>ACFET: This is commonly refers to as switching MOSFET. It switches adapter voltage and passes battery
+              voltage.</p>
+            <p>How to locate ACFET: The MOSFET internal diode kathod will be connected to the input from adapter. It
+              is usually refers to as second Vin MOSFET.</p>
+            <P>Going by the generic concept, from the adpater port (charging port), there will be 2 MOSFETs through
+              which the adapter voltage will pass through. One of the MOSFETs will pass the adapter voltage
+              automatically because it will be connected in such a way that the internal diode will be in forward
+              form. While the other MOSFET will be connected in such a way that the internal diode will be in reverse
+              manner(blocking).</P>
+            <p>Check out the below links to understand more about this concept. After going through the below
+              materials, you should be able to understand the concept of this section. You will be able to determine the
+              input and output, also the ACFET & RBFET and the expected voltage value.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4OfAp1JSNG4">Laptex</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=FaUlCiCFw58">AFS SOLUTIONS</a>
+            <details>
+              <summary>Reference</summary>
+              <p>This is the location of ACFET and input of ACFET of the below motherboards </p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>ACFET: PQ10</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>ACFET: PQ10</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>ACFET: PQ50</p>
+                <P>Input: Drain pin 5</P>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>ACFET: PQ101</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>ACFET: PQ302</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <p>ACFET: PQ4301</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>ACFET: PQ200</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <p>ACFET: PQ306</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr10 invisible">
+          <h3>LDO 3&5 present at testing point</h3>
+          <p>Check 3.3V and 5V coils voltage at standby output coils</p>
+
+          <div class="arrow">
+            <button class="btn-pwr13 btn option" type="button" name="button">3.3v & 5v present at output coil</button>
+            <button class="btn-pwr14 btn option" type="button" name="button">3.3v & 5v absent at output coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Standby output coil: This is the voltage at the PWM output coils.</p>
+            <p>In some architectures, the standby output coil voltage is designed to generate and withdraw in less the
+              5sec. One clue of this type of architectures is that the DC supply current readings drop with around
+              0.009amps out of the first value that appears on DC supply e.g from 0.015 to 0.006</p>
+            <p>Also some standby output coil voltages are designed to generate after power button is pressed.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>This is the location of 3V and 5V coil of the below motherboard.</p>
+              <ul>
+                <li>LA-B101</li>
+                <p>PL402 & PL404</p>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <P>PL4502 & PL4501</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <P>PL402 & PL403</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr11 invisible">
+          <h3>3.3v & 5v absent at output coil</h3>
+          <p>At this state of your troubleshooting, we continue by tackling standy section </p>
+          <button class="btn option" onclick="location.href='standby-section.ejs'" type="button" name="button">Standby
+            sction</button>
+          <details>
+            <summary>Hint</summary>
+            <p>Instead of replacing the standby IC directly, it is always best to check the standby carefully from the
+              basic before concluding.</p>
+          </details>
+          <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr12 invisible">
+          <h3>Adapter voltage present at ACFET Input </h3>
+          <p>Gate of switching MOSFET(ACFET) is controlled by Charging IC?</p>
+
+          <button class="btn option" onclick="location.href='no-19v-at-clr.ejs'" type="button" name="button">If Yes,
+            let check charging IC</button>
+          <button class="btn-pwr15 btn option" type="button" name="button">If No, follow the simple circuit</button>
+          <details>
+            <summary>Hint</summary>
+            <p>What is gate voltage? It is the voltage that determines weather MOSFET voltage will be crossed or not.
+              The MOSFET is always directly or indirectly controlled by the charging IC in this section.</p>
+            <p>What is the expected voltage? It actually depends on the type of MOSFET used and the circuit diagram.
+            </p>
+            <p>What is the expected value of adapter voltage? It is always stated in the recommended adapter. It is
+              mostly 19V.</p>
+            <p>What is ACFET? It is commonly referred to as switching MOSFET. It switches adapter voltage and forward
+              battery voltage.</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4OfAp1JSNG4">Laptex</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=FaUlCiCFw58">AFS SOLUTIONS</a>
+            <details>
+              <summary>Reference</summary>
+              <p>This is the location of ACFET and input of ACFET of the below motherboards </p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>ACFET: PQ10</p>
+                <p>Gate is directly controlled by charging IC.</p>
+                <p>Connection between pin4 of PQ10(gate) and pin4 of PU5.</p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>ACFET: PQ10</p>
+                <p>Gate is directly controlled by charging IC.</p>
+                <p>Connection between pin4 of PQ10(gate) and pin4 of PU4.</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>ACFET: PQ50</p>
+                <p>Gate is directly controlled by charging IC.</p>
+                <p>Connection between pin4 of PQ50(gate) and pin4 of PU9.</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>ACFET: PQ101</p>
+                <p>Gate is indirectly controlled by charging IC.</p>
+                <p>Charging IC does the controlling through the ACIN voltage released from it's pin13(ACOK) to turn on
+                  PQ14B in other to make voltage divider out of PR101 & PR105.</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>ACFET: PQ302</p>
+                <P>Gate is indirectly controlled by charging IC.</P>
+                <p>Charging IC does the controlling through the ACPRN# voltage released from it's pin5(ACOK) to turn
+                  on
+                  PQ314 in other to make voltage divider out of PR326 & PR327 which output is PACIN. This PACIN is
+                  used
+                  to turn on PQ307B in other to make voltage divider out of PR303 & PR308.</p>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <p>ACFET: PQ4301</p>
+                <P>Not controlled by the charging IC.</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>ACFET: PQ200</p>
+                <P>Not controlled by the charging IC.</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <p>ACFET: PQ306</p>
+                <p>Gate is directly controlled by charging IC.</p>
+                <p>Connection between pin4 of PQ306(gate) and pin4 of PU300.</p>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr13 invisible">
+          <h3>If No, follow the simple circuit</h3>
+          <p>Which of the below options is the switching MOSFET gate controlled by?</p>
+
+          <div class="arrow">
+            <button class="btn-pwr16" type="button" name="button">Controlled by voltage divider</button>
+            <button class="btn-pwr17" type="button" name="button">Controlled by VH28 IC</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>If switching MOSFET is not controlled by battery IC, in many cases it will be controlled by voltage
+              divider or in some HP motherboards it is controlled by VH28 IC. Even when its controlled by VH28 IC, it
+              is till done with the aid of charging IC through <em>ACIN or ACOK</em> signal issued by charging IC.
+              Examples are LA-B101 & LA-9104P that are indirectly controlled by charging IC. DA0P8 and AX1 is an example
+              of Moteherboaed which gate is controlled by VH28 IC. This is specific to HP motherboards.</p>
+            <p>If it is controlled by voltage divider, carefully check the divider circuit. Most of the time the
+              voltage divider pull down resistor will be indirectly controlled by charging IC. You will understand the
+              concept more in the below references:</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4OfAp1JSNG4">Laptex</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=FaUlCiCFw58">AFS SOLUTIONS</a>
+          </details>
+          <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr14 invisible">
+          <h3>Controlled by voltage divider</h3>
+          <p>Carefully check the voltage divider circuit.</p>
+          <Details>
+            <summary>Hint</summary>
+            <p>How to check voltage divider circuit:</p>
+            <ol>
+              <li>Check input voltage of the divider circuit.</li>
+              <li>Check the esistance value of resistors. sometime, it is best to take the resistors out of the
+                motherboard and test. You will understand voltage divider more in the below references:</li>
+              <a target="_blank" href="https://www.youtube.com/watch?v=FaUlCiCFw58">AFS SOLUTIONS</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=4OfAp1JSNG4">Laptex</a>
+            </ol>
+            <p>If it is controlled by voltage divider, carefully check the divider circuit. Most of the time the
+              voltage
+              divider ground will be indirectly controlled by charging IC.</p>
+          </Details>
+          <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr15 invisible">
+          <h3>Controlled by VH28 IC</h3>
+          <p>Even If switching MOSFET is controlled VH28 IC, it is till done with the aid of charging IC through
+            <em>ACIN</em> signal. Therefor, we can proceed by check charging ic requirement first.
+          </p>
+
+          <button class="btn option" onclick="location.href='no-19v-at-clr.ejs'" type="button" name="button">Let check
+            charging IC requirements</button>
+          <details>
+            <summary>Hint</summary>
+            <p>VH28 IC: It is a boosting IC mostly used in HP motherboards. <img src="" alt=""></p>
+            <p>Sometime it is a simple boosting circuit on the that will be achieved via diodes and capacitors</p>
+          </details>
+          <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-pwr16 invisible">
+          <h3>Adapter voltage absent at ACFET Input</h3>
+          <p>Check voltage at the input of RBFET(blocking MOSFET)</p>
+
+          <div class="arrow">
+            <button class="btn-pwr18 btn option" type="button" name="button">Adapter voltage present at input of
+              RBFET</button>
+            <button class="btn-pwr19 btn option" type="button" name="button">Adapter voltage absent at input of
+              RBFET</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>RBFET: It is the MOSFET forwarding the adapter voltage and blocking the battery voltage</p>
+            <p>RBFET can be P-channel or N-channel or diode, depending on the architecture</p>
+            <details>
+              <summary>Reference</summary>
+              <p>This is the location of RBFET and input of RBFET of the below motherboards </p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>RBFET: PQ9</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>RBFET: PQ10</p>
+                <P>Input: Source pin 1,2 & 3</P>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>RBFET: PQ48</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>RBFET: PQ100</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>RBFET: PQ301</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <p>RBFET: PQ4410</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>RBFET: PQ201</p>
+                <P>Input: Drain pin 5,6,7 & 8</P>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <p>RBFET: PQ302</p>
+                <P>Input: Source pin 5,6,7 & 8</P>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr17 invisible">
+          <h3>Adapter voltage present at input of RBFET</h3>
+          <p>Replace RBFET(blocking MOSFET)</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU </button>
+          <details>
+            <summary>Hint</summary>
+            <p>Some times, diode will be used in place of RBFET</p>
+          </details>
+          <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-pwr18 invisible">
+          <h3>Adapter voltage absent at input of RBFET (blocking MOSFET)</h3>
+          <p>Back-trace the voltage</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard</p>
+          <details>
+            <summary>Hint</summary>
+            <p>It will either come from a coil or fuse and this is always feeded directly from charging port</p>
+            <p>Check voltage on coil or fuse pin 1 and 2, if there is no adapter voltage on both pins, check charging
+              port</p>
+            <p>Check voltage on coil or fuse pin 1 and 2, if there is adapter voltage only on input pin, change the
+              component</p>
+            <details>
+              <summary>Reference</summary>
+              <p>Using the reference motherboards. below is the location</p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>PL1</p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>PL1</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <p>PL18 & PL19</p>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>PL901</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>PF101</p>
+              </ul>
+            </details>
+          </details>
+          <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+
+        </div>
+        <div class="d-pwr19 invisible">
+          <h3>3.3v & 5v present at output coil</h3>
+          <p>Quickly navigate through standby section and continue from the part where 3.3v & 5v output coils voltage
+            is generated or proceed to super I/O requirement.</p>
+
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='standby-section.ejs'" type="button" name="button">Standby
+              section</button>
+            <button class="btn option" onclick="location.href='io-requirements.ejs'" type="button" name="button">Super
+              I/O requirement</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>If standby coils voltage is present and appropriate voltage is present at BIOS pin 8, you can attempt
+              programming BIOS. Beware, it is not the best option but it saves time simply because many power issues
+              will be caused by BIOS if all the previous tested voltages are present.</p>
+          </details>
+          <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+
+      </div>
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+
+  </body>
+
+  </html>

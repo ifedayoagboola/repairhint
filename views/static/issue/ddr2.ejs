@@ -1,0 +1,239 @@
+<%- include('../../partials/issue-header') %>
+<body id="ddr2" onLoad="bugRoute()">
+<%- include('../../partials/issue-navbar') %>
+
+  <div class="direction">
+    <div class="d-rtwo1">
+        <h3>DDR2 RAM troubleshooting</h3>
+        <p>Check VREF voltage on pin 1 or 26</p>
+        <div class="arrow">
+         <button class="btn-rtwo1 btn option" type="button" name="button">VREF is present</button>
+        <button class="btn-rtwo2 btn option" type="button" name="button">VREF is absent</button>
+     </div>
+        <details>
+            <summary>Hint</summary>
+            <P>VREF voltge is always half of the RAM supply. </P>
+            <p>The value is 0.90v</p>
+            <p>Check with ram if is possible.</p>
+            <p>Check at Ram pin number 1</p>
+        </details>     
+    </div>
+    <div class="d-rtwo2 invisible">
+        <h3>VREF is present</h3>
+        <p>Check VDDSPD voltage on pin 199.</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo3 btn option" type="button" name="button">VDDSPD is present</button>
+        <button class="btn-rtwo4 btn option" type="button" name="button">VDDSPD is absent</button>
+        </div>
+        <details>
+            <summary>Hint</summary>
+            <p>What is the expected voltage? 3.3V</p>
+            <p>Check with ram if is possible.</p>
+            <p>Check at RAM pin number 199</p>
+        </details>
+        <button class="btn option" onclick="location.href='ddr2.ejs'" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo3 invisible">
+        <h3>VREF is absent</h3>
+        <p>Back-trace the voltage.</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>Hint</summary>
+            <p>VREF is mostly generated out of a voltage divider which input is always feeded from RAM supply.</p>
+            <p>The value is 0.9v </p>
+        </details> 
+        <button class="btn option" onclick="location.href='ddr2.ejs'" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo4 invisible">
+        <h3>VDDSPD is present</h3>
+        <p>Check RAM supply voltage on pin 82 (it has multiple, just pick on one)</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo5 btn option" type="button" name="button">RAM supply is present</button>
+        <button class="btn-rtwo6 btn option" type="button" name="button">RAM supply is absent</button>
+        </div>       
+        <details>
+            <summary>Hint</summary>
+            <p>What is RAM supply? This is the main power voltage for the RAM section.</p>
+            <p>The value is 1.8V</p>
+        </details>
+        <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo5 invisible">
+        <h3>VDDSPD is absent</h3>
+        <p>Back-trace the voltage.</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>Hint</summary>
+            <p>This pin is feeded directly from the VS(3v DC-DC output) voltage.</p>
+            <p>The voltage value is 3.3v</p>
+        </details>
+        <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo6 invisible">
+        <h3>RAM supply is present</h3>
+        <p>Check SCLK voltage on pin 197</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo7 btn option" type="button" name="button">SCLK voltage is present</button>
+        <button class="btn-rtwo8 btn option" type="button" name="button">SCLK voltage is absent</button>
+        </div>
+        
+        <details>
+            <summary>Hint</summary>
+            <p>The voltage is always pulled up with a resistor which input voltage is 3.3</p>
+            <p>The voltage value is 3.3v</p>
+        </details>
+        <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo7 invisible">
+        <h3>RAM supply is absent</h3>
+        <p>Back-trace the RAM supply voltage to it's source voltage (RAM PWM).</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>RAM supply</summary>
+            <p>Re-check voltage at the RAM supply coil.</p>
+            <P>Check continuity between RAM supply coil and RAM pin.</P>
+        </details>
+        <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo8 invisible">
+        <h3>SCLK voltage is present</h3>
+        <p>Check SDAT voltage on pin 195</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo9 btn option" type="button" name="button">SDAT voltage is present</button>
+        <button class="btn-rtwo10 btn option" type="button" name="button">SDAT voltage is absent</button>
+        </div>
+        
+        <details>
+            <summary>Hint</summary>
+            <p>The voltage is always pulled up with a resistor which input voltage is 3.3</p>
+            <p>The voltage value is 3.3v</p>
+        </details>
+        <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo9 invisible">
+        <h3>SCLK voltage is absent</h3>
+        <p>Back-trace the voltage to its pullup resistor</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>Hint</summary>
+            <p>The voltage is always pulled up with a resistor which input voltage is 3.3V</p>
+            <P>Locate the connected resistor and check the resistor input voltage, output voltage and resistance value.
+            </P>
+        </details>
+        <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo10 invisible">
+        <h3>SDAT voltage is present</h3>
+        <p>Check SCLK signal.</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo11 btn option" type="button" name="button">SCLK signal is present</button>
+        <button class="btn-rtwo12 btn option" type="button" name="button">SCLK signal is absent</button>
+        </div>
+        
+        <details>
+            <summary>Hint</summary>
+            <p>The signal appears and disappear in less than a second</p>
+            <p>Set your oscilloscope at dc mode and place your oscilloscope probe at the testing point, then trigger the
+                board to check the signal</p>
+        </details>
+        <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo11 invisible">
+        <h3>SDAT voltage is absent</h3>
+        <p>Back-trace the voltage to its pullup resistor</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>Hint</summary>
+            <p>The voltage is always pulled up with a resistor which input voltage is 3.3V</p>
+            <P>Locate the connected pull up resistor and check the resistor voltage and resistance.</P>
+            <a target="_blank" href="https://www.youtube.com/watch?v=JWju5kNftok">Aditya11ttt</a>
+        </details>
+        <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo12 invisible">
+        <h3>SCLK signal is present</h3>
+        <p>Check SDAT signal</p>
+
+        <div class="arrow">
+        <button class="btn-rtwo13 btn option" type="button" name="button">SDAT signal is present</button>
+        <button class="btn-rtwo14 btn option" type="button" name="button">SDAT signal is absent</button>
+        </div>
+        
+        <details>
+            <summary>Hint</summary>
+            <p>The signal appears and disappear in less than a second</p>
+            <p>Set your oscilloscope at dc mode and place your oscilloscope probe at the testing point, then trigger the
+                board to check the signal</p>
+            <p>It is a good idea flash the main BIOS even if the SCLK and SDAT is present</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=JWju5kNftok">Aditya11ttt</a>
+        </details>
+        <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo13 invisible">
+        <h3>SCLK signal is absent</h3>
+        <p>Flash MAIN BIOS chip</p>
+        <p>If flashing bios does'nt help, check LPC freme signal.</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard,</p>
+        <details>
+            <summary>Hint</summary>
+            <p>SCLK signal appears and disappear in less than a second.</p>
+            <p>You can check LPC frame at the super SIO pin.</p>
+        </details>
+        <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo14 invisible">
+        <h2>SDAT signal is present</h2>
+        <p>Check LPC Frame signal</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <details>
+            <summary>Hint</summary>
+            <p>You can check LPC frame at the super SIO pin.</p>
+            <p>It is a good idea flash the main BIOS even if the SCLK and SDAT is present.</p>
+        </details>
+        <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+    </div>
+    <div class="d-rtwo15 invisible">
+        <h3>SDAT signal is absent</h3>
+        <p>Flash MAIN BIOS chip.</p>
+        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK YOU</button>
+        <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+        <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+    </div>
+
+    <!-- Bug form using ejs template-->
+    <%- include('../../partials/navigator-bug-form') %>
+    </div>
+    
+<!-- Footer using ejs template-->
+<%- include('../../partials/footer') %>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<script src="../../js/index.js" charset="utf-8"></script>
+
+<!-- Bug for script file using ejs template. It's not working  using external script-->
+<%- include('../../partials/bug') %>
+</body>
+
+</html>

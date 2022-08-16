@@ -1,0 +1,531 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="cpu" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-cpu1">
+                    <h3>CPU Core section troubleshooting</h3>
+                    <p>Be sure impedance of CPU coil is fine.</p>
+                    <p>Check main supply voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu1 btn option" type="button" name="button">All main supplies is
+                            present</button>
+                        <button class="btn-cpu2 btn option" type="button" name="button">One of the main supplies is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>hint</summary>
+                        <p>Main supply voltage in VCORE IC use to varies slightly in total number and value. some will
+                            have 2 main supplies, some will have 3 and even 4 main supplies.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EAYQtidl3DY">Laptex</a>
+                        <br>
+                        <p>Also confirm presence of the VIN voltage at the drain of PWM top MOSFET.</p>
+                        <p>However, for checking any PWM circuit on your motherboard, it is a good practice to always
+                            check drain
+                            voltage of top MOSFET.</p>
+                        <p>In most latest motherboards, VCORE PWM circuit is now all integrated in one single IC.
+                            Therefore, you are good once you check the IC inputs.</p>
+                        <p>Here are few examples of the supply with name and there voltage for VCORE PWM regulator:</p>
+                        <ul>
+                            <p>Example 1:</p>
+                            <li>Drain of top MOSFET: CLR voltage</li>
+                            <li>VDD = 5V</li>
+                            <li>VCCP= 5V</li>
+
+                            <p>Example 2:</p>
+                            <li>Drain of top MOSFET: CLR voltage</li>
+                            <li>VDD = 5V</li>
+                            <li>VCC= 5V</li>
+
+                            <p>Example 3:</p>
+                            <li>Drain of top MOSFET: CLR voltage</li>
+                            <li>VIN = 19V</li>
+                            <li>VCC = 5V</li>
+                            <li>3V3 = 3.3V</li>
+                        </ul>
+                        <p>Where can I check this supplies? VCORE regulator pin and drain of top MOSFET. In most latest
+                            motherboards, both top and lower MOSFETs is embelded inside VCORE reguralor therefore,
+                            you won't find drain of top MOSFET to check CLR voltage instead you have to stick to VCORE
+                            regulator only.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>This is the VCORE IC location for the below motherboards.</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <p>PU10</p>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>PU13</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>PU10</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PU700</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>PU901</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <p>PU4601</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PU1100</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>PU1100</p>
+                            </ul>
+                        </details>
+                    </details>
+                </div>
+                <div class="d-cpu2 invisible">
+                    <h3>All main supplies is present</h3>
+                    <p>Check VRON pin.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu3 btn option" type="button" name="button">VRON is present</button>
+                        <button class="btn-cpu4 btn option" type="button" name="button">VRON is absent</button>
+
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why should I check VR_ON? VR_ON is the enable voltage for the VCORE section.</p>
+                        <p>What is the expected VR_ON voltage value? 3.3V (90% is the minimun value).</p>
+                        <p>What is the other name for VR_ON in schematic? VR_RDY, VR_READY.</p>
+                    </details>
+                    <button class="btn option" onclick="location.href='no-cpu-core.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-cpu3 invisible">
+                    <h3>One of the main supplies is absent</h3>
+                    <p>Back-trace the missing voltage.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>As for the 19v, there use to be a resistor and capacitor connected to the VCC line. Check
+                            short at the capacitor or VCC pin and check the value of the resistor. Checkout practical
+                            example:</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EAYQtidl3DY">Laptex</a>
+                        <P>As for the 5V and 3V, they are mostly feeded direcly from the DC-DC line.</P>
+                    </details>
+                    <button class="btn option" onclick="location.href='no-cpu-core.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-cpu4 invisible">
+                    <h3>VRON is present</h3>
+                    <p>Check voltage on the SCLK.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu5 btn option" type="button" name="button">SCLK is present</button>
+                        <button class="btn-cpu6 btn option" type="button" name="button">SCLK is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage value? 1.05V</p>
+                    </details>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu5 invisible">
+                    <h3>VRON is absent</h3>
+                    <p>Back-trace the voltage to it's source (Mostly generated by super I/O or H_ALL_PWRGD).</p>
+                    <p>Check voltage at the source (super I/O or H_ALL_PWRGD).</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu7 btn option" type="button" name="button">VRON is present at the
+                            source</button>
+                        <button class="btn-cpu8 btn option" type="button" name="button">VRON is absent at the
+                            source</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Mostly it is generated by super I/O or H_ALL_PWRGD circuit.</p>
+                        <p>The voltage is generated through combination of other sections power good(PWRGD).</p>
+                        <P>Confirm all PWM power good voltages because VR_ON is generated by combined availability of
+                            all PWM power goods.</P>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=vketupaMVgw"></a>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu6 invisible">
+                    <h3>SCLK is present</h3>
+                    <p>Check SDAT voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu9 btn option" type="button" name="button">SDAT voltage is present</button>
+                        <button class="btn-cpu10 btn option" type="button" name="button">SDAT voltage is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage value? 1.05V</p>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu7 invisible">
+                    <h3>SDAT voltage is present</h3>
+                    <p>Check ALERT# voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu11 btn option" type="button" name="button">ALERT# voltage is present
+                        </button>
+                        <button class="btn-cpu12 btn option" type="button" name="button">ALERT# voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage value? 1.05V</p>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu8 invisible">
+                    <h3>SCLK is absent</h3>
+                    <p>Back-trace to it's pull up resistor and check the input voltage of the resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu13 btn option" type="button" name="button">SCLK pull up resistor input
+                            voltage is present</button>
+                        <button class="btn-cpu14 btn option" type="button" name="button">SCLK pull up resistor input
+                            voltage is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The pin voltage is pulled by a resistor with 1.05V</p>
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu9 invisible">
+                    <h3>VRON is present at the source</h3>
+                    <p>Check and correct continuity between the source and destination.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu10 invisible">
+                    <h3>VRON is absent at the source</h3>
+                    <p>Check PWRGD of all PWM regulators which coil voltage has generated.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu15 btn option" type="button" name="button">All PWM IC PWRGD voltage is
+                            fine</button>
+                        <button class="btn-cpu16 btn option" type="button" name="button">One PWRGD is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Mostly it is generated by super I/O or H_ALL_PWRGD circuit.</p>
+                        <p>The voltage is generated through combination of other sections power good(PWRGD).</p>
+                        <p>If any of it's required PWRGD is missing, there will be no VR_ON. Checkout practical example:
+                        </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=vketupaMVgw">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu11 invisible">
+                    <h3>SDAT voltage is absent</h3>
+                    <p>Back-trace to it's pull up resistor and check the input voltage of the resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu17 btn option" type="button" name="button">SDAT pull up resistor input
+                            voltage is present</button>
+                        <button class="btn-cpu18 btn option" type="button" name="button">SDAT pull up resistor input
+                            voltage is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The pin voltage is pulled by a resistor with 1.05V</p>
+                    </details>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu12 invisible">
+                    <h3>ALERT# voltage is present</h3>
+                    <p>Replace VCORE IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu19 btn option" type="button" name="button">Still no VCORE voltage after
+                            replacing VCORE IC</button>
+                    </div>
+                    <br>
+                    <br><button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu13 invisible">
+                    <h3>ALERT# voltage is absent</h3>
+                    <p>Back-trace to it's pull up resistor and check the input voltage of the resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu20 btn option" type="button" name="button">ALERT# pull up resistor input
+                            voltage is present</button>
+                        <button class="btn-cpu21 btn option" type="button" name="button">ALERT# pull up resistor input
+                            voltage is absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The pin voltage is pulled by a resistor with 1.05V</p>
+                    </details>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu14 invisible">
+                    <h3>SCLK pull up resistor input voltage is present</h3>
+                    <p>Check the resistance value of the pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu22 btn option" type="button" name="button">The resistance value of SCLK
+                            pull up resistor is good</button>
+                        <button class="btn-cpu23 btn option" type="button" name="button">The resistance value of SCLk
+                            pull up resistor is bad</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu15 invisible">
+                    <h3>SCLK pull up resistor input voltage is absent</h3>
+                    <p>Back-trace the voltage and correct it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always feeded from 1.05V supply</p>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu16 invisible">
+                    <h3>All PWM IC PWRGD voltage is fine</h3>
+                    <p>Carefully back-trace the VR_ON and follow the simple circuit if there is any.</p>
+                    <p>If impedance of VRON is fine, replace the super I/O (If VRON is controlled by super I/O) </p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu17 invisible">
+                    <h3>One PWRGD is absent</h3>
+                    <p>Correct the PWRGD issue and proceed.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Power good of an IC is only present if the IC feedback(FB) circuit is fine.</p>
+                        <p>If the IC feedback(FB) is fine and yet no power good, replace the particular IC.</p>
+                        <p>Beware, it is mostly pulled up by pullup resistor.</p>
+                    </details>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu18 invisible">
+                    <h3>SDAT pull up resistor input voltage is present</h3>
+                    <p>Check the resistance value of the pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu24 btn option" type="button" name="button">The resistance value of SDAT
+                            pull up resistor is good</button>
+                        <button class="btn-cpu25 btn option" type="button" name="button">The resistance value of SDAT
+                            pull up resistor is bad</button>
+                    </div>
+
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu19 invisible">
+                    <h3>SDAT pull up resistor input voltage is absent</h3>
+                    <p>Back-trace the voltage and correct it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always feeded from 1.05V supply.</p>
+                    </details>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu20 invisible">
+                    <h3>Still no VCORE voltage after replacing VCORE IC</h3>
+                    <p>Most likely your PCH/ICH is bad.</p>
+                    <p>In a very rear cases, flashing MAIN BIOS can help.</p>
+                    <p>You can confirm top and lower MOSFET gate frequency and voltage.</p>
+                    <p>In most rear cases, replacing filter capacitor can help.</p>
+                    <P>Check if the motherboard uses token capacitor and follow the procedure.</P>
+
+                    <div class="arrow">
+                        <button class="btn-cpu28 btn option" type="button" name="button">There is token capacitor on
+                            Motherboard.</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If motherboard has no token capacitor, Most likely your PCH/ICH is bad.</p>
+                        <p>How does token capacitor looks like? </p>
+                        <img class="hint-img1" src="../../images/nav/token.jpg" alt="token">
+                        <p>How do I locate token capacitor? It is mostly under the processor and sometimes beside</p>
+                        <p>At times when the token capacitor is faulty, it will cause the PWM coil voltage to be absent
+                            and it does'nt stop the PWM coil voltage from generating some times. In a nutshell, it is
+                            the top weakness of the motherboard that possess the capacitor</p>
+                        <p>How do I replace token capacitor with SMD electrolytic capacitors? </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+                    </details>
+
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu21 invisible">
+                    <h3>ALERT# pull up resistor input voltage is present</h3>
+                    <p>Check the resistance value of the pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-cpu26 btn option" type="button" name="button">The resistance value of ALERT#
+                            pull up resistor is good</button>
+                        <button class="btn-cpu27 btn option" type="button" name="button">The resistance value of ALERT#
+                            pull up resistor is bad</button>
+                    </div>
+
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu22 invisible">
+                    <h3>ALERT# pull up resistor input voltage is absent</h3>
+                    <p>Back-trace the voltage and correct it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The voltage is always feeded from 1.05V supply.</p>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu23 invisible">
+                    <h3>The resistance value of SCLK pull up resistor is good</h3>
+                    <p>Resolder the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        curren state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>There might me dry solder. </p>
+                    </details>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu24 invisible">
+                    <h3>The resistance value of SCLk pull up resistor is bad</h3>
+                    <p>Replace the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu25 invisible">
+                    <h3>The resistance value of SDAT pull up resistor is good</h3>
+                    <p>Resolder the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>There might me dry solder.</p>
+                    </details>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu26 invisible">
+                    <h3>The resistance value of SDAT pull up resistor is bad</h3>
+                    <p>Replace the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu27 invisible">
+                    <h3>The resistance value of ALERT# pull up resistor is good</h3>
+                    <p>Resolder the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>There might me dry solder.</p>
+                    </details>
+                    <button class="btn-previous24 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu28 invisible">
+                    <h3>The resistance value of ALERT# pull up resistor is bad</h3>
+                    <p>Replace the resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous25 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-cpu29 invisible">
+                    <h3>There is token capacitor on Motherboard</h3>
+                    <p>Replace token capacitor with four or two SMD electrolytic capacitors (see hint for clue).</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I replace token capacitor with SMD electrolytic capacitors?</p>
+                        <p>How do I replace token capacitor with SMD electrolytic capacitors? </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=H8ZQQXUd6es">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=jqyTqIEYQB4">Laptop Desktop Repair</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4W2AljjOUYQ">José Faria</a>
+                    </details>
+                    <button class="btn-previous26 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

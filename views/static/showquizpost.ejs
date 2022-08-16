@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repairhint</title>
+</head>
+<body>
+    <div class="container">
+    <h5  style="padding-bottom: 10px;"><%= quiz.q %></h5>
+    <P  style="padding-bottom: 10px;"><%= quiz.options %></P>
+ 
+    <P  style="padding-bottom: 10px;"><%= quiz.answer%></P>
+
+    <% if (quiz.img === undefined){ %>
+        <a href="/partials/no-picture-post.ejs">Post Another Quiz question</a>
+     <%   console.log("No picture") %>
+   <% }else { %>
+        <img style="width: 70%;" src="/uploads/clue-images/<%= quiz.img%>" alt="img"  style="padding-bottom: 10px;"><br>
+       <a href="/partials/picture-post.ejs">Post Another Quiz question</a>
+       
+    <% }  %> 
+    <br>
+
+    
+
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

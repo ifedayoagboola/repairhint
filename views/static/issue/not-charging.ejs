@@ -1,0 +1,664 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="not-charging" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-not-charging1">
+                    <h3>Motherboard not charging </h3>
+                    <p>This will provide help in series of issues such as</p>
+                    <ul>
+                        <li>Motherboard not charging</li>
+                        <li>Motherboard charging battery but not increasing percentage </li>
+                        <li>motherboard not turning on with adapter</li>
+                        <li>Motherboard not detecting adapter</li>
+                        <li>Motherboard not detecting battery </li>
+                        <li>Motherboard not powering(Caused by no 19v at CLR)</li>
+                        <li>Motherboard charging slow</li>
+                        <li>Motherboard discharging fast</li>
+                        <li>Motherboard charging battery sometimes and does not charge sometimes</li>
+                        <li>Motherboard turning on with only adapter</li>
+                        <li>Motherboard turning on with only battery</li>
+                        <li>Motherboard showing 255% battery remaining</li>
+                        <li>Motherboard power with adapter but does not power with battery</li>
+                        <li>Motherboard power with battery but does not power with adapter</li>
+                    </ul>
+                    <div class="arrow">
+                        <button class="btn-not-charging1 btn option" type="button" name="button">Proceed</button>
+                    </div>
+                </div>
+                <div class="d-not-charging2 invisible">
+                    <p>The first and most important step in troubleshooting is to carefully check for physical damages.
+                    </p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging2 btn option" type="button" name="button">Not clear from physical
+                            damages</button>
+                        <button class="btn-not-charging3 btn option" type="button" name="button">All clear from physical
+                            damages</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is physical damage? This is motherboard damage that can be physically seen e.g
+                            corrosion, track damage, liquid damage, broken tracks, missing components e.t.c. </p>
+                        <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+                        <img class="hint-img1" src="../../images/nav/burnt.jpg" alt="physical-damage1">
+                        <img class="hint-img1" src="../../images/nav/physical-damage.jpg" alt="physical-damage1">
+                        <p>Physical damage can be small to the extent that you won't observe it and yet it can cause any
+                            kind of issue on your motherboard, depending on where the damage is.</p>
+                        <p>It is ideal and best practice to check for physical damages for at least 7 minutes.</p>
+                        <a target="_blank"
+                            href="https://www.google.com/search?q=laptop+motherboard+damages&tbm=isch&ved=2ahUKEwjxuo3H5774AhUE3hoKHWHpDc0Q2-cCegQIABAA&oq=laptop+motherboard+damages&gs_lcp=CgNpbWcQA1CZBljVEWDaFWgAcAB4AIAB5wOIAYsRkgEHMi00LjIuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=5dyxYrG0OIS8a-HSt-gM">Check
+                            out more physical damages</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='not-charging.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging3 invisible">
+                    <h3>Not clear from physical damages</h3>
+                    <p>Physical damages includes liquid damage, corrossion, rust, dry joint, burnt part or
+                        component, broken tracks, missing components e.t.c.</p>
+                    <p>Follow the below steps to successfully take care of physical damages such as liquid damage,
+                        corrosion, and rust.</p>
+                    <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+                    <ol>
+                        <li>Remove all the removable pheripheral devices such as Processor, WLAN, RAM, Cmos
+                            battery, cabbles e.t.c from the motherboard </li>
+                        <li>Prepare warm water that in a container that contains the entire motherboard board and
+                            apply shampoo.</li>
+                        <li>Soak the motherboard in a warm wather and shampoo for 30min.</li>
+                        <li>Watch the motherboard carefully and make sure every part of the motherboard is shinning.
+                        </li>
+                        <img class="hint-img1" src="../../images/nav/soak.jpg" alt="naked board">
+                        <li>Dry it in an industrial oven for 20min at 150degree temp</li>
+                        <li>Wait for 10min, for motherboard to cool off.</li>
+                        <li>Finally, retest motherboard and if your case is not resolved, continue with navigator.</li>
+
+                        <details>
+                            <summary>Hint</summary>
+                            <p>Best game of chance in motherboard repair is <em>discharging.</em> Learn to do it right.
+                            </p>
+                            <p>What is liquid damage? It is basically physical damages caused by any liquid substance.
+                            </p>
+                            <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+                            <a target="_blank"
+                                href="https://www.google.com/search?q=motherboard+liquid+damage&sxsrf=ALiCzsYo4ZDL5T8Gdax5uyuClquiOLfCmw:1655785339114&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi25diH2b34AhVP0IUKHRO0DosQ_AUoAXoECAEQAw&biw=1366&bih=657&dpr=1">Liquid
+                                damage</a>
+                            <p>What is corrosion? Corrosion is the process of oxidation that happens when oxygen bonds
+                                with metal,
+                                producing rust and causing the metal to flake off and lose its valuable chemical
+                                properties.
+                                <a target="_blank"
+                                    href="https://www.google.com/search?q=laptop+motherboard+corrosion&sxsrf=ALiCzsa-Fa6GF7pSCv9ODPLy8QCFGnROwg:1655825942635&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiSk_uo8L74AhU2SfEDHURWBzgQ_AUoAXoECAEQAw&biw=1366&bih=600&dpr=1"></a>
+                            </p>
+                            <p>What is rust? Rust is a specific type of corrosion related to iron.</p>
+                            <p>Why warm water and shampoo? It helps to soften the corrosions, rust e.t.c. Hence, it
+                                helps to clean
+                                motherboard
+                                as shinning as new after watching.</p>
+                            <p>Why industrial oven? It helps to dry the motherboard quickly and also slightly heat the
+                                motherboard,
+                                this helps againt dry joint.</p>
+                            <p>Is there any other alternative for industrial oven? Build an incubator with 100WATT and
+                                carton or
+                                non-metalic box and keep the board in it for 3-4hours</p>
+                            <p>Is there any other alternative for manual incubator? Sunlight for averagely 48hours</p>
+                            <a target="_blank" href="https://www.youtube.com/watch?v=yV9Vwl1Gebs">AFS SOLUTION</a>
+                            <a target="_blank"
+                                href="https://www.youtube.com/watch?v=S-au1-2mNe8">SpaceJamTartzv3</a><br>
+                            <a target="_blank"
+                                href="https://www.shutterstock.com/video/clip-24318833-bowl-motherboard-electronics-gets-final-wash-funny">Shutter
+                                Stock</a>
+                        </details>
+                    </ol>
+                    <p>In a case of dry joint follow the bellow steps</p>
+                    <ol>
+                        <li>Carefully take out the burnt component</li>
+                        <li>Replace or Don't replace (optional) the burnt component and proceed to next troubleshooting.
+                        </li>
+                        <li><em>Strong warning:</em> Do not give supply without PWM regulator.
+                            <details>
+                                <summary>Hint</summary>
+                                <p>What is PWM? Pulse width modulation (PWM) is a modulation technique that generates
+                                    variable-width pulses to represent the amplitude of an analog input signal. In
+                                    relation to motherboard, it is actually to regulate 19V supply to generate exact
+                                    required voltage.</p>
+                                <p>What is PWM regulator? It is the IC in the PWM circuit.</p>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+                                <p>Why can't I give supply without PWM regulator? Because the top MOSFET will short or
+                                    somtimes both top and lower MOSFET.</p>
+                                <p>What if I really need to check without PWM regulator? You have to take out the top
+                                    and lower MOSFET.
+                                </p>
+                                <p>What is supply? Supply means the input given to make a system or section work. Supply
+                                    here, I mean
+                                    adapter</p>
+                            </details>
+                    </ol>
+                    <p>In a case of burnt component, follow the bellow steps.</p>
+                    <ol>
+                        <li>Carefully take out the burnt component</li>
+                        <li>Replace or Don't replace (optional) the burnt component and proceed to next troubleshooting.
+                        </li>
+                        <li><em>Strong warning:</em> Do not give supply without PWM regulator.
+                            <details>
+                                <summary>Hint</summary>
+                                <p>What is PWM? Pulse width modulation (PWM) is a modulation technique that generates
+                                    variable-width
+                                    pulses to represent the amplitude of an analog input signal. In relation to
+                                    motherboard, it is
+                                    actually to regulate 19V supply to generate exact required voltage.</p>
+                                <p>What is PWM regulator? It is the IC in the PWM circuit.</p>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+                                <p>Why can't I give supply without PWM regulator? Because the top MOSFET will short or
+                                    somtimes both top
+                                    and lower MOSFET.</p>
+                                <p>What if I really need to check without PWM regulator? You have to take out the top
+                                    and lower MOSFET.
+                                </p>
+                                <p>What is supply? Supply means the input given to make a system or section work. Supply
+                                    here, I mean
+                                    adapter</p>
+                            </details>
+                    </ol>
+                    <li>In some cases, burnt component or part will lead to total condemn of that particullar section.
+                        Check
+                        <em>Hint</em> for some materials that can help you understand the concept of bypassing through
+                        the use of
+                        buck regulator. Check and see if bypass can work for your case.
+                    </li>
+                    <details>
+                        <summary>Hint</summary>
+                        <a target="_blank"
+                            href="https://m.facebook.com/adityaa11ttt/videos/297473970964494/?locale=en_GB&_rdr">Adityatt111</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+                        <br>
+                        <br>
+                        <p>In a case of broken tracks, correct the connection and if component is missing, put the
+                            appropriate one
+                        </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ref9JHUf-uw">Branchus Creations</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=vx50YtEC2S8">RetroGameModz</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=pqEwtfFjqD8">Electronics repair
+                            school</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=OCjWE_hy0KQ">Aditya11ttt</a>
+                    </details>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button">THANK
+                            YOU</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging4 invisible">
+                    <h3>All clear from physical damages</h3>
+                    <p>Next important step is to retest the motherboard nakedly to see if the case is still the same.
+                    </p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging4 btn option" type="button" name="button">Working after
+                            testing nakedly but won't work after assembling the PC</button>
+                        <button class="btn-not-charging5 btn option" type="button" name="button">Still the same
+                            after testing nakedly</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What does it means to test motherboard nakedly? It simply means testing the motherboard
+                            without connecting any of the followings screen, flex, WLAN card, power switch, HDD, RAM and
+                            any removable accessories.</p>
+                        <img class="hint-img1" src="../../images/nav/naked-board.jpg" alt="physical-damage1">
+                        <p>How do I power my motherboard without power switch? </p>
+                        <ul>
+                            <li>Tune your multimeter to diode range.</li>
+                            <li>Place the red probe at the ground (GND) </li>
+                            <li>Use the black probe to torch NBSWON# (ON/OFF) or gently brush through at the pins on the
+                                switch connector without bridging 2 pins.</li>
+                        </ul>
+                        <p>It is a go idea to remove the CMOS battery and short the CMOS connector positive to ground
+                            for 15-20 seconds before testing nakedly</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=9b350urN2S0">Electronics repair
+                            school</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=1LqScrdpop4">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=BEVs9LLeE2Q">Laptex</a>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-not-charging5 invisible">
+                    <h3>Working after testing nakedly but won't work after assembling the PC.</h3>
+                    <P>Major cause of this kind of issue is short, this can occur as a result of the followings.</P>
+                    <ol>
+                        <li>Faulty pheripheral device e.g HDD, RAM, Screen cable, WLAN, ribon cables, camera e.t.c.</li>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NX0Q-B2W9MU">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=Brvi4g6mzHE">Laptop Repair Zone</a>
+                        <li>Faliure to properly return necessary insulating nylons.</li>
+                        <li>Using wrong nut.</li>
+                        <li>Failure to use nut where it's necessary.</li>
+                        <li>Improper connection of connectors.</li>
+                    </ol>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is short? A short circuit is an electrical circuit that allows a current to travel along
+                            an unintended path with no or very low electrical impedance. In a practical idea, short is a
+                            direct contact between supply (positive) and ground (GND or negative).</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+                        <p>What is ribbon cable? A ribbon cable is a cable with many conducting wires running parallel
+                            to each other on the same flat plane.</p>
+                        <a target="_blank"
+                            href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.parts-people.com%2Fimages%2Fproducts%2FBAL20TPcbl1.JPG&imgrefurl=https%3A%2F%2Fwww.parts-people.com%2Findex.php%3Faction%3Ditem%26id%3D24931&tbnid=XDaXa6IWEWl5IM&vet=12ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ..i&docid=2txtoNE1JhhBUM&w=1200&h=899&q=laptop%20motherboard%20cable&hl=en&ved=2ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ">
+                            Ribbon cable</a>
+                        <p>What is insulating nylons? This are nylons like tape used to insulate exposed surface.</p>
+                        <img class="hint-img1" src="../../images/nav/insulator.jpg" alt="insulator">
+                    </details>
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button"
+                            name="button">THANK YOU</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging6 invisible">
+                    <h3>Still the same after testing nakedly</h3>
+                    <p>Check impedance of the three switching MOSFETs.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging6 btn option" type="button" name="button">All the switching
+                            MOSFETs is good</button>
+                        <button class="btn-not-charging7 btn option" type="button" name="button">One or More is
+                            faulty</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Which three MOSFETs? 1st MOSFET, 2nd MOSFET and battery MOSFET (RBFET, ACFET & BATFET) or
+                            (farward MOSFET, switching MOSFET and discharging MOSFET).</p>
+                        <p>How to check MOSFET? MOSFET can either be N-channel or P-channel.</p>
+                        <ul>
+                            <li>For testing P-channel: Place red probe at the drain, place black probe at the
+                                source, there should be at least 0.300 in diode range of the multimeter. If you reverse
+                                the probe, there should be no value. Both drain and source is not to be connected or
+                                beep with gate.</li>
+                            <li>For testing N-channel: Place black probe at the drain, place red probe at the
+                                source, there should be at least 0.300 in diode range of the multimeter. If you reverse
+                                the probe, there should be no value. Both drain and source is not to be connected or
+                                beep with gate.</li>
+                        </ul>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging7 invisible">
+                    <h3>All the switching MOSFETs is good</h3>
+                    <p>Check gate voltage of ACFET(switching MOSFET).</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging8 btn option" type="button" name="button">ACFET(switching
+                            MOSFET) output voltage is correct</button>
+                        <button class="btn-not-charging9 btn option" type="button" name="button">ACFET(switching
+                            MOSFET) output voltage is wrong</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>When you are getting 0V or 19V on the gate, there is definatly aa problem.</p>
+                        <p>What is the expected gate volatage? It actually depends on the channel of the MOSFET used
+                            in the archircture:</p>
+                        <ul>
+                            <li>For P-channel: At least 6v below source voltage.</li>
+                            <li>For N-channel: At least 5v above drain vlotage.</li>
+                        </ul>
+                        <p>How to locate switching MOSFET? Any one of the 1st and 2nd MOSFET receiving input voltage
+                            through kathod of the internal diode in the schematic.</p>
+                        <img class="hint-img1" src="../../images/nav/switching-mosfet.jpg" alt="switching-mosfet">
+                    </details>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging8 invisible">
+                    <h3>One or More is faulty</h3>
+                    <p>Replace the faulty MOSFET with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to
+                        the current state of your motherboard.</p>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging9 invisible">
+                    <h3>ACFET(switching MOSFET) output voltage is correct</h3>
+                    <p>Regardlesss of ACFET gate voltage presence, you have to be sure of the switching by
+                        confirming the charging ic requirements.</p>
+                    <p>Locate the charging IC.</p>
+                    <p>Check voltage on DCIN pin of charging IC(Check other names for DCIN in the hint).</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging10 btn option" name="button" type="button">Adapter voltage
+                            present at charging IC DCIN pin </button>
+                        <button class="btn-not-charging11 btn option" name="button" type="button">Adapter voltage
+                            absent at charging IC DCIN pin</button>
+                        <button class="btn option" onclick="location.href='not-charging-19v.ejs'" type="button"
+                            name="button">19v switching is Perfect</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Why do I need to go through this process if ACFET output voltage id present? Because
+                            short in switching MOSFET can make it look like switching is present which is not.</p>
+                        <p>How do I locate charging IC? It is always close to battery terminal. In schematic, it is
+                            mostly always the page before standby section.</p>
+                        <p>When you are getting 0V or 19V on the gate of ACFET(switching-MOSFET), there is definatly aa
+                            problem.</p>
+                        <p>What is the expected voltage for DCIN? adapter voltage (mostly 19V).</p>
+                        <p>Other names for the DCIN can be VCC, PVCC (and more).</p>
+                    </details>
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging10 invisible">
+                    <h3>ACFET(switching MOSFET) output voltage is wrong</h3>
+                    <p>Locate the charging IC.</p>
+                    <p>Check voltage on DCIN pin of charging IC(Check other names for DCIN in the hint).</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging12 btn option" name="button" type="button">Adapter voltage
+                            present at charging IC DCIN pin </button>
+                        <button class="btn-not-charging13 btn option" name="button" type="button">Adapter voltage
+                            absent at charging IC DCIN pin</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I locate charging IC? It is always close to battery terminal. In schematic, it is
+                            mostly always the page before standby section.</p>
+                        <p>Other names for the DCIN can be VCC, PVCC (and more)</p>
+                    </details>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging11 invisible">
+                    <h3>Adapter voltage present at charging IC DCIN pin</h3>
+                    <p>Check charging IC LDO voltage.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging14 btn option" name="button" type="button">LDO voltage
+                            present</button>
+                        <button class="btn-not-charging15 btn option" name="button" type="button">LDO voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Charging IC LDO: It depends on the type of IC, It is either REGN or VDD or in few case
+                            LDO.</p>
+                        <ul>
+                            <li>If it is REGN, the value is 6V</li>
+                            <li>If it is VDD, the value is 5v</li>
+                            <li>If it is LDO, The value is around 5.4v (MAX8724 is an example)</li>
+                            <P>Check the motherboard or the motherboard documentation to determine the actual
+                                battery requirements.</P>
+                        </ul>
+                        <p>Just 1V drop in the above stated voltages will cause severe issue.</p>
+
+                    </details>
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging12 invisible">
+                    <h3>Adapter voltage absent at charging IC DCIN pin</h3>
+                    <p>Back-trace the DCIN line and correct it.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging16 btn option" name="button" type="button">Adapter voltage
+                            now present</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Carefully check the connected component, it mostly resistor or diode, the diode can be
+                            2in1. </p>
+                        <p>Also be sure of the track.</p>
+                    </details>
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging13 invisible">
+                    <h3>LDO voltage present</h3>
+                    <p>Charging IC LDO can be named REGN, LDO, VDD or VDDA</p>
+                    <p>If it is named VDD or VDDA, check voltage on VDDP too, VDDP is directly feeded from VDD
+                        depending on the archircture.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging17 btn option" name="button" type="button">VDDP voltage
+                            present</button>
+                        <button class="btn-not-charging18 btn option" name="button" type="button">VDDP voltage
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>This step is optional depending on the LDO name.</p>
+                        <p>Check the motherboard or the motherboard documentation to determine the actual VDDP
+                            voltage. </p>
+                    </details>
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging14 invisible">
+                    <h3>LDO voltage absent</h3>
+                    <p>Replace the charging IC with good one and retest</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging19 btn option" name="button" type="button">LDO voltage now
+                            present</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Expect nothing from the charging IC if LDO is bad. Check and be sure impedance of LDO is
+                            fine too.</p>
+                    </details>
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging15 invisible">
+                    <h3>VDDP voltage present</h3>
+                    <p>Check ACDETECT voltage.</p>
+                    <div class="arrow">
+                        <button class="btn-not-charging20 btn option" name="button" type="button">ACDETECT voltage
+                            is perfect</button>
+                        <button class="btn-not-charging21 btn option" name="button" type="button">ACDETECT voltage
+                            is imperfect</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the exact voltage of ACDETECT? It actually varies between the range of 2.4V - 3.1V.
+                            Do the calculation with the given voltage divider to get the exact value. The actual voltage
+                            will be stated in the charging IC datasheet.</p>
+                        <p>What are the other names for ACDETECT? ACIN, ACDET, ACSET (and more).</p>
+                    </details>
+                    <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging16 invisible">
+                    <h3>VDDP voltage absent</h3>
+                    <p>Back-trace the VDDP line and correct it. Without fulfilling this part you can't continue.</p>
+                    <div class="arrow">
+                        <button class="btn-not-charging22 btn option" name="button" type="button">VDDP voltage now
+                            present</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Just confirm continuity and follow the simple circiut/track.</p>
+                    </details>
+                    <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging17 invisible">
+                    <h3>ACDETECT voltage is perfect</h3>
+                    <p>Check ACOK voltage in adapter mode and battery mode.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging23 btn option" type="button" name="button">ACOK voltage is
+                            perfect</button>
+                        <button class="btn-not-charging24 btn option" type="button" name="button">ACOK voltage is
+                            imperfect</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the voltage value of ACOK? It actually depends on the motherboard architecture,
+                            best way to be sure is to che the datasheet of the IC. Another option is by the naming
+                            convention.</p>
+                        <ul>
+                            <li>ACOK means it will be high with adapter and low with battery (active high).</li>
+                            <li>ACOK# means it will be low with adapter and high with battery (active low).</li>
+                            <li>ACOK with bar on top, means it will be low with adapter and high with battery
+                                (active low).</li>
+                            <li>ACPRESS means it will be high with adapter and low with battery (active high).</li>
+                        </ul>
+                        <p>Where do check ACOK voltage? Charging IC.</p>
+                        <p>What is the voltage value for active High? 3V.</p>
+                        <p>What are the other names for ACOK? ACIN, ACPRESS (and more)</p>
+                    </details>
+                    <button class="btn-previous15 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging18 invisible">
+                    <h3>ACDETECT voltage is imperfect</h3>
+                    <p>Back-trace the ACDETECT pin voltage and correct it.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to
+                        the current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is usually feeded the output of a voltage divider.</p>
+                        <a target="_blank" href="youtube.com/watch?v=TAXv2swJr8k">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=rixH12PSKR0">Laptex</a>
+                    </details>
+                    <button class="btn-previous16 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging19 invisible">
+                    <h3>ACOK voltage is perfect</h3>
+                    <p>Check ACDRIVE voltage</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='not-charging-19v.ejs'" type="button"
+                            name="button">ACDRIVE voltage is present</button>
+                        <button class="btn-not-charging25 btn option" type="button" name="button">ACDRIVE voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected volatage for ACDRIVE? It depends on the type of MOSFET channel used
+                            for switching:</p>
+                        <ul>
+                            <li>For N-channel: Around 24v (at least 6v above MOSFET input <em>DRAIN</em>) </li>
+                            <li>For P-channel: Around 8v (at least 8V below MOSFET input <em>SOURCE</em>)</li>
+                        </ul>
+                    </details>
+                    <button class="btn-previous17 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging20 invisible">
+                    <h3>ACOK voltage is imperfect</h3>
+                    <p>Check ACOK impedence.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging26 btn option" type="button" name="button">ACOK impedence is
+                            fine</button>
+                        <button class="btn-not-charging27 btn option" type="button" name="button">ACOK impedence is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=ssb0Ji4hoYE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=AlEJknY1918">Laptex</a>
+                    </details>
+                    <button class="btn-previous18 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging21 invisible">
+                    <h3>ACDRIVE voltage is absent</h3>
+                    <p>Replace charging IC.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging28 btn option" type="button" name="button">Problem still
+                            remain the same</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Short in ACOK can cause ACDRIVE to the absent. Be sure ACOK is impedance is fine.</p>
+                    </details>
+                    <button class="btn-previous19 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging22 invisible">
+                    <h3>ACOK impedence is fine</h3>
+                    <p>Replace charging IC.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to
+                        the current state of your motherboard.</p>
+                    <button class="btn-previous20 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging23 invisible">
+                    <h3>ACOK impedence is bad</h3>
+                    <p>Inject voltage not exceeding 3v on ACOK line.</p>
+
+                    <div class="arrow">
+                        <button class="btn-not-charging29 btn option" type="button" name="button">Found a heating
+                            component</button>
+                        <button class="btn-not-charging30 btn option" type="button" name="button">ACOK impedence is
+                            now fine</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can remove the charging IC and check the impedance again before injecting voltage. </p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=EIFxhGs-KMI">Aditya11ttt</a>
+                    </details>
+                    <button class="btn-previous21 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging24 invisible">
+                    <h3>If problem still remain the same</h3>
+                    <p>Replace ACFET(switching MOSFET).</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to
+                        the current state of your motherboard.</p>
+                    <button class="btn-previous22 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-not-charging25 invisible">
+                    <h3>Found a heating component</h3>
+                    <p>Replace the haeting component and proceed.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to
+                        the current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Before replacing component, remove heating component and check impedance of ACOK line. If
+                            impedance is fine, replace the component else inject the voltage again untill the ACOK line
+                            is clear from short</p>
+                    </details>
+                    <button class="btn-previous23 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

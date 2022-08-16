@@ -1,0 +1,272 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="clock" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-clock1">
+                    <h3>Crystal 32.768KHz troubleshooting</h3>
+                    <p>Check clock signal 32.768KHz frequency on crystal.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clk1 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            present</button>
+                        <button class="btn-clk2 btn option" type="button" name="button">Clock 32.768KHz frequency
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected frequency value? 32.768KHz</p>
+                        <p>Where and how can I locate the crystal? It is always located close to the Super SIO. You can
+                            have one or 2 on the motherboard, if you check in the schematic one will be directly
+                            connected to super SIO and one will be directly connected to the ICH/PCH. It's best practice
+                            to check the two 32.768KHz frequency.</p>
+                        <p>What if I can't find any crystal placed beside the super SIO or ICH/PCH? It is embelded
+                            inside the Super SIO</p>
+                        <p>Baware of some motherboards that uses green clock. In such motherboard, there will be
+                            single IC that controls everything that has to do with clock.</p>
+                        <p>What if I dont't have oscilloscope? Assume it is working fine and proceed.</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+                    </details>
+                </div>
+
+                <div class="d-clock2 invisible">
+                    <h3>Clock 32.768KHz frequency present</h3>
+                    <p>Check 32.768KHz sign wave.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clk3 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            present</button>
+                        <button class="btn-clk4 btn option" type="button" name="button">Clock 32.768KHz sign wave
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How does the signal looks like? </p>
+                        <p>Input sign wave will be smaller compared to output sign wave</p>
+                        <p>What if I dont't have oscilloscope? Assume it is working fine and proceed</p>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=zFsj2BKpyeE">Aditya11ttt</a>
+                        <a target="_blank" href="https://www.youtube.com/watch?v=6ZcMI_5LZKs">SKBWORLD</a>
+                    </details>
+                    <button class="btn option" onclick="location.href='clock-32-768khz.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-clock3 invisible">
+                    <h3>Clock 32.768KHz frequency absent</h3>
+                    <p>Check the value of the 32.768KHz crystal resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clk5 btn option" type="button" name="button">Resistor value is good</button>
+                        <button class="btn-clk6 btn option" type="button" name="button">Resistor value is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Which resistor it the 32.768KHz resistor? The resistor connecting both input(RTCX1) and
+                            output(RTCX2) of the 32.768KHz crystal.</p>
+                        <p>It is always connected to both input pin(RTCX1) and output pin(RTCX2) of the crytal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>R1285</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>R568</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>R564</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>RH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>R994</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>RH70</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>RH70</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn option" onclick="location.href='clock-32-768khz.ejs'" type="button"
+                        name="button">Previous</button>
+                </div>
+                <div class="d-clock4 invisible">
+                    <h3>Clock 32.768KHz sign wave present</h3>
+                    <p>If crystal clock frequency and sign wave is good, your motherboard 32.768KHz is perfect. Proceed
+                        by re-navigating to the current state of your motherboard.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+
+                <div class="d-clock5 invisible">
+                    <h3>Clock 32.768KHz sign wave absent</h3>
+                    <p>Check the value of the 32.768KHz crystal resistor.</p>
+
+                    <div class=arrow>
+                        <button class="btn-clk7 btn option" type="button" name="button">Resistor value is good</button>
+                        <button class="btn-clk8 btn option" type="button" name="button">Resistor value is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Which resistor it the 32.768KHz resistor? The resistor connecting both input(RTCX1) and
+                            output(RTCX2) of the 32.768KHz crystal.</p>
+                        <p>It is always connected to both input pin(RTCX1) and output pin(RTCX2) of the crytal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>R1285</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>R568</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>R564</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>RH1</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>R994</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>RH70</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>RH70</P>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-clock6 invisible">
+                    <h3>Resistor value is good</h3>
+                    <p>Check the impedance of the two crystal capacitors.</p>
+
+                    <div class="arrow">
+                        <button class="btn-clk9 btn option" type="button" name="button">Crystal capacitor impedence is
+                            fine</button>
+                        <button class="btn-clk10 btn option" type="button" name="button">Crystal capacitor impedence is
+                            bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>How do I identify these capacitors? These are the two capacitors connected to the input and
+                            output pin of the crystal.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <img class="hint-img1" src="../../images/nav/crystal-cap.jpg" alt="crysta-cap">
+                            <p>Check it out in the below motherboards</p>
+                            <ul>
+                                <li>LA-4494P</li>
+                                <P>C1574 & C1575</P>
+                            </ul>
+                            <ul>
+                                <li>LA-7912P</li>
+                                <p>C682 & C686</p>
+                            </ul>
+                            <ul>
+                                <li>R33</li>
+                                <p>C808 & C803</p>
+                            </ul>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>CH4 & CH3</p>
+                            </ul>
+                            <ul>
+                                <li>LA-B101</li>
+                                <p>C1009 & C1010</p>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <p>CH45 & CH46</p>
+                            </ul>
+                        </details>
+                    </details>
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-clock7 invisible">
+                    <h3>Resistor value is bad</h3>
+                    <p>Replace the crystal resistor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It is always best to remove resistor and check the resistor value outside the motherboard</p>
+                    </details>
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-clock8 invisible">
+                    <h3>Crystal capacitor impedence is fine</h3>
+                    <p>Replace clock 32.768KHz crystal.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <br>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-clock9 invisible">
+                    <h3>Crystal capacitor impedance is bad</h3>
+                    <p>Replace faulty capacitor.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

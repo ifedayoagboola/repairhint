@@ -1,0 +1,278 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="ram-voltage" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+
+      <div class="direction">
+        <div class="d-ram-voltage1">
+          <h3>RAM supply voltage troublesshoting</h3>
+          <p>Locate RAM supply PWM cuicuit and check impedance of the PWM output coil.</p>
+
+          <div class="arrow">
+            <button class="btn-ram-voltage1 btn option" type="button" name="button">RAM supply impedance is
+              fine</button>
+            <button class="btn-ram-voltage2 btn option" type="button" name="button">RAM supply impedance is bad</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How do I locate the RAM supply PWM? It is usually close to the RAM slot. If you check in the schematic,
+              it will be the PWM circuit generating the expected RAM supply such as:</p>
+            <ul>
+              <li>2.5V PWM suppy for DDR1</li>
+              <li>1.8V PWM supply for DDR2</li>
+              <li>1.5V or 1.35v PWM suppy for DDR3 and</li>
+              <li>1.2V PWM suppy for DDR2</li>
+            </ul>
+            <p>In most cases, it naming convention is something like +1.8V_SUS, +1_35VSUS.</p>
+          </details>
+        </div>
+
+        <div class="d-ram-voltage2 invisible">
+          <h3>RAM supply impedance is fine</h3>
+          <p>Check the RAM PWM regulator VCC(VDD) voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-ram-voltage3 btn option" type="button" name="button">Regulator VCC voltage is
+              present</button>
+            <button class="btn-ram-voltage4 btn option" type="button" name="button">Regulator VCC voltage is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Where can I check this voltage? At the IC or component connected next to it for safety purpose.</p>
+            <p>It's IC pin naming convention is usually as follows VDD or V5IN.</p>
+            <p>What is the expected voltage? It's is usually 5v. This will be stated clearly in the schematic.</p>
+            <p>For checking any PWM circuit on your motherboard, it is a good practice to always check drain voltage of
+              top MOSFET.</p>
+            <details>
+              <summary>Reference</summary>
+              <p>This is the location of RAM IC and VCC (VDD) pin number for the below reference motherboards.</p>
+              <ul>
+                <li>LA-4494P</li>
+                <p>Pin 10 of PU7</p>
+              </ul>
+              <ul>
+                <li>LA-7912P</li>
+                <p>Pin 11 of PU6</p>
+              </ul>
+              <ul>
+                <li>R33</li>
+                <P>Pin 14 of PU5</P>
+              </ul>
+              <ul>
+                <li>LA-9104P</li>
+                <p>Pin 11 of PU300</p>
+              </ul>
+              <ul>
+                <li>LA-B101</li>
+                <p>Pin 11 of PU501</p>
+              </ul>
+              <ul>
+                <li>15341-1</li>
+                <p>Pin 12 of PU5101</p>
+              </ul>
+              <ul>
+                <li>LA-C361P</li>
+                <p>Pin 15, 16 and 17 of PU700</p>
+              </ul>
+              <ul>
+                <li>LA-D993</li>
+                <p>Pin 7 of PU900</p>
+              </ul>
+            </details>
+          </details>
+          <button class="btn option" onclick="location.href='no-ram-voltage.ejs'" type="button"
+            name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage3 invisible">
+          <h3>RAM supply impedance is bad</h3>
+          <p>Inject voltage and <a href="short.ejs">clear the short</a>.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <button class="btn option" onclick="location.href='no-ram-voltage.ejs'" type="button"
+            name="button">Previous</button>
+        </div>
+
+        <div class="d-ram-voltage4 invisible">
+          <h3>Regulator VCC voltage is present</h3>
+          <p>Check the RAM PWM regulator drive voltage.</p>
+
+          <div class="arrow">
+            <button class="btn-ram-voltage5 btn option" type="button" name="button">Regulator drive voltage is
+              present</button>
+            <button class="btn-ram-voltage6 btn option" type="button" name="button">Regulator drive voltage is
+              absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Where can I check this voltage? At RAM IC or component connected next to it for safety purpose.</p>
+            <p>It's IC pin naming convention is usually as follows VDDP or V5FILT.</p>
+            <p>What is the expected voltage? It's is usually 5v. This will be stated clearly in the schematic.</p>
+          </details>
+          <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-ram-voltage5 invisible">
+          <h3>Regulator VCC voltage is absent</h3>
+          <p>Back-trace the voltage to it's source.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>This particular pin is not used in all RAM regulators. Therefore, skip this pin if it is not used in your
+              motherboard architecture.</p>
+            <p>It is usually feeded via a resistor.</p>
+          </details>
+          <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage6 invisible">
+          <h3>Regulator drive voltage is present</h3>
+          <p>Check the RAM PWM regulator S3 & S5 (EN/DEM & LEM) pin voltage).</p>
+
+          <div class="arrow">
+            <button class="btn-ram-voltage7 btn option" type="button" name="button">Regulator S3 & S5 (EN/DEM & LEM)
+              voltage is present</button>
+            <button class="btn-ram-voltage8 btn option" type="button" name="button">Regulator S3 & S5 (EN/DEM & LEM)
+              voltage is absent</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>Where can I check this voltage? At the IC or component connected next to it for safety purpose.</p>
+            <p>It's other pin naming convention can be EN/DEM & LEM.</p>
+            <p>What is the expected voltage? It's is usually 5v. This will be stated clearly in the schematic.</p>
+          </details>
+          <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage7 invisible">
+          <h3>Regulator drive voltage is absent</h3>
+          <p>Back-trace the voltage to it's source.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>It is usually feeded via a resistor.</p>
+          </details>
+          <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage8 invisible">
+          <h3>Regulator S3 & S5 (EN/DEM & LEM) voltage is present</h3>
+          <p>Check main supply voltage at the drain of PWM top MOSFET.</p>
+
+          <div class="arrow">
+            <button class="btn-ram-voltage9 btn option" type="button" name="button">Voltage is present at the drain of
+              top MOSFET</button>
+            <button class="btn-ram-voltage10 btn option" type="button" name="button">Voltage is absent at the drain of
+              top MOSFET</button>
+          </div>
+          <br>
+          <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage9 invisible">
+          <h3>Regulator S3 & S5 (EN/DEM & LEM) voltage is absent</h3>
+          <p>Back-trace the voltage to it's source.</p>
+
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <details>
+            <summary>Hint</summary>
+            <p>It's ultimate source is super I/O.</p>
+          </details>
+          <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-ram-voltage10 invisible">
+          <h3>Voltage is present at the drain of top MOSFET.</h3>
+          <p>Replace the RAM suppy IC.</p>
+          <P>Check hint for more clues.</P>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+
+
+          <details>
+            <summary>Hint</summary>
+            <p>Confirm the presence and value of the components surrounding (components connected to the IC) the IC such
+              as resistor resistance value and capacitor impedance.</p>
+            <p>Example of these components includes:</p>
+            <ul>
+              <li>Resistance value of resistor connected to TON pin.</li>
+              <li>Resistance value of BOOT resistor</li>
+              <li>Impedance of BOOT capacitor (It is best practic to test this capacitor outside the motherboard)</li>
+              <li>Resistance value of resistor connected to CS pin</li>
+              <li>Resistance value of resistors connected to FB pin e.t.c.</li>
+            </ul>
+            <p>To some extent you can use external buck regulator to bypass the ram main supply(coil voltage).</p>
+            <p>Checkout how to use buck regulator for motherboard:</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=il-U7ymZJIY">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=ddAoDpmNScI">Laptex</a>
+          </details>
+          <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-ram-voltage11 invisible">
+          <h3>Voltage is absent at the drain of top MOSFET</h3>
+          <p>Back-trace the voltage to it's source.</p>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>2in1 MOSFET can be used to replace top MOSFET nad lower MOSFET. All you have to do is identify which pin
+              is the drain of top MOSFET.</p>
+              <p>Checkout for clue in the below material:</p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=Xc_yIdHw0zI">Dr-Bios com</a>
+              <details>
+                <summary>Hint</summary>
+                <p>Take a look at the below reference motherboard:</p>
+                <ul>
+                  <li>LA-D993</li>
+                  <P>PQ401 is a 2in1 MOSFET used just as it would have been something like PQ400 & PQ402. Pin 2 of PQ401
+                    is the drain of top MOSFET for 5v phase.
+                  </P>
+              </ul>
+              </details>
+          </details>
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+            YOU</button>
+
+          <details>
+            <summary>Hint</summary>
+            <p>It's source is CLR.</p>
+            <P>In some architectures, the CLR voltage is feeded to a fuse or coil before getting feeded to the drain of
+              PWM top MOSFET.</P>
+          </details>
+          <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+        </div>
+        <!-- Bug form using ejs template-->
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+  </body>
+
+  </html>

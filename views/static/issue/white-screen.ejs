@@ -1,0 +1,41 @@
+<%- include('../../partials/issue-header') %>ce
+
+    <body id="white-screen" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+            <div class="direction">
+                <div>
+                    <h3>Laptop is showing plain white</h3>
+                    <p>Check weather the system is responding to capslock</p>
+
+                    <div class="arrow">
+                        <button class="btn option" onclick="location.href='lvds.ejs'" type="button" name="button">
+                            Motherboard is responding to capslock</button>
+                        <button class="btn option" onclick="location.href='no-display.ejs'" type="button" name="button">
+                            Motherboard is not responding to capslock</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>It should be responding to capslock, therefore you will have to focus on checking LVDS
+                            section of your motherboard. If it does not respond to capslock, most likely someone has
+                            tamprred it. However, care less about the light and properly check all what the navigator
+                            reckoned step by step.
+                        </p>
+                    </details>
+                </div>
+                <!-- Bug form using ejs template-->
+                <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index2.js" charset="utf-8"></script>
+                
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+
+    </html>

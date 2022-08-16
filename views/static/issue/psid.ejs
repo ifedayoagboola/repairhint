@@ -1,0 +1,360 @@
+<%- include('../../partials/issue-header') %>
+
+    <body id="psid" onLoad="bugRoute()">
+        <%- include('../../partials/issue-navbar') %>
+
+            <div class="direction">
+                <div class="d-psid1">
+                    <h3>DELL: Motherboard charging problem (PS_ID)</h3>
+                    <p>This is additional guide for dell charging problem as the PS_ID logic is specific to dell
+                        motherboards.</p>
+                    <p>First thing first, be sure you are using the original dell recommended watt charger for the
+                        particular motherboard.</p>
+                    <p>Insert adapter, turn on the laptop, enter the BIOS setup, scroll to the adapter type and check
+                        the adapter type status.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid1 btn option" type="button" name="button">Adapter type shows adapter
+                            watt</button>
+                        <button class="btn-psid2 btn option" type="button" name="button">Adapter type is
+                            unknown</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>In most dell laptops, you will get a warning message that state that adapter type is
+                            unknown.</p>
+                        <!-- include image warning for adapter warning -->
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Here are the PSID location for the below motherboards</p>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Page 45</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>Page 43</P>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Page 53</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>Page 53</P>
+                            </ul>
+                        </details>
+                    </details>
+                </div>
+                <div class="d-psid3 invisible">
+                    <h3>Adapter type shows adapter watt</h3>
+                    <p>If you can get the information of your adapter in the BIOS setup, it means your motherboard PS_ID
+                        logic is perfect.</p>
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <!-- <a href="ADAPTER TYPE UNKNOWN"></a> -->
+                    </details>
+
+                    <button class="btn option" onclick="location.href='psid.ejs'" type="button">Previous</button>
+                </div>
+                <div class="d-psid4 invisible">
+                    <h3>Adapter type is unknown</h3>
+                    <p>Check voltage on the PS_ID pin at the charging port.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid3 btn option" type="button" name="button">PS_ID voltage is
+                            present</button>
+                        <button class="btn-psid4 btn option" type="button" name="button">PS_ID voltage is
+                            absent</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected voltage? 3.3V (minimum is 2.9).</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Here are the PSID pin location for the below motherboards</p>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>Pin 1 of charging port</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>Pin 4 of charging port</P>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>Pin 4 of charging port</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>Pin 4 of charging port</P>
+                            </ul>
+                        </details>
+                    </details>
+
+                    <button class="btn option" onclick="location.href='psid.ejs'" type="button">Previous</button>
+                </div>
+                <div class="d-psid5 invisible">
+                    <h3>PS_ID voltage is present</h3>
+                    <p>Check the resistance value of the 33ohms resistor inbetween the PSID line.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid5 btn option" type="button" name="button">Resistor is good</button>
+                        <button class="btn-psid6 btn option" type="button" name="button">Resistor is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can first confiRm PSID voltage on super SIO PS_ID pin.</p>
+                        <p>What is the expected resistance? 33ohms</p>
+                        <p>Brief on PS_ID: PS_ID is a logic specifically used in dell architecture to detect and
+                            communicate the validity of the type of dell charger inserted.</p>
+                        <img class="hint-img1" src="../../images/nav/psid.jpg" alt="psid">
+                        <p>PS_ID logic is made up of combination of few components. There are basically 3 most important
+                            of them all, these include the 3.3v pullup resistor, 33ohms resistor and the N-channel JFET.
+                        </p>
+                        <p>The utimate target of the logic is to successfully have 3.3v (minimum is 2.8) at both
+                            charging port PS_ID pin and the super I/O PS_ID pin with resistance of 33ohms or less.</p>
+                        <p>How do I bypass this logic if I can't trace it? Remove the 3 2in1 diodes and jump a wire from
+                            the super I/O PS_ID pin to the charging port PS_ID pin direct.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Here are the PSID 33ohms resistor location for the below motherboards</p>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PR903</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>PR4305</P>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PR101</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>PR102. Note, it is just a track on this motherboard.</P>
+                            </ul>
+                        </details>
+                    </details>
+
+                    <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid6 invisible">
+                    <h3>PS_ID voltage is absent</h3>
+                    <p>Check voltage at the input of 3.3v pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid7 btn option" type="button" name="button">Pull up input voltage is
+                            present</button>
+                        <button class="btn-psid8 btn option" type="button" name="button">Pull up input voltage is
+                            absent</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>You can first confirm PSID voltage on super SIO PS_ID pin.</p>
+                        <details>
+                            <summary>Reference</summary>
+                            <p>Here are the PSID pull up resistor location for the below motherboards</p>
+                            <ul>
+                                <li>LA-9104P</li>
+                                <p>PR902</p>
+                            </ul>
+                            <ul>
+                                <li>15341-1</li>
+                                <P>PR4304</P>
+                            </ul>
+                            <ul>
+                                <li>LA-C361P</li>
+                                <p>PR101</p>
+                            </ul>
+                            <ul>
+                                <li>LA-D993</li>
+                                <P>PR101</P>
+                            </ul>
+                        </details>
+                    </details>
+
+                    <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+
+                </div>
+                <div class="d-psid7 invisible">
+                    <h3>Resistor is good</h3>
+                    <p>If the resistance is good, your PS_ID logic is fine.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid8 invisible">
+                    <h3>Resistor is bad</h3>
+                    <p>Replace the 33ohms resistor in the circuit.</p>
+                    <p>Second option is to bypass it.</p>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected resistance? 33ohms</p>
+                        <p>Brief on PS_ID: PS_ID is a logic specifically used in dell architecture to detect and
+                            communicate the validity of the type of dell charger inserted.</p>
+                        <img src="" alt="PS_ID circuit">
+                        <p>PS_ID logic is made up of combination of few components. There are basically 3 most important
+                            of them all, these include the 3.3v pullup resistor, 33ohms resistor and the N-channel JFET.
+                        </p>
+                        <p>The utimate target of the logic to successfully have 3.3v (minimum is 2.7) at both charging
+                            port PS_ID pin and the super I/O PS_ID pin with resistance of 33ohms or less.</p>
+                        <p>How do I bypass this logic if I can't trace it? Remove the 3 2in1 diodes and jump a wire from
+                            the super I/O PS_ID pin to the charging port PS_ID pin.</p>
+                    </details>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid9 invisible">
+                    <h3>Pull up input voltage is present</h3>
+                    <p>Check voltage at the output of 3.3v pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid9 btn option" type="button" name="button">Pull up output voltage is
+                            present</button>
+                        <button class="btn-psid10 btn option" type="button" name="button">Pull up output voltage is
+                            absent</button>
+                    </div>
+                    <br>
+                    <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid10 invisible">
+                    <h3>Pull up input voltage is absent</h3>
+                    <p>Back-trace the voltage to it source.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid11 invisible">
+                    <h3>Pull up output voltage is present</h3>
+                    <p>Follow the subsequent circuit. The ultimate aim is getiing 3.3V at both the adapter PS_ID pin and
+                        super I/O PS_ID pin.</p>
+                    <p>You can bypass it (check hint).</p>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Brief on PS_ID: PS_ID is a logic specifically used in dell architecture to detect and
+                            communicate the validity of the type of dell charger inserted.</p>
+                        <img class="hint-img1" src="../../images/nav/psid.jpg" alt="psid">
+                        <p>PS_ID logic is made up of combination of few components. There are basically 3 most important
+                            of them all, these include the 3.3v pullup resistor, 33ohms resistor and the N-channel JFET.
+                        </p>
+                        <p>The utimate target of the logic is to successfully have 3.3v (minimum is 2.8) at both
+                            charging port PS_ID pin and the super I/O PS_ID pin with resistance of 33ohms or less.</p>
+                        <p>How do I bypass this logic if I can't trace it? Remove the 3 2in1 diodes and jump a wire from
+                            the super I/O PS_ID pin to the charging port PS_ID pin direct.</p>
+                    </details>
+
+                    <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid12 invisible">
+                    <h3>Pull up output voltage is absent</h3>
+                    <p>Check impedance of pull up resistor output.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid11 btn option" type="button" name="button">Pull up output impedance is
+                            fine</button>
+                        <button class="btn-psid12 btn option" type="button" name="button">Pull up output impedance is
+                            bad</button>
+                    </div>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The impedance checking here, is to watchout for short.</p>
+                    </details>
+
+                    <br>
+                    <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid13 invisible">
+                    <h3>Pull up output impedance is fine</h3>
+                    <p>Check resistance value of pull up resistor.</p>
+
+                    <div class="arrow">
+                        <button class="btn-psid13 btn option" type="button" name="button">Pull up resistor resistance
+                            value is good</button>
+                        <button class="btn-psid14 btn option" type="button" name="button">Pull up resistor resistance
+                            value is bad</button>
+                    </div>
+
+                    <details>
+                        <summary>Hint</summary>
+                        <p>What is the expected resistance value of the resistor? 2.2Kiloohm, it is always stated in the
+                            schematic.</p>
+                    </details>
+
+                    <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid14 invisible">
+                    <h3>Pull up output impedance is bad</h3>
+                    <p>Inject voltage and <a href="short.ejs">clear the short</a>.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid15 invisible">
+                    <h3>Pull up resistor resistance value is good</h3>
+                    <p>If pull resistor has the input voltage, the output impedance is fine and the pull up resistor
+                        value is good, there should be output voltage, else you are doing something wrong.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+                </div>
+                <div class="d-psid16 invisible">
+                    <h3>Pull up resistor resistance value is bad</h3>
+                    <p>Replace the resistor with good one.</p>
+
+                    <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+                        YOU</button>
+                    <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the
+                        current state of your motherboard.</p>
+
+                    <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+                </div>
+                <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+            </div>
+
+            <!-- Footer using ejs template-->
+            <%- include('../../partials/footer') %>
+
+                <script src="https://code.jquery.com/jquery-3.6.0.js"
+                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+                <script src="../../js/index.js" charset="utf-8"></script>
+                <!-- Bug for script file using ejs template. It's not working  using external script-->
+                <%- include('../../partials/bug') %>
+    </body>
+    
+
+    </html>

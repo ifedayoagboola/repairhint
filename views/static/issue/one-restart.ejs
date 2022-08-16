@@ -1,0 +1,460 @@
+<%- include('../../partials/issue-header') %>
+
+  <body id="one-restart" onLoad="bugRoute()">
+    <%- include('../../partials/issue-navbar') %>
+
+      <div class="direction">
+        <div class="d-rst1">
+          <h3>Motherboard restart or trippoff in less than a second</h3>
+          <p>The first and most important step in troubleshooting is to carefully check for physical damages</p>
+
+          <div class="arrow">
+            <button class="btn-rst1 btn option" type="button" name="button">Not clear from physical damages</button>
+            <button class="btn-rst2 btn option" type="button" name="button">All clear from physical damages</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What is physical damage? This is motherboard damage that can be physically seen e.g corrosion, track
+              damage, liquid damage, broken tracks, missing components e.t.c. </p>
+            <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/burnt.jpg" alt="physical-damage1">
+            <img class="hint-img1" src="../../images/nav/physical-damage.jpg" alt="physical-damage1">
+            <p>Physical damage can be small to the extent that you won't observe it and yet it can cause any kind of
+              issue on your motherboard, depending on where the damage is.</p>
+            <p>It is ideal and best practice to check for physical damages for at least 7 minutes.</p>
+            <a target="_blank"
+              href="https://www.google.com/search?q=laptop+motherboard+damages&tbm=isch&ved=2ahUKEwjxuo3H5774AhUE3hoKHWHpDc0Q2-cCegQIABAA&oq=laptop+motherboard+damages&gs_lcp=CgNpbWcQA1CZBljVEWDaFWgAcAB4AIAB5wOIAYsRkgEHMi00LjIuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=5dyxYrG0OIS8a-HSt-gM">Check
+              out more physical damages</a><br><br>
+            <p>See why you need to watch closely for physical damages</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=lX69uFGHDj0">Platinum computers</a>
+          </details>
+        </div>
+
+        <div class="d-rst2 invisible">
+          <h3>Not clear from physical damages</h3>
+          <p>Physical damages includes liquid damage, corrossion, rust, dry joint, burnt part or component,
+            broken tracks, missing components e.t.c </p>
+          <p>Follow the below steps to successfully take care of physical damages such as liquid damage, corrosion, and
+            rust </p>
+          <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+          <ol>
+            <li>Remove all the removable pheripheral devices such as Processor, WLAN, RAM, Cmos battery, cabbles e.t.c.
+              from the motherboard </li>
+            <li>Prepare warm water that in a container that contains the entire motherboard board and apply shampoo.
+            </li>
+            <li>Soak the motherboard in a warm wather and shampoo for 30min.</li>
+            <li>Watch the motherboard carefully and make sure every part of the motherboard is shinning</li>
+            <img class="hint-img1" src="../../images/nav/soak.jpg" alt="naked board">
+            <li>Dry it in an industrial oven for 20min at 150degree temp</li>
+            <li>Wait for 10min, for motherboard to cool off </li>
+            <li>Finally, retest motherboard and if your case is not resolved, continue with navigator </li>
+
+            <details>
+              <summary>Hint</summary>
+              <p>Best game of chance in motherboard repair is <em>discharging.</em> Learn to do it right.</p>
+              <p>What is liquid damage? It is basically physical damages caused by any liquid substance.</p>
+              <img class="hint-img1" src="../../images/nav/liquid-damage.jpg" alt="physical-damage1">
+              <a target="_blank"
+                href="https://www.google.com/search?q=motherboard+liquid+damage&sxsrf=ALiCzsYo4ZDL5T8Gdax5uyuClquiOLfCmw:1655785339114&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi25diH2b34AhVP0IUKHRO0DosQ_AUoAXoECAEQAw&biw=1366&bih=657&dpr=1">Liquid
+                damage</a>
+              <p>What is corrosion? Corrosion is the process of oxidation that happens when oxygen bonds with metal,
+                producing rust and causing the metal to flake off and lose its valuable chemical properties.
+                <a target="_blank"
+                  href="https://www.google.com/search?q=laptop+motherboard+corrosion&sxsrf=ALiCzsa-Fa6GF7pSCv9ODPLy8QCFGnROwg:1655825942635&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiSk_uo8L74AhU2SfEDHURWBzgQ_AUoAXoECAEQAw&biw=1366&bih=600&dpr=1"></a>
+              </p>
+              <p>What is rust? Rust is a specific type of corrosion related to iron.</p>
+              <p>Why warm water and shampoo? It helps to soften the corrosions, rust e.t.c. Hence, it helps to clean
+                motherboard
+                as shinning as new after watching.</p>
+              <p>Why industrial oven? It helps to dry the motherboard quickly and also slightly heat the motherboard,
+                this helps againt dry joint.</p>
+              <p>Is there any other alternative for industrial oven? Build an incubator with 100WATT and carton or
+                non-metalic box and keep the board in it for 3-4hours</p>
+              <p>Is there any other alternative for manual incubator? Sunlight for averagely 48hours</p>
+              <a target="_blank" href="https://www.youtube.com/watch?v=yV9Vwl1Gebs">AFS SOLUTION</a>
+              <a target="_blank" href="https://www.youtube.com/watch?v=S-au1-2mNe8">SpaceJamTartzv3</a><br>
+              <a target="_blank"
+                href="https://www.shutterstock.com/video/clip-24318833-bowl-motherboard-electronics-gets-final-wash-funny">Shutter
+                Stock</a>
+            </details>
+          </ol>
+          <p>In a case of dry joint follow the bellow steps</p>
+          <ol>
+            <li>Slightly resolder the suspected section or component</li>
+            <li>Or, Slightly heat the entire motherboard excluding the chipset (PCH/ICH), processor and GFX chip </li>
+            <details>
+              <summary>Hint</summary>
+              <p>What is dry joint? Dry joints are the main form of problem solder joint. These solder joints may be
+                completely open circuit, or they may be intermittent, high resistance or noisy. It is therefore
+                essential that no dry solder joints are present in any electronics equipment.</p>
+            </details>
+          </ol>
+          <p>In a case of burnt component, follow the bellow steps.</p>
+          <ol>
+            <li>Carefully take out the burnt component</li>
+            <li>Replace or Don't replace (optional) the burnt component and proceed to next troubleshooting.</li>
+            <li><em>Strong warning:</em> Do not give supply without PWM regulator.
+              <details>
+                <summary>Hint</summary>
+                <p>What is PWM? Pulse width modulation (PWM) is a modulation technique that generates variable-width
+                  pulses to represent the amplitude of an analog input signal. In relation to motherboard, it is
+                  actually to regulate 19V supply to generate exact required voltage.</p>
+                <p>What is PWM regulator? It is the IC in the PWM circuit.</p>
+                <a target="_blank" href="https://www.youtube.com/watch?v=Lf7JJAAZxEU">Make</a>
+                <a target="_blank" href="https://www.youtube.com/watch?v=d7gbGqwMQHg">The Chipmaster</a>
+                <p>Why can't I give supply without PWM regulator? Because the top MOSFET will short or somtimes both top
+                  and lower MOSFET.</p>
+                <p>What if I really need to check without PWM regulator? You have to take out the top and lower MOSFET.
+                </p>
+                <p>What is supply? Supply means the input given to make a system or section work. Supply here, I mean
+                  adapter</p>
+              </details>
+          </ol>
+          <li>In some cases, burnt component or part will lead to total condemn of that particullar section. Check
+            <em>Hint</em> for some materials that can help you understand the concept of bypassing through the use of
+            buck regulator. Check and see if bypass can work for your case.
+          </li>
+          <details>
+            <summary>Hint</summary>
+            <a target="_blank"
+              href="https://m.facebook.com/adityaa11ttt/videos/297473970964494/?locale=en_GB&_rdr">Adityatt111</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=u0C-n2JBHG4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=4jDvd0jcr8s">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Tw31drbsEzg">Aditya11ttt</a>
+            <br>
+            <br>
+            <p>In a case of broken tracks, correct the connection and if component is missing, put the appropriate one
+            </p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=ref9JHUf-uw">Branchus Creations</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=vx50YtEC2S8">RetroGameModz</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=pqEwtfFjqD8">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=OCjWE_hy0KQ">Aditya11ttt</a>
+          </details>
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button">THANK YOU</button>
+          </div>
+          <br>
+          <button class="btn option" onclick="location.href='one-restart.ejs'" type="button">Previous</button>
+        </div>
+
+
+        <div class="d-rst3 invisible">
+          <h3>All clear from physical damages</h3>
+          <p>Next important step is to re-test the motherboard nakedly to see if the case is still the same</p>
+
+          <div class="arrow">
+            <button class="btn-rst3 btn option" type="button" name="button">Working after testing nakedly but won't work
+              after assembling
+              the PC</button>
+            <button class="btn-rst4 btn option" type="button" name="button">Still the same after testing
+              nakedly</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>What does it means to test motherboard nakedly? It simply means testing the motherboard without
+              connecting any of the followings screen, flex, WLAN card, power switch, HDD, RAM and any removable
+              accessories.</p>
+            <img class="hint-img1" src="../../images/nav/naked-board.jpg" alt="physical-damage1">
+            <p>How do I power my motherboard without power switch? </p>
+            <ul>
+              <li>Tune your multimeter to diode range.</li>
+              <li>Place the red probe at the ground (GND) </li>
+              <li>Use the black probe to torch NBSWON# (ON/OFF) or gently brush through at the pins on the
+                switch connector without bridging 2 pins.</li>
+            </ul>
+            <p>It is a go idea to remove the CMOS battery and short the CMOS connector positive to ground for 15-20
+              seconds before testing nakedly</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=9b350urN2S0">Electronics repair school</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=1LqScrdpop4">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=BEVs9LLeE2Q">Laptex</a>
+          </details>
+          <button class="btn option" onclick="location.href='one-restart.ejs'" type="button"
+            name="button">Previous</button>
+        </div>
+        <div class="d-rst4 invisible">
+          <h3>Working after testing nakedly but won't work after assembling the PC</h3>
+          <P>Major cause of this kind of issue is short, this can occur as a result of the followings.</P>
+          <ol>
+            <li>Faulty pheripheral device e.g HDD, RAM, Screen cable, WLAN, ribon cables, camera e.t.c.</li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NX0Q-B2W9MU">Aditya11ttt</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=Brvi4g6mzHE">Laptop Repair Zone</a>
+            <li>Faliure to properly return necessary insulating nylons.</li>
+            <li>Using wrong nut.</li>
+            <li>Failure to use nut where it's necessary.</li>
+            <li>Improper connection of connectors.</li>
+          </ol>
+          <details>
+            <summary>Hint</summary>
+            <p>What is short? A short circuit is an electrical circuit that allows a current to travel along an
+              unintended path with no or very low electrical impedance. In a practical idea, short is a direct contact
+              between supply (positive) and ground (GND or negative).</p>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+            <a target="_blank" href="https://www.youtube.com/watch?v=NCqh_D3B0ao">Kidovators by GyanLab</a>
+            <p>What is ribbon cable? A ribbon cable is a cable with many conducting wires running parallel to each other
+              on the same flat plane.</p>
+            <a target="_blank"
+              href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.parts-people.com%2Fimages%2Fproducts%2FBAL20TPcbl1.JPG&imgrefurl=https%3A%2F%2Fwww.parts-people.com%2Findex.php%3Faction%3Ditem%26id%3D24931&tbnid=XDaXa6IWEWl5IM&vet=12ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ..i&docid=2txtoNE1JhhBUM&w=1200&h=899&q=laptop%20motherboard%20cable&hl=en&ved=2ahUKEwixoIL8wKT5AhUQLRoKHRiOADQQMygEegUIARDaAQ">
+              Ribbon cable</a>
+            <p>What is insulating nylons? This are nylons like tape used to insulate exposed surface.</p>
+            <img class="hint-img1" src="../../images/nav/insulator.jpg" alt="insulator">
+          </details>
+          <div class="arrow">
+            <button class="btn option" onclick="location.href='mb-issue.ejs'" type="button" name="button">THANK
+              YOU</button>
+          </div>
+          <br>
+          <button class="btn-previous1 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst5 invisible">
+          <h3>Still the same after testing nakedly</h3>
+          <p>Besure all PWM coil and DC-DC impedance is perfect.</p>
+          <p>Besure NBSWON# voltage is good as expected</p>
+          <p>Continue by disabling CPU section.</p>
+
+          <div class="arrow">
+            <button class="btn-rst5 btn option" type="button" name="button">Motherboard behaviour changes after lifting
+              CPU PWM coils</button>
+            <button class="btn-rst6 btn option" type="button" name="button">No changes in motherboard behaviour after
+              lifting CPU PWM coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How do I disable a section? There are differnt ways of disabling a section of motherboard, One of the
+              easiest way is by just lifting one leg of PWM output coils.</p>
+            <p>Must I start disabling from CPU? You can start by disabling the suspected section.</p>
+            <P>How do I lift the coil? You can use hot air gun and soldering iron. Apply hot air to the particular coil
+              pin you intend to lift and gently lift it by using soldering iron as your twizzer.</P>
+          </details>
+          <button class="btn-previous2 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-rst6 invisible">
+          <h3>Motherboard behaviour changes after lifting CPU PWM coils</h3>
+          <p>Carefully troubleshoot and fish out the culprit in the CPU section by focusing on GFX section.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the CPU section because motherboard improves in
+              performance or changes behaviour after lifting the CPU PWM coil.</p>
+            <p>Start by checking every necessary impedance and required voltages in this section on a step by step
+              basis.</p>
+          </details>
+
+          <button class="btn-previous3 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst7 invisible">
+          <h3>No changes in motherboard behaviour after lifting CPU PWM coil</h3>
+          <p>Disable GFX core section by lifting the GFX core PWM coil and re-test motherboard.</p>
+
+          <div class="arrow">
+            <button class="btn-rst7 btn option" type="button" name="button">Motherboard behaviour changes after lifting
+              GFX PWM coil</button>
+            <button class="btn-rst8 btn option" type="button" name="button">No changes in motherboard behaviour after
+              lifting GFX PWM coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <P>How do I lift the coil? You can use hot air gun and soldering iron. Apply hot air to the particular coil
+              pin you intend to lift and gently lift it by using soldering iron as your twizzer.</P>
+          </details>
+          <button class="btn-previous4 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst8 invisible">
+          <h3>Motherboard behaviour changes after lifting GFX PWM coil</h3>
+          <p>Carefully troubleshoot and fish out the culprit in the GFX section by focusing on GFX section.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the GFX section because motherboard improves in
+              performance or changes behaviour after lifting the CPU PWM coil.</p>
+            <p>Start by checking every necessary impedance and required voltages in this section on a step by step
+              basis.</p>
+          </details>
+          <button class="btn-previous5 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst9 invisible">
+          <h3>No changes in motherboard behaviour after lifting GFX PWM coil</h3>
+          <p>Disable RAM section by lifting the RAM coil and re-test motherboard.</p>
+
+          <div class="arrow">
+            <button class="btn-rst9 btn option" type="button" name="button">Motherboard behaviour changes after lifting
+              RAM PWM coil</button>
+            <button class="btn-rst10 btn option" type="button" name="button">No changes in motherboard behaviour after
+              lifting RAM PWM coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How do I disable a section? There are differnt ways of disabling a section of motherboard, One of the
+              easiest way is by just lifting one leg of PWM output coils.</p>
+          </details>
+          <button class="btn-previous6 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst10 invisible">
+          <h3>Motherboard behaviour changes after lifting RAM PWM coil</h3>
+          <p>Carefully troubleshoot and fish out the culprit in the RAM section by focusing on RAM section.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the RAM section because motherboard improves in
+              performance or changes behaviour after lifting the CPU PWM coil.</p>
+            <p>Start by checking every necessary impedance and required voltages in this section on a step by step
+              basis.</p>
+          </details>
+          <button class="btn-previous7 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-rst11 invisible">
+          <h3>No changes in motherboard behaviour after lifting RAM PWM coil</h3>
+          <p>Disable chipset 1.05 section by lifting the RAM coil and re-test motherboard.</p>
+
+          <div class="arrow">
+            <button class="btn-rst11 btn option" type="button" name="button">Motherboard behaviour changes after lifting
+              1.05 PWM coil</button>
+            <button class="btn-rst12 btn option" type="button" name="button">No changes in motherboard behaviour after
+              lifting 1.05 PWM coil</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How do I disable a section? There are differnt ways of disabling a section of motherboard, One of the
+              easiest way is by just lifting one leg of PWM output coils.</p>
+          </details>
+          <button class="btn-previous8 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst12 invisible">
+          <h3>Motherboard behaviour changes after lifting 1.05 PWM coil</h3>
+          <p>Carefully troubleshoot and fish out the culprit in the chipset 1.05 section by focusing on GFX section.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the chipset 1.05 section because motherboard
+              improves in performance or changes behaviour after lifting the CPU PWM coil.</p>
+            <p>Start by checking every necessary impedance and required voltages in this section on a step by step
+              basis.</p>
+          </details>
+          <button class="btn-previous9 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-rst13 invisible">
+          <h3>No changes in motherboard behaviour after lifting 1.05 PWM coil</h3>
+          <p>Disable every other PWM section by lifting the PWM coil and re-test motherboard.</p>
+
+          <div class="arrow">
+            <button class="btn-rst13 btn option" type="button" name="button">Motherboard behaviour changes after lifting
+              every other PWM coils</button>
+            <button class="btn-rst14 btn option" type="button" name="button">No changes in motherboard behaviour after
+              lifting All PWM coils</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>How do I disable a section? There are differnt ways of disabling a section of motherboard, One of the
+              easiest way is by just lifting one leg of PWM output coils.</p>
+          </details>
+          <button class="btn-previous10 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst14 invisible">
+          <h3>Motherboard behaviour changes after lifting every other PWM coils</h3>
+          <p>Focus your troubleshooting on the particular PWM coil you lifted that improves the performance of your
+            motherboard.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the particular PWM section you lifted that
+              improves the performance or changes behaviour of the motherboard.</p>
+          </details>
+          <button class="btn-previous11 btn option" type="button" name="button">Previous</button>
+        </div>
+        <div class="d-rst15 invisible">
+          <h3>No changes in motherboard behaviour after lifting All PWM coils</h3>
+          <p>Remove DC-DC MOSFET one after the other and re-test the motherboard condition.</p>
+
+          <div class="arrow">
+            <button class="btn-rst15 btn option" type="button" name="button">Motherboard behaviour changes after
+              removing one DC-DC MOSFET</button>
+            <button class="btn-rst16 btn option" type="button" name="button">No changes in motherboard behaviour after
+              remove all DC-DC MOSFETs</button>
+          </div>
+
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the line of the particular DC-DC MOSFET you
+              removed that improves the performance or changes behaviour of the motherboard.</p>
+          </details>
+          <button class="btn-previous12 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-rst16 invisible">
+          <h3>Motherboard behaviour changes after removing one DC-DC MOSFET</h3>
+          <p>Focus your troubleshooting on the particular DC-DC you removed that improves the performance of your
+            motherboard.</p>
+
+          <button class="btn option" onclick="location.href='mb-issue.ejs'" name="button" type="button">THANK
+            YOU</button>
+          <p>If problem does not resolve after rectifying this, continue troubleshooting by navigating to the current
+            state of your motherboard.</p>
+          <details>
+            <summary>Hint</summary>
+            <p>There is high chance that the motherboard problem is in the particular DC-DC MOSFET you removed that
+              improves the performance or changes behaviour of the motherboard.</p>
+          </details>
+          <button class="btn-previous13 btn option" type="button" name="button">Previous</button>
+        </div>
+
+        <div class="d-rst17 invisible">
+          <h3>No changes in motherboard behaviour after removing all DC-DC MOSFETs</h3>
+          <P>Carefully check your standby section.</P>
+          <ul>
+            <li>Confirm feedback and PWRGOOD of the standby</li>
+            <li>Use oscilloscope to confirm the voltages perfection</li>
+          </ul>
+          <p>Carefully check and confirm your CLR voltage and it's switching.</p>
+          <ul>
+            <li>Make sure the CLR voltage is not dropping at anypoint in time</li>
+            <li>Use oscilloscope to confirm the voltages perfection</pli>
+          </ul>
+          <p>If all the above is good, most like it's an internal track damage.</p>
+
+          <button class="btn-previous14 btn option" type="button" name="button">Previous</button>
+        </div>
+        <!-- Bug form using ejs template-->
+        <%- include('../../partials/navigator-bug-form') %>
+      </div>
+
+      <!-- Footer using ejs template-->
+      <%- include('../../partials/footer') %>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <script src="../../js/index.js" charset="utf-8"></script>
+        <!-- Bug for script file using ejs template. It's not working  using external script-->
+        <%- include('../../partials/bug') %>
+  </body>
+
+  </html>

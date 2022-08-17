@@ -641,6 +641,10 @@ app.get("/partials/picture-quiz.ejs", async function (req, res) {
   }
 });
 
+app.get("/static/sub.ejs", function (req, res) {
+    res.render("static/sub.ejs")
+})
+
 
 //moved here from it's original location 
 app.get("/casestudies/new", (req, res) => {

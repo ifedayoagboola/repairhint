@@ -39,7 +39,7 @@
             <img class="user-img" src="images/profile.png " alt="">
             <h2><%- fullname %></h2>
             <p>Welcome to fixhint <%- first %>, get and monitor progress information about your account</p>
-            <a class="btn" href="/account.ejs">Refresh</a>
+            <a class="btn" href="/static/sub.ejs">Subscribe</a>
             <a class="btn" href="/logout">Logout</a>
             <div>
                 <p>Your referer link is</p>
@@ -54,8 +54,7 @@
                 <div>
                     <img class="user-img" src="images/refer.jpg " alt="">
                     <h3><%- refer%></h3>
-                    <p>Referred</p>
-                    
+                    <p>Referred</p>               
                 </div>
                 <div>
                     <img class="user-img" src="images/profile.png " alt="">
@@ -64,7 +63,8 @@
                 </div>
             </div>
             <% if (sub === 0){ %>
-                <p style="color: red;">You have no active subscription</p>
+                <a class="sub-link" href="/static/sub.ejs">You have no active subscription</a>
+                <p ></p>
                 <details>
                     <p>You will only have access to case studies and about page.</p>
                 </details>

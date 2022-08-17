@@ -4,6 +4,8 @@ https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server#how
 link for form  field setting
 https://docs.google.com/spreadsheets/d/1FyxOJIRfPHtIKvLSKkvRZVvA7u0WkMZuzFolT12Py5Q/edit#gid=0
 
+price tag link
+http://bestjquery.com/tutorial/pricing-table/demo97/
 
 In this version have been able to chenge the value user that has already registered in database but yet to make it +1
 

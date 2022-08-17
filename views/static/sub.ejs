@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- css links -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- css links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5b9ff68e39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+        <div class="direction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricingTable">
+                            <div class="pricingTable-header">
+                                <h4 class="title">Basic</h4>
+                                <span class="month">Per Month</span>
+                            </div>
+                            <div class="price-value">
+                                <span class="amount">$5</span>
+                                <span class="amount-sm">99</span>
+                            </div>
+                            <ul class="pricing-content">
+                                <li><i class="fa fa-check"></i>Access to Navigator</li>
+                                <li><i class="fa fa-check"></i> Access to random clue</li>
+                                <li><i class="fa fa-check"></i> Unlimited access to case studies platform</li>
+                                <li><i class="fa fa-check"></i> Access to picture quiz</li>
+                                <li><i class="fa fa-check"></i> Access to regular quiz</li>
+                            </ul>
+                            <a href="#" class="pricingTable-signup">1 MONTH</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricingTable green">
+                            <div class="pricingTable-header">
+                                <h4 class="title">Regular</h4>
+                                <span class="month">Per Month</span>
+                            </div>
+                            <div class="price-value">
+                                <span class="amount">$5</span>
+                                <span class="amount-sm">50</span>
+                            </div>
+                            <ul class="pricing-content">
+                                <li><i class="fa fa-check"></i> Access to Navigator</li>
+                                <li><i class="fa fa-check"></i> Access to random clue</li>
+                                <li><i class="fa fa-check"></i> Unlimited access to case studies platform</li>
+                                <li><i class="fa fa-check"></i> Access to picture quiz</li>
+                                <li><i class="fa fa-check"></i> Access to regular quiz</li>
+                                <li><i class="fa fa-check"></i> 8.5% discount</li>
+                            </ul>
+                            <a href="#" class="pricingTable-signup">3 months</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricingTable pink">
+                            <div class="pricingTable-header">
+                                <h4 class="title">PREMIUM</h4>
+                                <span class="month">Per Month</span>
+                            </div>
+                            <div class="price-value">
+                                <span class="amount">$4</span>
+                                <span class="amount-sm">99</span>
+                            </div>
+                            <ul class="pricing-content">
+                                <li><i class="fa fa-check"></i> Access to Navigator</li>
+                                <li><i class="fa fa-check"></i> Access to random clue</li>
+                                <li><i class="fa fa-check"></i> Unlimited access to case studies platform</li>
+                                <li><i class="fa fa-check"></i> Access to picture quiz</li>
+                                <li><i class="fa fa-check"></i> Access to regular quiz</li>
+                                <li><i class="fa fa-check"></i> Save up to 17%</li>
+                                <li><i class="fa fa-check"></i> Access to new lunch feature</li>
+                            </ul>
+                            <a href="#" class="pricingTable-signup">6 months</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer using ejs template-->
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

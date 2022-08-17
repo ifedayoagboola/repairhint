@@ -4,6 +4,13 @@
   /* font-family: 'Poppins', sans-serif:
   box-sizing: border-box; */
 }
+
+.sub-link{
+  color: red; 
+  text-decoration: none;
+  font-size: 30px;
+}
+
 .containerr {
   width: 100;
   /* height: 100vh; */
@@ -96,3 +103,7 @@
   right: 20px;
   color: white;
 }
+
+.logo-img {
+  height: 42px;
+} 

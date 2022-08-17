@@ -130,5 +130,6 @@ dist
 .pnp.*
 
 # personal
+note.txt
 update-version.txt
 to-do.txt

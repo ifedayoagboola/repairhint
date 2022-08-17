@@ -248,6 +248,9 @@ body {
   border-radius: 8px;
   margin-top: 10px;
 }
+.logo-img {
+    height: 42px;
+  } 
 
 @media (max-width: 767px) {
     .result-box .btn{

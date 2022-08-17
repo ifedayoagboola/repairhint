@@ -12,8 +12,11 @@ h3 {
   color: black;
   text-align: center;
   font-size: 2.5rem;
-
 }
+a {
+  text-decoration: none;
+}
+
 /* class */
 .header {
   font-family: fantasy;
@@ -195,6 +198,10 @@ padding: 2% 15%;
 details a {
   margin: 0 10px;
 }
+
+.logo-img {
+  height: 42px;
+} 
 
 @media (max-width: 767px) {
   .clue-img {

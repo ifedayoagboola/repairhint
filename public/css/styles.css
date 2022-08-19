@@ -207,6 +207,10 @@ details a {
   border: 0; 
   width: 80%;
 }
+.error-alert {
+  position: absolute; 
+  width: 100%;
+}
 
 /* for random secret/clue */
 .clue-content {

@@ -8,6 +8,7 @@ const multer = require("multer")
 const nodemailer = require("nodemailer");
 const jwt = require('jsonwebtoken')
 const session = require('express-session');
+const flash = require("connect-flash");
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
 
@@ -30,6 +31,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash())
 
 
 //connect to mongoose
@@ -204,6 +206,7 @@ sub()
 
 // response to get request for home page
 app.get("/", function (req, res) {
+  const errors = req.flash().error || [];
 
   if (!req.isAuthenticated()) {
     var check = 1   //used to differentiate weather the is login on home page or not in other to manipulate login and logout button
@@ -225,7 +228,8 @@ app.get("/", function (req, res) {
       about: about,
       quiz: quiz,
       script: script,
-      account: account
+      account: account,
+      errors: errors,
     })
   } else {
     var check = 2   //used to differentiate weather the is login on home page or not in other to manipulate login and logout button
@@ -247,7 +251,8 @@ app.get("/", function (req, res) {
       quiz: quiz,
       about: about,
       script: script,
-      account: account
+      account: account,
+      errors: errors,
     })
   }
 
@@ -412,37 +417,59 @@ app.post('/', async (req, res) => {
   }
 });
 
-app.post('/login', function (req, res) {
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password
-  });
+//without this route, login was not working before, now it works without it
+app.get('/login', function (req, res) {
+  res.render('/')
+});
 
-  req.login(user, function (err) {
+// app.post('/login', passport.authenticate('local', { failureRedirect: '/', failureMessage: true }),
+//   function(req, res) {
+//     res.redirect('/~' + req.user.username);
+//   });
+
+app.post("/login", passport.authenticate("local", {
+  failureFlash: true,
+  failureRedirect: '/',
+}), (req, res) => {
+  //used to monitor  user login  
+  var user = req.user.username
+  User.findOneAndUpdate({ username: user }, { $inc: { logins: 1 } }, { new: true }, function (err) {
     if (err) {
       console.log(err);
     } else {
-      passport.authenticate('local')(req, res, function () {
-        //used to monitor  user login  
-        var user = req.user.username
-        User.findOneAndUpdate({ username: user }, { $inc: { logins: 1 } }, { new: true }, function (err) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("login is successful");
-          }
-        })
-        res.redirect('/');
-      });
+      console.log("login is successful");
     }
-  });
+  })
+  res.redirect('/');
 });
 
-//without this route, login was not working before, now it works without it
-// app.get('/login', function (req, res) {
-//   res.render('')
-// });
+// ##** This was commented out because users can login with wrong password if the refresh **##///////// 
 
+// app.post('/login.ejs', function (req, res) {
+//   const user = new User({
+//     username: req.body.username,
+//     password: req.body.password
+//   });
+
+//   req.login(user, function (err) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       passport.authenticate('local')(req, res, function () {
+//         //used to monitor  user login  
+//         var user = req.user.username
+//         User.findOneAndUpdate({ username: user }, { $inc: { logins: 1 } }, { new: true }, function (err) {
+//           if (err) {
+//             console.log(err);
+//           } else {
+//             console.log("login is successful");
+//           }
+//         })
+//         res.redirect('/');
+//       });
+//     }
+//   });
+// });
 
 
 //response to get request for content in partials folder

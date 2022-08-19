@@ -25,8 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(
   session({
-    // secret: process.env.RESETSECRET,
-    secret: "ourlitlesecret",
+    secret: process.env.PORT,
+    // secret: "ourlitlesecret",
     resave: false,
     saveUninitialized: false,
   })

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Repairhint</title>
 
 
     <!-- css links -->
@@ -35,10 +35,23 @@
 
     <link rel="stylesheet" href="../css/sub.css">
 </head>
+
 <body>
     <%- include('../partials/navbar') %>
         <div class="direction">
             <div class="container">
+                <section id="sub-forms" class="invisible">
+                    <form id="regular" action="/sub/regular" method="POST">
+                        <input type="text" name="first" value="1 month regular">
+                    </form>
+                    <form id="standard" action="/sub/standard" method="POST">
+                        <input type="text" name="first" value="3 months stardard">
+                    </form>
+                    <form id="premium" action="/sub/premium" method="POST">
+                        <input type="text" name="first" value="6 months premium">
+                    </form>
+                </section>
+
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="pricingTable">
@@ -57,7 +70,8 @@
                                 <li><i class="fa fa-check"></i> Access to picture quiz</li>
                                 <li><i class="fa fa-check"></i> Access to regular quiz</li>
                             </ul>
-                            <a href="#" class="pricingTable-signup">1 MONTH</a>
+                            <!-- <a href="#" class="pricingTable-signup">1 MONTH</a> -->
+                            <button class="pricingTable-signup" form="regular">1 months</button>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -78,7 +92,8 @@
                                 <li><i class="fa fa-check"></i> Access to regular quiz</li>
                                 <li><i class="fa fa-check"></i> 8.5% discount</li>
                             </ul>
-                            <a href="#" class="pricingTable-signup">3 months</a>
+                            <!-- <a href="#" class="pricingTable-signup">3 months</a> -->
+                            <button class="pricingTable-signup" form="standard">3 months</button>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -100,7 +115,8 @@
                                 <li><i class="fa fa-check"></i> Save up to 17%</li>
                                 <li><i class="fa fa-check"></i> Access to new lunch feature</li>
                             </ul>
-                            <a href="#" class="pricingTable-signup">6 months</a>
+                            <!-- <a href="#" class="pricingTable-signup">6 months</a> -->
+                            <button class="pricingTable-signup" form="premium">6 months</button>
                         </div>
                     </div>
                 </div>

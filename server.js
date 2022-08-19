@@ -438,10 +438,10 @@ app.post('/login', function (req, res) {
   });
 });
 
-//without this route, login is not working
-app.get('/login', function (req, res) {
-  res.render('')
-});
+//without this route, login was not working before, now it works without it
+// app.get('/login', function (req, res) {
+//   res.render('')
+// });
 
 
 
@@ -641,8 +641,21 @@ app.get("/partials/picture-quiz.ejs", async function (req, res) {
   }
 });
 
+
+// ################################### sub route and forms######################################
 app.get("/static/sub.ejs", function (req, res) {
-    res.render("static/sub.ejs")
+  res.render("static/sub.ejs")
+})
+app.post('/sub/regular', (req, res) => {
+  console.log(req.body);
+})
+
+app.post('/sub/standard', (req, res) => {
+  console.log(req.body);
+})
+
+app.post('/sub/premium', (req, res) => {
+  console.log(req.body);
 })
 
 
